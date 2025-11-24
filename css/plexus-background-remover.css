@@ -1,0 +1,36 @@
+/* ============================================
+   PLEXUS BACKGROUND REMOVER
+   Sadece beyaz arka planı kaldır, görseli koru
+   ============================================ */
+
+/* Container - arka planı kaldır */
+.plexus-structure-wrapper {
+    background: transparent !important;
+    overflow: visible !important;
+}
+
+/* Görsel - sadece beyaz arka planı kaldır, görseli koru */
+.plexus-structure-wrapper img {
+    /* mix-blend-mode'u kaldır - görseli korumak için */
+    mix-blend-mode: normal !important;
+    
+    /* Sadece glow efekti, arka plan kaldırma JavaScript'te yapılacak */
+    filter: drop-shadow(0 20px 60px rgba(139, 92, 246, 0.3));
+    
+    /* Kare çerçeveyi kaldır */
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    
+    /* Arka plan rengini kaldır */
+    background: transparent !important;
+    background-color: transparent !important;
+    
+    /* Görseli görünür yap */
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+

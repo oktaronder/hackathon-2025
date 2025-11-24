@@ -1,0 +1,228 @@
+/* ============================================
+   MOBILE HERO SECTION FIX
+   Logo ve arka plan video'nun mobilde görünür olması için
+   ============================================ */
+
+@media (max-width: 767px) {
+    /* Hero Section - Force visibility */
+    #section-hero {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+    
+    /* Jarallax video container - Mobilde görünür */
+    #section-hero.jarallax .jarallax-container,
+    #section-hero.jarallax .jarallax-img,
+    #section-hero.jarallax video {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Overlay'ler görünür */
+    #section-hero .gradient-edge-top,
+    #section-hero .gradient-edge-bottom,
+    #section-hero .sw-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Content container - Top 15% empty */
+    /* Navbar yüksekliği yaklaşık 70-80px, onun altından başlamalı */
+    #section-hero .abs.abs-centered {
+        position: relative !important;
+        z-index: 2 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: auto !important;
+        padding: 1vh 0 30px 0 !important;
+        margin-top: 0 !important;
+        overflow: visible !important;
+    }
+    
+    /* Navbar altında başlaması için */
+    body:has(header.transparent) #section-hero .abs.abs-centered {
+        padding-top: 1vh !important;
+    }
+    
+    /* Logo görseli - Kesinlikle görünür ve üstte */
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero img[alt="Future Minds Hackathon"],
+    #section-hero .col-lg-7 .mb-3 img,
+    #section-hero .col-lg-7 img,
+    #section-hero .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[alt="Future Minds Hackathon"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 12 !important;
+        max-width: 55% !important;
+        width: 55% !important;
+        height: auto !important;
+        margin: 0 auto 8px auto !important;
+        overflow: visible !important;
+    }
+    
+    /* mb-3 div'i görünür */
+    #section-hero .col-lg-7 .mb-3 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 11 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* col-lg-7 içeriği görünür */
+    #section-hero .col-lg-7 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10 !important;
+        overflow: visible !important;
+    }
+    
+    #section-hero .col-lg-7 > *:not(.hero-meta-badges),
+    #section-hero .col-lg-7 .wow,
+    #section-hero .col-lg-7 .mb-3:not(.hero-meta-badges),
+    #section-hero .col-lg-7 .mb-4,
+    #section-hero .col-lg-7 .mb-5 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+    }
+    
+    /* hero-meta-badges MUST stay flex */
+    #section-hero .col-lg-7 > .hero-meta-badges,
+    #section-hero .col-lg-7 .hero-meta-badges {
+        display: flex !important;
+        flex-direction: row !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Subtitle görünür */
+    #section-hero h3 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    /* Butonlar görünür */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #section-hero .abs.abs-centered {
+        padding-top: 2vh !important;
+        padding-bottom: 30px !important;
+        overflow: visible !important;
+    }
+    
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero img[alt="Future Minds Hackathon"],
+    #section-hero .col-lg-7 .mb-3 img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 10 !important;
+        max-width: 50% !important;
+        width: 50% !important;
+        margin: 0 auto 6px auto !important;
+    }
+}
+
+/* ============================================
+   NAVBAR ALTINDA BAŞLAMASI İÇİN EK DÜZENLEMELER
+   ============================================ */
+
+@media (max-width: 767px) {
+    /* Header fixed olduğunda hero section'ın üstten başlaması */
+    header.transparent,
+    header.fixed {
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 9999 !important;
+    }
+    
+    /* Hero section navbar altında başlamalı */
+    body:has(header.transparent) #section-hero,
+    body:has(header.fixed) #section-hero {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* İçerik navbar altından başlamalı - Top 15% empty */
+    body:has(header.transparent) #section-hero .abs.abs-centered,
+    body:has(header.fixed) #section-hero .abs.abs-centered {
+        padding-top: 1vh !important;
+    }
+    
+    /* Logo ve tüm içerik görünür - hero-meta-badges hariç */
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-7 > div:not(.hero-meta-badges),
+    #section-hero .col-lg-7 .wow {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    /* hero-meta-badges MUST stay flex */
+    #section-hero .col-lg-7 > .hero-meta-badges {
+        display: flex !important;
+        flex-direction: row !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Meta badges görünür */
+    #section-hero .d-flex.flex-wrap.gap-4 {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Subtitle görünür */
+    #section-hero h3.text-white {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+

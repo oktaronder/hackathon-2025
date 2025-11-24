@@ -1,0 +1,309 @@
+/* ============================================
+   MOBILE ALIGNMENT FIX ONLY
+   Fixes ONLY alignment and spacing on mobile
+   Does NOT change design, colors, sizes, effects
+   ============================================ */
+
+@media (max-width: 768px) {
+    
+    /* ============================================
+       1) HEADER LOGO - Slightly Larger & Vertically Centered
+       ============================================ */
+    
+    /* Logo container - vertical centering */
+    header #logo,
+    header .de-flex-col:first-child {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+    
+    /* Logo image - daha büyük (okunabilir) */
+    header #logo img.logo-mobile,
+    header.transparent #logo .logo-mobile {
+        max-height: 160px !important;
+        height: auto !important;
+        width: auto !important;
+        object-fit: contain !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* ============================================
+       2) DATE + LOCATION ROW - Same Row (Already Fixed)
+       ============================================ */
+    
+    /* Ensure they stay on same row - already fixed in mobile-layout-comprehensive-fix.css */
+    .hero-meta-badges {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        margin-top: 180px !important; /* CRITICAL: Prevent navbar overlap on all mobile devices */
+        margin-bottom: 20px !important;
+    }
+    
+    /* Extra spacing for iPhone SE and similar small devices */
+    @media (max-width: 390px) {
+        .hero-meta-badges {
+            margin-top: 220px !important; /* Even more space for very small screens */
+        }
+    }
+    
+    /* ============================================
+       3) APPLY NOW + LEARN MORE BUTTONS
+       Center as group, same height
+       ============================================ */
+    
+    .hero-cta-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important; /* Center as group */
+        align-items: center !important; /* Same vertical alignment */
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 80px auto 0 !important; /* Add top spacing on mobile */
+        padding: 0 !important;
+        text-align: center !important; /* Center content */
+    }
+    
+    .hero-cta-buttons .btn-main,
+    .hero-cta-buttons .btn-line {
+        height: auto !important;
+        min-height: 32px !important; /* Smaller (was 36px) */
+        min-width: 85px !important; /* Smaller */
+        max-width: 115px !important; /* Smaller */
+        width: auto !important; /* Override width: 100% from other CSS */
+        padding: 6px 14px !important; /* Smaller */
+        font-size: 11px !important; /* Smaller */
+        display: inline-flex !important;
+        align-items: center !important; /* Vertical center content */
+        justify-content: center !important; /* Horizontal center content */
+        margin: 0 !important; /* Remove any margins */
+        text-align: center !important;
+    }
+    
+    /* ============================================
+       4) DEADLINE BADGE
+       Reduce width if overflowing, keep centered
+       ============================================ */
+    
+    .hero-deadline {
+        display: inline-flex !important;
+        align-items: center !important; /* Icon+text vertically centered */
+        justify-content: center !important;
+        max-width: 90% !important; /* Prevent overflow */
+        width: auto !important;
+        margin: 0 auto !important; /* Center horizontally */
+        box-sizing: border-box !important;
+    }
+    
+    /* ============================================
+       5) BENEFITS LIST - Horizontal (Yan Yana) + Scrollable
+       CRITICAL: Override all column/vertical rules
+       ============================================ */
+    
+    /* HIGH SPECIFICITY - Override all possible rules */
+    #section-hero .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .col-lg-7 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits,
+    #section-hero .wow .hero-benefits,
+    .hero-benefits,
+    .hero-right-content .hero-benefits {
+        display: flex !important;
+        flex-direction: row !important; /* Horizontal - Yan yana */
+        flex-wrap: nowrap !important; /* NO WRAPPING - Force single row */
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        overflow-x: auto !important; /* Horizontal scroll if needed */
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: thin !important;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent !important;
+        padding-bottom: 4px !important;
+    }
+    
+    .hero-benefits::-webkit-scrollbar,
+    #section-hero .hero-benefits::-webkit-scrollbar {
+        height: 3px !important;
+    }
+    
+    .hero-benefits::-webkit-scrollbar-track,
+    #section-hero .hero-benefits::-webkit-scrollbar-track {
+        background: transparent !important;
+    }
+    
+    .hero-benefits::-webkit-scrollbar-thumb,
+    #section-hero .hero-benefits::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-radius: 3px !important;
+    }
+    
+    /* HIGH SPECIFICITY - Override all possible rules for items */
+    #section-hero .hero-benefits .benefit-item-organic,
+    #section-hero .col-lg-5 .hero-benefits .benefit-item-organic,
+    #section-hero .col-lg-7 .hero-benefits .benefit-item-organic,
+    #section-hero .hero-right-content .hero-benefits .benefit-item-organic,
+    #section-hero .wow .hero-benefits .benefit-item-organic,
+    .hero-benefits .benefit-item-organic {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        flex: 0 0 auto !important; /* Don't shrink */
+        min-width: fit-content !important;
+        max-width: none !important;
+        width: auto !important;
+        white-space: nowrap !important;
+        gap: 6px !important;
+        margin: 0 !important;
+    }
+    
+    /* ============================================
+       6) PRIZE POOL CARD
+       Center on mobile, fit width
+       ============================================ */
+    
+    .hero-prize-organic {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important; /* Center horizontally */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .prize-organic-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important; /* Center */
+        box-sizing: border-box !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .prize-label-organic {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .prize-amount-organic {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+    
+    /* ============================================
+       7) COUNTDOWN BOXES
+       Equal width & height, even spacing
+       ============================================ */
+    
+    #section-hero #defaultCountdown.countdown-new {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: stretch !important; /* Equal height */
+        gap: 8px !important; /* Even spacing */
+        width: 100% !important;
+    }
+    
+    .countdown-new .countdown-row {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 8px !important; /* Even spacing */
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    .countdown-new .countdown-section {
+        flex: 1 1 0 !important; /* Equal width */
+        min-width: 0 !important;
+        max-width: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 60px !important; /* Equal height */
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+    
+    /* Header Logo - daha büyük (okunabilir) */
+    header #logo img.logo-mobile,
+    header.transparent #logo .logo-mobile {
+        max-height: 150px !important;
+    }
+    
+    /* Deadline - smaller max-width */
+    .hero-deadline {
+        max-width: 95% !important;
+    }
+    
+    /* Benefits - smaller gap */
+    .hero-benefits {
+        gap: 10px !important;
+    }
+    
+    /* Countdown - smaller boxes */
+    .countdown-new .countdown-section {
+        min-height: 55px !important;
+        gap: 6px !important;
+    }
+    
+    #section-hero #defaultCountdown.countdown-new {
+        gap: 6px !important;
+    }
+    
+    .countdown-new .countdown-row {
+        gap: 6px !important;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    
+    /* Header Logo - daha büyük (okunabilir) */
+    header #logo img.logo-mobile,
+    header.transparent #logo .logo-mobile {
+        max-height: 140px !important;
+    }
+    
+    /* Deadline - full width allowed */
+    .hero-deadline {
+        max-width: 100% !important;
+    }
+    
+    /* Benefits - smaller gap */
+    .hero-benefits {
+        gap: 8px !important;
+    }
+    
+    /* Countdown - smaller boxes */
+    .countdown-new .countdown-section {
+        min-height: 50px !important;
+        gap: 4px !important;
+    }
+    
+    #section-hero #defaultCountdown.countdown-new {
+        gap: 4px !important;
+    }
+    
+    .countdown-new .countdown-row {
+        gap: 4px !important;
+    }
+}
+

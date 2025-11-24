@@ -1,0 +1,93 @@
+/* ============================================
+   PRIZE COUNTER ANIMATION - AWARD WINNING
+   Professional slot machine counter effects
+   ============================================ */
+
+.prize-amount {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-variant-numeric: tabular-nums !important;
+    font-feature-settings: "tnum" !important;
+    will-change: contents, transform;
+}
+
+/* Counting state - animasyon sırasında */
+.prize-amount.counting {
+    animation: counter-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes counter-glow {
+    0%, 100% {
+        filter: drop-shadow(0 8px 40px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(167,139,250,0.3));
+    }
+    50% {
+        filter: drop-shadow(0 8px 50px rgba(0,0,0,0.7)) drop-shadow(0 0 60px rgba(167,139,250,0.5));
+    }
+}
+
+/* Pulse moment - büyük artışlarda */
+.prize-amount.pulse-moment {
+    animation: pulse-scale 0.3s ease-out;
+}
+
+@keyframes pulse-scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Completed state - animasyon tamamlandığında */
+.prize-amount.completed {
+    animation: none !important;
+}
+
+/* Final glow - tamamlandığında final efekti */
+.prize-amount.final-glow {
+    animation: final-glow-pulse 1s ease-out;
+}
+
+@keyframes final-glow-pulse {
+    0% {
+        filter: drop-shadow(0 8px 40px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(167,139,250,0.3));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 12px 60px rgba(0,0,0,0.8)) drop-shadow(0 0 80px rgba(167,139,250,0.6));
+        transform: scale(1.03);
+    }
+    100% {
+        filter: drop-shadow(0 8px 40px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(167,139,250,0.3));
+        transform: scale(1);
+    }
+}
+
+/* Smooth number transitions */
+.prize-amount {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Performance optimization */
+.prize-amount.counting {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Accessibility - reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .prize-amount.counting,
+    .prize-amount.pulse-moment,
+    .prize-amount.final-glow {
+        animation: none !important;
+    }
+    
+    .prize-amount {
+        transition: none !important;
+    }
+}

@@ -1,0 +1,551 @@
+/* ============================================
+   MOBILE NAVBAR & HERO SPACING FIX
+   HIGHEST PRIORITY - Prevents navbar overlap
+   ============================================ */
+
+/* All mobile devices */
+@media (max-width: 768px) {
+    /* Prevent horizontal overflow */
+    #section-hero,
+    #section-hero .container,
+    #section-hero .row {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+    }
+    
+    /* CRITICAL: Push hero content down from navbar */
+    #section-hero .abs.abs-centered {
+        padding-top: 150px !important; /* Reduced for better fit */
+        padding-bottom: 40px !important;
+    }
+    
+    #section-hero .col-lg-7 {
+        padding-top: 60px !important; /* Reduced */
+    }
+    
+    /* CRITICAL: Push date/location badges way down */
+    .hero-meta-badges,
+    #section-hero .hero-meta-badges,
+    #section-hero .col-lg-7 .hero-meta-badges {
+        margin-top: 130px !important; /* Reduced but still safe from navbar */
+        margin-bottom: 15px !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    /* PRIZE POOL - Compact spacing */
+    .hero-prize-organic,
+    #section-hero .hero-prize-organic,
+    #section-hero .col-lg-5 .hero-prize-organic {
+        margin-bottom: 20px !important;
+        margin-top: 15px !important;
+    }
+    
+    /* COUNTDOWN - Compact spacing */
+    .hero-countdown-new,
+    #section-hero .hero-countdown-new,
+    #section-hero .row.mt-4,
+    #section-hero .row.mt-4 .hero-countdown-new {
+        margin-top: 25px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Reduce gaps between sections */
+    #section-hero .row.g-5 {
+        gap: 10px !important;
+    }
+}
+
+/* iPhone SE and similar (320px - 390px width) */
+@media (max-width: 390px) {
+    /* Prevent overflow on small screens */
+    body,
+    html {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    /* Hero section - zorunlu alt boşluk */
+    #section-hero {
+        min-height: 100vh !important;
+        padding-bottom: 10vh !important; /* %10 zorunlu alt boşluk */
+        overflow: visible !important;
+    }
+    
+    #section-hero .abs.abs-centered {
+        padding-top: 120px !important;
+        padding-bottom: 10vh !important; /* Zorunlu alt boşluk */
+        min-height: calc(100vh - 120px) !important;
+    }
+    
+    #section-hero .col-lg-7 {
+        padding-top: 80px !important;
+    }
+    
+    /* CRITICAL: Badges safe from navbar */
+    .hero-meta-badges,
+    #section-hero .hero-meta-badges,
+    #section-hero .col-lg-7 .hero-meta-badges {
+        margin-top: 160px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    /* Make elements smaller */
+    .hero-meta-badge {
+        font-size: 10px !important;
+    }
+    
+    /* LOGO - Much smaller to save space */
+    #section-hero .hero-title-image,
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-4 img {
+        max-width: 40% !important; /* Much smaller */
+        width: 40% !important;
+        margin-bottom: 3px !important; /* Reduced from 6px */
+    }
+    
+    #section-hero .mb-4.hero-title-container,
+    #section-hero .hero-title-container {
+        margin-bottom: 3px !important; /* Reduced from 6px */
+    }
+    
+    /* SUBTITLE - Hide to save space */
+    #section-hero h3,
+    #section-hero h3.text-white,
+    #section-hero .col-lg-7 h3 {
+        display: none !important;
+    }
+    
+    /* DEADLINE BADGE - Much smaller and closer */
+    .hero-deadline,
+    #section-hero .hero-deadline,
+    #section-hero .text-center.mb-5 {
+        margin-top: 2px !important; /* Reduced from 4px */
+        margin-bottom: 4px !important; /* Reduced from 8px */
+        padding: 6px 12px !important;
+        font-size: 9px !important;
+    }
+    
+    .hero-deadline i {
+        font-size: 10px !important;
+    }
+    
+    .hero-deadline span {
+        font-size: 9px !important;
+    }
+    
+    /* CTA BUTTONS - Normal (NO transform) */
+    .hero-cta-buttons,
+    #section-hero .hero-cta-buttons {
+        margin-top: 6px !important;
+        margin-bottom: 5px !important;
+        transform: none !important; /* Normal pozisyon */
+    }
+    
+    .hero-cta-buttons .btn-main,
+    .hero-cta-buttons .btn-line {
+        min-width: 80px !important;
+        padding: 6px 12px !important;
+        font-size: 10px !important;
+    }
+    
+    /* BENEFITS - Order 1 (önce gelsin) */
+    .hero-benefits,
+    #section-hero .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+        transform: none !important;
+        order: 1 !important; /* İlk sırada */
+        display: flex !important;
+        flex-direction: row !important;
+    }
+    
+    /* PRIZE POOL - Order 2 (sonra gelsin) - margin ile yukarı */
+    .hero-prize-organic,
+    #section-hero .hero-prize-organic,
+    #section-hero .col-lg-5 .hero-prize-organic,
+    #section-hero .hero-right-content .hero-prize-organic {
+        margin-bottom: 6px !important;
+        margin-top: -30px !important; /* Negative margin - yukarı çek */
+        transform: none !important; /* Transform kaldır */
+        order: 2 !important; /* İkinci sırada */
+    }
+    
+    .prize-organic-wrapper {
+        padding: 10px 8px !important;
+    }
+    
+    /* COUNTDOWN - Order 3 (en son) - margin ile yukarı */
+    .hero-countdown-new,
+    #section-hero .hero-countdown-new,
+    #section-hero .row.mt-4 {
+        margin-top: -40px !important; /* Daha fazla negative */
+        margin-bottom: 15px !important;
+        position: relative !important;
+        z-index: 5 !important;
+        transform: none !important; /* Transform kaldır */
+        order: 3 !important; /* Üçüncü sırada */
+    }
+    
+    /* Hero right content - flex container */
+    #section-hero .hero-right-content,
+    #section-hero .col-lg-5 .hero-right-content {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .countdown-new .countdown-section {
+        min-height: 45px !important;
+        padding: 5px 3px !important;
+    }
+    
+    /* Reduce all gaps */
+    #section-hero .row.g-5 {
+        gap: 4px !important;
+    }
+    
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        margin-bottom: 3px !important;
+    }
+    
+    /* col-lg-5 - Flex container olarak ayarla */
+    #section-hero .col-lg-5 {
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+/* Very small devices (< 360px) */
+@media (max-width: 360px) {
+    /* Hero - zorunlu alt boşluk */
+    #section-hero {
+        min-height: 100vh !important;
+        padding-bottom: 12vh !important; /* %12 zorunlu alt boşluk */
+    }
+    
+    #section-hero .abs.abs-centered {
+        padding-top: 110px !important;
+        padding-bottom: 12vh !important;
+        min-height: calc(100vh - 110px) !important;
+    }
+    
+    #section-hero .col-lg-7 {
+        padding-top: 85px !important;
+    }
+    
+    .hero-meta-badges,
+    #section-hero .hero-meta-badges,
+    #section-hero .col-lg-7 .hero-meta-badges {
+        margin-top: 165px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    /* Ultra compact elements */
+    .hero-meta-badge {
+        font-size: 9px !important;
+    }
+    
+    /* LOGO - Extra small */
+    #section-hero .hero-title-image,
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-4 img {
+        max-width: 35% !important;
+        width: 35% !important;
+        margin-bottom: 2px !important; /* Reduced from 5px */
+    }
+    
+    /* DEADLINE - Extra small and closer */
+    .hero-deadline,
+    #section-hero .hero-deadline {
+        padding: 5px 10px !important;
+        font-size: 8px !important;
+        margin-top: 2px !important; /* Reduced from 3px */
+        margin-bottom: 3px !important; /* Reduced from 6px */
+    }
+    
+    .hero-deadline i {
+        font-size: 9px !important;
+    }
+    
+    .hero-deadline span {
+        font-size: 8px !important;
+    }
+    
+    /* CTA buttons - Normal */
+    .hero-cta-buttons,
+    #section-hero .hero-cta-buttons {
+        margin-top: 5px !important;
+        margin-bottom: 4px !important;
+        transform: none !important; /* Normal pozisyon */
+    }
+    
+    .hero-cta-buttons .btn-main,
+    .hero-cta-buttons .btn-line {
+        min-width: 70px !important;
+        max-width: 95px !important;
+        padding: 5px 10px !important;
+        font-size: 9px !important;
+    }
+    
+    /* BENEFITS - Order 1 */
+    .hero-benefits,
+    #section-hero .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits {
+        margin-top: 3px !important;
+        margin-bottom: 3px !important;
+        transform: none !important;
+        order: 1 !important;
+        display: flex !important;
+        flex-direction: row !important;
+    }
+    
+    /* PRIZE POOL - Order 2 - margin ile yukarı */
+    .hero-prize-organic,
+    #section-hero .hero-prize-organic,
+    #section-hero .col-lg-5 .hero-prize-organic,
+    #section-hero .hero-right-content .hero-prize-organic {
+        margin-bottom: 5px !important;
+        margin-top: -35px !important; /* Negative margin */
+        transform: none !important;
+        order: 2 !important;
+    }
+    
+    .prize-organic-wrapper {
+        padding: 8px 6px !important;
+    }
+    
+    .prize-label-organic {
+        font-size: 7px !important;
+    }
+    
+    .prize-currency {
+        font-size: 16px !important;
+    }
+    
+    .prize-number {
+        font-size: 28px !important;
+    }
+    
+    /* COUNTDOWN - Order 3 - margin ile yukarı */
+    .hero-countdown-new,
+    #section-hero .hero-countdown-new,
+    #section-hero .row.mt-4 {
+        margin-top: -45px !important; /* Daha fazla negative */
+        margin-bottom: 15px !important;
+        position: relative !important;
+        z-index: 5 !important;
+        transform: none !important;
+        order: 3 !important;
+    }
+    
+    /* Hero right content - flex container */
+    #section-hero .hero-right-content,
+    #section-hero .col-lg-5 .hero-right-content {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .countdown-new .countdown-section {
+        min-height: 40px !important;
+        padding: 4px 2px !important;
+    }
+    
+    .countdown-new .countdown-amount {
+        font-size: 12px !important;
+    }
+    
+    .countdown-new .countdown-period {
+        font-size: 5px !important;
+    }
+    
+    /* Minimal gaps */
+    #section-hero .row.g-5 {
+        gap: 3px !important;
+    }
+    
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        margin-bottom: 2px !important;
+    }
+    
+    /* col-lg-5 tamamını yukarı çek */
+    #section-hero .col-lg-5 {
+        transform: translateY(-5vh) !important;
+    }
+}
+
+/* Extremely small devices (< 340px) */
+@media (max-width: 340px) {
+    /* Hero - maximum zorunlu alt boşluk */
+    #section-hero {
+        min-height: 100vh !important;
+        padding-bottom: 15vh !important; /* %15 zorunlu alt boşluk */
+    }
+    
+    #section-hero .abs.abs-centered {
+        padding-top: 100px !important;
+        padding-bottom: 15vh !important;
+        min-height: calc(100vh - 100px) !important;
+    }
+    
+    #section-hero .col-lg-7 {
+        padding-top: 90px !important;
+    }
+    
+    .hero-meta-badges,
+    #section-hero .hero-meta-badges,
+    #section-hero .col-lg-7 .hero-meta-badges {
+        margin-top: 170px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    /* Extra small elements */
+    .hero-meta-badge {
+        font-size: 8px !important;
+    }
+    
+    /* LOGO - Minimal size */
+    #section-hero .hero-title-image,
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-4 img {
+        max-width: 30% !important;
+        width: 30% !important;
+        margin-bottom: 2px !important; /* Reduced from 4px */
+    }
+    
+    /* DEADLINE - Minimal and closer */
+    .hero-deadline,
+    #section-hero .hero-deadline {
+        padding: 4px 8px !important;
+        font-size: 7px !important;
+        margin-top: 1px !important; /* Reduced from 2px */
+        margin-bottom: 3px !important; /* Reduced from 5px */
+    }
+    
+    .hero-deadline i {
+        font-size: 8px !important;
+    }
+    
+    .hero-deadline span {
+        font-size: 7px !important;
+    }
+    
+    /* Buttons - Normal */
+    .hero-cta-buttons,
+    #section-hero .hero-cta-buttons {
+        margin-top: 4px !important;
+        margin-bottom: 3px !important;
+        gap: 3px !important;
+        transform: none !important; /* Normal pozisyon */
+    }
+    
+    .hero-cta-buttons .btn-main,
+    .hero-cta-buttons .btn-line {
+        min-width: 65px !important;
+        max-width: 90px !important;
+        padding: 4px 8px !important;
+        font-size: 8px !important;
+    }
+    
+    /* BENEFITS - Order 1 */
+    .hero-benefits,
+    #section-hero .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits {
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+        gap: 4px !important;
+        transform: none !important;
+        order: 1 !important;
+        display: flex !important;
+        flex-direction: row !important;
+    }
+    
+    .hero-benefits .benefit-item-organic {
+        font-size: 7px !important;
+    }
+    
+    .hero-benefits .benefit-item-organic i {
+        font-size: 8px !important;
+    }
+    
+    /* PRIZE POOL - Order 2 - margin ile yukarı */
+    .hero-prize-organic,
+    #section-hero .hero-prize-organic,
+    #section-hero .col-lg-5 .hero-prize-organic,
+    #section-hero .hero-right-content .hero-prize-organic {
+        margin-bottom: 4px !important;
+        margin-top: -40px !important; /* Negative margin */
+        transform: none !important;
+        order: 2 !important;
+    }
+    
+    .prize-organic-wrapper {
+        padding: 6px 5px !important;
+    }
+    
+    .prize-label-organic {
+        font-size: 6px !important;
+    }
+    
+    .prize-currency {
+        font-size: 14px !important;
+    }
+    
+    .prize-number {
+        font-size: 24px !important;
+    }
+    
+    /* COUNTDOWN - Order 3 - margin ile yukarı */
+    .hero-countdown-new,
+    #section-hero .hero-countdown-new,
+    #section-hero .row.mt-4 {
+        margin-top: -50px !important; /* Daha fazla negative */
+        margin-bottom: 20px !important;
+        position: relative !important;
+        z-index: 5 !important;
+        transform: none !important;
+        order: 3 !important;
+    }
+    
+    /* Hero right content - flex container */
+    #section-hero .hero-right-content,
+    #section-hero .col-lg-5 .hero-right-content {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .countdown-new .countdown-section {
+        min-height: 36px !important;
+        padding: 3px 2px !important;
+    }
+    
+    .countdown-new .countdown-amount {
+        font-size: 11px !important;
+    }
+    
+    .countdown-new .countdown-period {
+        font-size: 5px !important;
+    }
+    
+    /* Absolute minimal gaps */
+    #section-hero .row.g-5 {
+        gap: 2px !important;
+    }
+    
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        margin-bottom: 1px !important;
+    }
+    
+    /* col-lg-5 tamamını yukarı çek */
+    #section-hero .col-lg-5 {
+        transform: translateY(-5vh) !important;
+    }
+}
+

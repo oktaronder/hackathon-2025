@@ -1,0 +1,350 @@
+/* ============================================
+   HERO MOBILE FULLSCREEN FIX - FINAL
+   Video background hero section tam ekran mobilde
+   Includes: 100vh fix, Prize Pool sizing, Benefits spacing
+   ============================================ */
+
+@media (max-width: 767px) {
+    
+    /* Body - normal scroll */
+    body {
+        position: relative !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+    
+    /* Hero Section - RELATIVE FULL SCREEN (scrollable) */
+    #section-hero.jarallax,
+    #section-hero {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100vh !important; /* Exactly one screen */
+        min-height: 100vh !important;
+        max-height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important; /* No scroll inside hero */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* Changed from center */
+    }
+    
+    /* Video container - full screen */
+    #section-hero .jarallax-container {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 0 !important;
+    }
+    
+    /* Video element - full screen cover */
+    #section-hero .jarallax-container video,
+    #section-hero video {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+    
+    /* Gradient overlays - full screen */
+    #section-hero .gradient-edge-top,
+    #section-hero .gradient-edge-bottom,
+    #section-hero .sw-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Content wrapper - starts near top after navbar */
+    #section-hero .abs.abs-centered {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* Changed from center to flex-start */
+        align-items: center !important;
+        padding-top: max(90px, 12vh) !important; /* Dynamic padding based on viewport */
+        padding-bottom: 10px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        transform: none !important;
+        z-index: 2 !important;
+    }
+    
+    /* Container - starts from top */
+    #section-hero .abs.abs-centered .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important; /* Changed from 100% to auto */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* Changed from space-between to flex-start */
+        align-items: center !important;
+        padding: 0 15px !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 3 !important;
+    }
+
+    /* Main Row - Starts from top */
+    #section-hero .row.g-5 {
+        flex: 0 0 auto !important; /* Changed from flex: 1 to auto */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* Changed from space-evenly to flex-start */
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 15px !important; /* Small gap between elements */
+    }
+
+    /* ORDERING */
+    #section-hero .col-lg-7 { 
+        order: 1 !important;
+        padding-top: 20px !important; /* Increased from 15px - Add top padding for first element spacing */
+    }
+    #section-hero .col-lg-5 { 
+        order: 2 !important;
+        padding-top: 0 !important;
+    }
+    #section-hero .row.mt-4 { 
+        order: 3 !important;
+        flex: 0 0 auto !important;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+        width: 100% !important;
+    }
+
+    /* ---------------------------------------------------------
+       ELEMENT STYLING
+       --------------------------------------------------------- */
+
+    /* 0. Date + Location badges - Space from navbar */
+    .hero-meta-badges {
+        margin-top: 60px !important; /* Increased significantly for small screens to prevent navbar overlap */
+        margin-bottom: 15px !important;
+        position: relative !important;
+        z-index: 10 !important; /* Ensure badges are visible */
+    }
+    
+    /* Extra spacing for very small screens (iPhone SE and similar) */
+    @media screen and (max-width: 375px) and (max-height: 680px) {
+        .hero-meta-badges {
+            margin-top: 75px !important; /* Even more space on smallest devices */
+        }
+    }
+
+    /* 1. Hero Content (Logo) - Scale down to fit */
+    #section-hero .hero-title-image {
+        max-width: 65% !important; 
+        margin-bottom: 10px !important;
+    }
+    #section-hero .mb-4.hero-title-container {
+        margin-bottom: 10px !important;
+    }
+
+    /* Add space between Subtitle and Buttons */
+    #section-hero h3.text-white {
+        margin-bottom: 15px !important;
+    }
+    .hero-cta-buttons {
+        margin-top: 48px !important; /* Increased by ~5 units (total ~48px) */
+    }
+
+    /* 2. Benefits - More spacing */
+    .hero-benefits {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px !important; /* Increased spacing */
+        margin-bottom: 15px !important;
+        padding: 5px 0 !important;
+    }
+    
+    .hero-benefits .benefit-item-organic {
+        padding: 6px 12px !important;
+        background: rgba(255,255,255,0.08) !important;
+        border-radius: 50px !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* 3. Prize Pool Box - Lower, Larger */
+    .hero-prize-organic {
+        margin-top: 25px !important; /* Lowered by ~20-25px */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .prize-organic-wrapper {
+        padding: 25px 10px !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+        background: rgba(20, 10, 40, 0.6) !important;
+        border: 1px solid rgba(167, 139, 250, 0.4) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 16px !important;
+        width: 90% !important;
+        max-width: 360px !important;
+    }
+
+    .prize-amount-organic .prize-number {
+        font-size: 62px !important; /* +30% size */
+        font-weight: 900 !important;
+        line-height: 1 !important;
+    }
+    
+    .prize-amount-organic .prize-currency {
+        font-size: 40px !important;
+        margin-top: 8px !important;
+        vertical-align: top !important;
+        display: inline-block !important;
+    }
+
+    /* 4. Countdown - Centered under prize pool */
+    .hero-countdown-new {
+        margin-top: 0 !important;
+        transform: scale(0.85) !important; /* Scale down to fit 100vh */
+        transform-origin: center top !important;
+    }
+
+    /* Navbar - floating above hero with proper height */
+    header.transparent,
+    header.fixed,
+    header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 9999 !important;
+        background: rgba(139, 92, 246, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        min-height: 70px !important; /* Ensure minimum height */
+    }
+    
+    /* Ensure navbar container has proper height */
+    header .container {
+        min-height: 70px !important;
+    }
+    
+    /* First section after hero */
+    #section-hero + section {
+        padding-top: 5px !important;
+    }
+}
+
+/* iPhone SE and similar (max-width: 390px) - EXTREME FIX */
+@media (max-width: 390px) {
+    /* EXTREME padding for iPhone SE - push badges WAY DOWN */
+    #section-hero .abs.abs-centered {
+        padding-top: max(200px, 30vh) !important; /* MASSIVELY increased - 2x more */
+    }
+    
+    /* CRITICAL: HUGE margin for badges on iPhone SE */
+    .hero-meta-badges {
+        margin-top: 80px !important; /* Nearly 2x increase from 50px */
+    }
+    
+    /* HUGE padding for first column */
+    #section-hero .col-lg-7 {
+        padding-top: 50px !important; /* Increased from 35px */
+    }
+    
+    /* Navbar should have maximum height on small screens */
+    header.transparent,
+    header.fixed,
+    header {
+        min-height: 70px !important;
+        max-height: 80px !important;
+    }
+}
+
+/* Small Mobile Devices - Extra Safe Padding */
+@media (max-width: 480px) {
+    /* Extra safe padding for small screens */
+    #section-hero .abs.abs-centered {
+        padding-top: max(110px, 16vh) !important;
+    }
+    
+    /* Extra space for badges on small screens - CRITICAL */
+    .hero-meta-badges {
+        margin-top: 35px !important; /* Increased from 25px */
+    }
+    
+    /* Extra padding for first column */
+    #section-hero .col-lg-7 {
+        padding-top: 25px !important;
+    }
+    
+    header.transparent,
+    header.fixed,
+    header {
+        min-height: 65px !important;
+    }
+}
+
+/* Extra Small Mobile Devices - Maximum Safe Padding */
+@media (max-width: 360px) {
+    /* Maximum safe padding for very small screens */
+    #section-hero .abs.abs-centered {
+        padding-top: max(120px, 20vh) !important;
+    }
+    
+    /* Maximum space for badges on very small screens - CRITICAL */
+    .hero-meta-badges {
+        margin-top: 40px !important; /* Increased from 30px */
+    }
+    
+    /* Extra padding for first column */
+    #section-hero .col-lg-7 {
+        padding-top: 30px !important;
+    }
+    
+    header.transparent,
+    header.fixed,
+    header {
+        min-height: 60px !important;
+    }
+}
+
+/* ============================================
+   MOBILE MENU OPEN - BLUR KALDIR
+   Menü açıkken blur efektini kaldır
+   ============================================ */
+
+@media (max-width: 767px) {
+    /* Menü açıkken header'dan blur'u kaldır */
+    header.menu-open.transparent,
+    header.menu-open.fixed,
+    header.menu-open {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+}

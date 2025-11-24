@@ -1,0 +1,710 @@
+/* ============================================
+   MOBILE MENU - BASİT VE GÜZEL TASARIM
+   Tam ortada, çalışan mobil menü
+   ============================================ */
+
+/* Mobilde menü butonunu görünür yap */
+@media (max-width: 992px) {
+    #menu-btn {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        z-index: 10000 !important;
+        position: relative !important;
+    }
+    
+    .menu_side_area {
+        display: block !important;
+        visibility: visible !important;
+        z-index: 10000 !important;
+        position: relative !important;
+    }
+}
+
+/* Mobil menü - 767px ve altı */
+@media (max-width: 767px) {
+    #menu-btn {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        z-index: 10001 !important;
+        position: relative !important;
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+        margin-left: 15px !important;
+        margin-top: 0 !important;
+    }
+    
+    #menu-btn:before {
+        font-size: 24px !important;
+        line-height: 24px !important;
+    }
+    
+    .menu_side_area {
+        display: block !important;
+        visibility: visible !important;
+        z-index: 10001 !important;
+        position: relative !important;
+        width: auto !important;
+        margin-left: 15px !important;
+    }
+    
+    /* Header transparent durumunda da görünür */
+    header.transparent #menu-btn,
+    header.transparent.smaller #menu-btn {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Menü kapalıyken menü öğelerini gizle */
+    header:not(.menu-open) .header-col-mid,
+    header:not(.menu-open) #mainmenu {
+        display: none !important;
+    }
+    
+    /* Menü açıkken tam ekran overlay - YARI SAYDAM */
+    header.menu-open {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        z-index: 99999 !important;
+        /* YARI SAYDAM ARKA PLAN - Sectionlar görünsün */
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.95) 0%, rgba(124, 58, 237, 0.95) 50%, rgba(109, 40, 217, 0.95) 100%) !important;
+        overflow-y: auto !important; /* Scroll'a izin ver */
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        /* BLUR EFEKTİNİ KALDIR - Menü açıkken blur olmasın */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+    
+    /* Menü açıkken body scroll - İZİN VER (sectionlar görünsün) */
+    body:has(header.menu-open),
+    html:has(header.menu-open) {
+        overflow-y: auto !important; /* Scroll'a izin ver */
+        overflow-x: hidden !important;
+        position: relative !important; /* Fixed yerine relative */
+        width: 100% !important;
+    }
+    
+    /* Menü açıkken sectionlar görünür olsun */
+    header.menu-open ~ #wrapper,
+    body:has(header.menu-open) #wrapper {
+        position: relative !important;
+        z-index: 1 !important; /* Menünün altında */
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
+    /* Menü açıkken tüm sectionlar görünür */
+    header.menu-open ~ #wrapper section,
+    body:has(header.menu-open) #wrapper section {
+        position: relative !important;
+        z-index: 1 !important;
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Menü açıkken container - FLEXBOX İLE TAM ORTADA */
+    header.menu-open .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh !important; /* min-height kullan - sectionlar görünsün */
+        height: auto !important; /* auto yap - içeriğe göre uzasın */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* center yerine flex-start - üstten başla */
+        align-items: center !important;
+        padding: 80px 20px 20px 20px !important; /* Üstten boşluk - menü butonları için */
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+    
+    /* Menü açıkken row */
+    header.menu-open .row {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Menü açıkken col */
+    header.menu-open .col-md-12 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Menü açıkken de-flex - MENÜYÜ GÖSTER */
+    header.menu-open .de-flex {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* center yerine flex-start */
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 0 !important;
+        margin-top: 40px !important; /* Menü için üstten boşluk */
+        position: relative !important;
+    }
+    
+    /* Menü açıkken logo ve buton - üstte */
+    header.menu-open .de-flex-col:first-child {
+        display: none !important;
+    }
+    
+    /* Menü açıkken menü container - ORTADA */
+    header.menu-open .de-flex-col:nth-child(2) {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 100000 !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Menü açıkken header-col-mid - GÖRÜNÜR */
+    header.menu-open .header-col-mid {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        position: relative !important;
+        z-index: 100000 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    /* Menü açıkken menü listesi - TAM ORTADA */
+    header.menu-open #mainmenu {
+        display: flex !important;
+        flex-direction: column !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        list-style: none !important;
+        gap: 15px !important;
+        box-sizing: border-box !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 100000 !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        height: auto !important;
+        min-height: auto !important;
+        top: auto !important;
+        left: auto !important;
+    }
+    
+    /* Menü öğeleri - GÖRÜNÜR */
+    header.menu-open #mainmenu li {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        height: auto !important;
+        min-height: auto !important;
+        position: relative !important;
+    }
+    
+    /* Menü linkleri - BASİT VE GÜZEL */
+    header.menu-open #mainmenu li a.menu-item {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 16px 35px !important;
+        color: #ffffff !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        background: rgba(255, 255, 255, 0.15) !important;
+        border: 2px solid rgba(255, 255, 255, 0.4) !important;
+        border-radius: 10px !important;
+        margin: 0 !important;
+        transition: all 0.3s ease !important;
+        text-align: center !important;
+        min-width: 220px !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+        /* BLUR EFEKTİNİ KALDIR - Butonlar net görünsün */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        /* Z-index ile üstte tut */
+        position: relative !important;
+        z-index: 100001 !important;
+        /* Text shadow ile daha net görünürlük */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        /* Ekstra görünürlük garantisi */
+        height: auto !important;
+        min-height: auto !important;
+        width: auto !important;
+        max-width: 100% !important;
+        line-height: normal !important;
+        overflow: visible !important;
+        clip: auto !important;
+        clip-path: none !important;
+    }
+    
+    /* Hover efekti */
+    header.menu-open #mainmenu li a.menu-item:hover,
+    header.menu-open #mainmenu li a.menu-item.active {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-color: rgba(255, 255, 255, 0.8) !important;
+        color: #ffffff !important;
+        transform: scale(1.05) !important;
+        /* Hover'da da blur yok */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        /* Daha net görünürlük */
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    /* Menü açıkken buton - üst sağda */
+    header.menu-open .de-flex-col:last-child {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 100001 !important;
+    }
+    
+    header.menu-open #menu-btn {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #ffffff !important;
+        z-index: 100001 !important;
+    }
+    
+    /* Apply Now butonu gizle */
+    header.menu-open .btn-main {
+        display: none !important;
+    }
+    
+    /* Tüm menü öğelerinin görünürlüğünü garanti et - EN ÜSTTE */
+    header.menu-open .de-flex-col:nth-child(2) *,
+    header.menu-open .header-col-mid *,
+    header.menu-open #mainmenu * {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Menü öğelerinin pozisyonunu düzelt */
+    header.menu-open .header-col-mid #mainmenu {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+}
+
+/* Küçük ekranlar */
+@media (max-width: 480px) {
+    #menu-btn {
+        width: 36px !important;
+        height: 36px !important;
+        padding: 6px !important;
+        margin-left: 10px !important;
+    }
+    
+    #menu-btn:before {
+        font-size: 22px !important;
+        line-height: 22px !important;
+    }
+    
+    header.menu-open .container {
+        padding: 15px !important;
+    }
+    
+    header.menu-open #mainmenu {
+        max-width: 95% !important;
+        gap: 12px !important;
+    }
+    
+    header.menu-open #mainmenu li a.menu-item {
+        padding: 14px 28px !important;
+        font-size: 18px !important;
+        min-width: 200px !important;
+    }
+}
+
+/* Extra küçük ekranlar */
+@media (max-width: 360px) {
+    header.menu-open .container {
+        padding: 12px !important;
+    }
+    
+    header.menu-open #mainmenu {
+        max-width: 100% !important;
+        gap: 10px !important;
+    }
+    
+    header.menu-open #mainmenu li a.menu-item {
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+        min-width: 180px !important;
+    }
+}
+
+/* Tablet - 768px ile 992px arası */
+@media (min-width: 768px) and (max-width: 992px) {
+    /* Menü açıkken tam ekran overlay - TABLET İÇİN - YARI SAYDAM */
+    header.menu-open {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        z-index: 99999 !important;
+        /* YARI SAYDAM ARKA PLAN - Sectionlar görünsün */
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.95) 0%, rgba(124, 58, 237, 0.95) 50%, rgba(109, 40, 217, 0.95) 100%) !important;
+        overflow-y: auto !important; /* Scroll'a izin ver */
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+    
+    /* Menü açıkken body scroll - İZİN VER (sectionlar görünsün) - TABLET */
+    body:has(header.menu-open),
+    html:has(header.menu-open) {
+        overflow-y: auto !important; /* Scroll'a izin ver */
+        overflow-x: hidden !important;
+        position: relative !important; /* Fixed yerine relative */
+        width: 100% !important;
+    }
+    
+    /* Menü açıkken sectionlar görünür olsun - TABLET */
+    header.menu-open ~ #wrapper,
+    body:has(header.menu-open) #wrapper {
+        position: relative !important;
+        z-index: 1 !important; /* Menünün altında */
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
+    /* Menü açıkken tüm sectionlar görünür - TABLET */
+    header.menu-open ~ #wrapper section,
+    body:has(header.menu-open) #wrapper section {
+        position: relative !important;
+        z-index: 1 !important;
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Menü açıkken container - FLEXBOX İLE TAM ORTADA - TABLET */
+    header.menu-open .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh !important; /* min-height kullan - sectionlar görünsün */
+        height: auto !important; /* auto yap - içeriğe göre uzasın */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* center yerine flex-start - üstten başla */
+        align-items: center !important;
+        padding: 80px 20px 20px 20px !important; /* Üstten boşluk - menü butonları için */
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+    
+    /* Menü açıkken row - TABLET */
+    header.menu-open .row {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Menü açıkken col - TABLET */
+    header.menu-open .col-md-12 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Menü açıkken de-flex - MENÜYÜ GÖSTER - TABLET */
+    header.menu-open .de-flex {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* center yerine flex-start */
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 0 !important;
+        margin-top: 40px !important; /* Menü için üstten boşluk */
+    }
+    
+    /* Menü açıkken logo - gizle - TABLET */
+    header.menu-open .de-flex-col:first-child {
+        display: none !important;
+    }
+    
+    /* Menü açıkken menü container - ORTADA - TABLET */
+    header.menu-open .de-flex-col:nth-child(2) {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 100000 !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Menü açıkken header-col-mid - GÖRÜNÜR - TABLET */
+    header.menu-open .header-col-mid {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        position: relative !important;
+        z-index: 100000 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    /* Menü açıkken menü listesi - TAM ORTADA - TABLET */
+    header.menu-open #mainmenu {
+        display: flex !important;
+        flex-direction: column !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        list-style: none !important;
+        gap: 15px !important;
+        box-sizing: border-box !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 100000 !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+    
+    /* Menü öğeleri - GÖRÜNÜR - TABLET */
+    header.menu-open #mainmenu li {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        /* BLUR EFEKTİNİ KALDIR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+    
+    /* Menü linkleri - BASİT VE GÜZEL - TABLET */
+    header.menu-open #mainmenu li a.menu-item {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 18px 40px !important;
+        color: #ffffff !important;
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        background: rgba(255, 255, 255, 0.15) !important;
+        border: 2px solid rgba(255, 255, 255, 0.4) !important;
+        border-radius: 10px !important;
+        margin: 0 !important;
+        transition: all 0.3s ease !important;
+        text-align: center !important;
+        min-width: 250px !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+        /* BLUR EFEKTİNİ KALDIR - Butonlar net görünsün */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        /* Z-index ile üstte tut */
+        position: relative !important;
+        z-index: 100001 !important;
+        /* Text shadow ile daha net görünürlük */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        /* Ekstra görünürlük garantisi */
+        height: auto !important;
+        min-height: auto !important;
+        width: auto !important;
+        max-width: 100% !important;
+        line-height: normal !important;
+        overflow: visible !important;
+        clip: auto !important;
+        clip-path: none !important;
+    }
+    
+    /* Hover efekti - TABLET */
+    header.menu-open #mainmenu li a.menu-item:hover,
+    header.menu-open #mainmenu li a.menu-item.active {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-color: rgba(255, 255, 255, 0.8) !important;
+        color: #ffffff !important;
+        transform: scale(1.05) !important;
+        /* Hover'da da blur yok */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        /* Daha net görünürlük */
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    /* Menü açıkken buton - üst sağda - TABLET */
+    header.menu-open .de-flex-col:last-child {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 100001 !important;
+    }
+    
+    header.menu-open #menu-btn {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #ffffff !important;
+        z-index: 100001 !important;
+    }
+    
+    /* Apply Now butonu gizle - TABLET */
+    header.menu-open .btn-main {
+        display: none !important;
+    }
+    
+    /* Tüm menü öğelerinin görünürlüğünü garanti et - EN ÜSTTE - TABLET */
+    header.menu-open .de-flex-col:nth-child(2) *,
+    header.menu-open .header-col-mid *,
+    header.menu-open #mainmenu * {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Menü öğelerinin pozisyonunu düzelt - TABLET */
+    header.menu-open .header-col-mid #mainmenu {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+}
+
+/* Menü butonu genel stilleri */
+#menu-btn {
+    -webkit-tap-highlight-color: rgba(139, 92, 246, 0.3);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#menu-btn:hover {
+    opacity: 0.8 !important;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+
+header.header-mobile #menu-btn {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}

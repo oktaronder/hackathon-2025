@@ -1,0 +1,296 @@
+/* ============================================
+   MODERN HOME SECTION
+   Muhteşem, modern, award-winning design
+   ============================================ */
+
+/* Hero Section - Modern Enhancements */
+#section-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Modern Content Container */
+#section-hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Meta Info Badges - Modern */
+#section-hero .d-flex.align-items-center {
+    background: rgba(255,255,255,0.12) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 50px !important;
+    padding: 14px 28px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+}
+
+#section-hero .d-flex.align-items-center:hover {
+    background: rgba(255,255,255,0.18) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* Deadline Badge - Modern */
+#section-hero .d-inline-block[style*="background: rgba(236,72,153"] {
+    background: linear-gradient(135deg, rgba(236,72,153,0.25), rgba(167,139,250,0.25)) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(236,72,153,0.4) !important;
+    border-radius: 50px !important;
+    padding: 12px 28px !important;
+    box-shadow: 0 4px 20px rgba(236,72,153,0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+#section-hero .d-inline-block[style*="background: rgba(236,72,153"]:hover {
+    background: linear-gradient(135deg, rgba(236,72,153,0.35), rgba(167,139,250,0.35)) !important;
+    border-color: rgba(236,72,153,0.6) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(236,72,153,0.3) !important;
+}
+
+/* CTA Buttons - Modern */
+#section-hero .btn-main {
+    border-radius: 50px !important;
+    padding: 20px 48px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 8px 24px rgba(139,92,246,0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+}
+
+#section-hero .btn-main::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+#section-hero .btn-main:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+#section-hero .btn-main:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 12px 40px rgba(139,92,246,0.4) !important;
+}
+
+#section-hero .btn-line {
+    border-radius: 50px !important;
+    padding: 20px 48px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border: 2px solid rgba(255,255,255,0.4) !important;
+    background: rgba(255,255,255,0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#section-hero .btn-line:hover {
+    background: rgba(255,255,255,0.15) !important;
+    border-color: rgba(255,255,255,0.6) !important;
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 12px 40px rgba(255,255,255,0.2) !important;
+}
+
+/* Modern Spacing */
+#section-hero .row {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================
+   LARGE SCREEN RESPONSIVE (PC & Büyük Ekranlar)
+   Layout'u bozmadan sadece boyutları optimize et
+   ============================================ */
+
+/* Normal Laptop ve Desktop (992px - 1599px) - Layout'u koru */
+@media (min-width: 992px) and (max-width: 1599px) {
+    /* Logo Image - Responsive sizing */
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"] {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Subtitle - Mevcut boyutu koru */
+    #section-hero h3 {
+        font-size: clamp(24px, 2.5vw, 32px) !important;
+    }
+}
+
+/* Extra Large Desktop (1600px - 1919px) */
+@media (min-width: 1600px) and (max-width: 1919px) {
+    /* Container - Sadece çok büyük ekranlarda max-width */
+    #section-hero .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Image */
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"] {
+        max-width: 90%;
+        height: auto;
+    }
+    
+    /* Subtitle */
+    #section-hero h3 {
+        font-size: clamp(28px, 2.2vw, 36px) !important;
+    }
+    
+    /* Meta Info Badges */
+    #section-hero .d-flex.align-items-center {
+        padding: 16px 30px !important;
+        font-size: 16px !important;
+    }
+    
+    /* CTA Buttons */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 20px 48px !important;
+        font-size: 17px !important;
+    }
+    
+    /* Deadline Badge */
+    #section-hero .d-inline-block[style*="background: rgba(236,72,153"] {
+        padding: 14px 30px !important;
+        font-size: 15px !important;
+    }
+}
+
+/* Ultra Wide Desktop (1920px+) */
+@media (min-width: 1920px) {
+    /* Container - Max width sadece ultra-wide'da */
+    #section-hero .container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Image - Prevent too large on ultra-wide */
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"] {
+        max-width: 85%;
+        height: auto;
+    }
+    
+    /* Subtitle */
+    #section-hero h3 {
+        font-size: clamp(32px, 2vw, 40px) !important;
+    }
+    
+    /* Meta Info Badges */
+    #section-hero .d-flex.align-items-center {
+        padding: 18px 34px !important;
+        font-size: 17px !important;
+    }
+    
+    #section-hero .d-flex.align-items-center i {
+        font-size: 22px !important;
+    }
+    
+    /* CTA Buttons */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 22px 52px !important;
+        font-size: 18px !important;
+    }
+    
+    /* Deadline Badge */
+    #section-hero .d-inline-block[style*="background: rgba(236,72,153"] {
+        padding: 16px 34px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* 4K and Above (2560px+) */
+@media (min-width: 2560px) {
+    /* Container */
+    #section-hero .container {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Image */
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"] {
+        max-width: 80%;
+        height: auto;
+    }
+    
+    /* Subtitle */
+    #section-hero h3 {
+        font-size: clamp(36px, 1.8vw, 44px) !important;
+    }
+    
+    /* Meta Info Badges */
+    #section-hero .d-flex.align-items-center {
+        padding: 20px 38px !important;
+        font-size: 18px !important;
+    }
+    
+    #section-hero .d-flex.align-items-center i {
+        font-size: 24px !important;
+    }
+    
+    /* CTA Buttons */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 24px 56px !important;
+        font-size: 19px !important;
+    }
+    
+    /* Deadline Badge */
+    #section-hero .d-inline-block[style*="background: rgba(236,72,153"] {
+        padding: 18px 38px !important;
+        font-size: 17px !important;
+    }
+}
+
+/* ============================================
+   TABLET & MOBILE RESPONSIVE
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 991px) {
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 18px 40px !important;
+        font-size: 15px !important;
+    }
+    
+    #section-hero .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 16px 32px !important;
+        font-size: 14px !important;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    #section-hero .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+

@@ -1,0 +1,106 @@
+/* ============================================
+   COUNTDOWN HERO SECTION FIXES
+   Perfect colors for dark video background
+   ============================================ */
+
+/* Countdown Container - Hero Section */
+#section-hero .countdown-s2 {
+    padding: 24px 20px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(15px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
+    border-radius: 20px !important;
+    border: 2px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Countdown Sections */
+#section-hero .countdown-s2 .countdown-section {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 16px 8px 12px 8px !important;
+    margin: 4px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+#section-hero .countdown-s2 .countdown-section:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Countdown Amount (Numbers) */
+#section-hero .countdown-s2 .countdown-amount {
+    color: #ffffff !important;
+    font-size: 32px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    font-family: var(--title-font, 'Poppins', sans-serif) !important;
+}
+
+/* Countdown Period (Labels: Days, Hours, etc.) */
+#section-hero .countdown-s2 .countdown-period {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    margin-top: 8px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+    font-family: var(--title-font, 'Poppins', sans-serif) !important;
+}
+
+/* Countdown Row */
+#section-hero .countdown-s2 .countdown-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Responsive Countdown */
+@media (max-width: 767px) {
+    #section-hero .countdown-s2 .countdown-section {
+        width: 70px !important;
+        padding: 12px 6px 10px 6px !important;
+    }
+    
+    #section-hero .countdown-s2 .countdown-amount {
+        font-size: 24px !important;
+    }
+    
+    #section-hero .countdown-s2 .countdown-period {
+        font-size: 9px !important;
+    }
+}
+
+/* Hero Section Text Color Fixes */
+#section-hero.text-light h1,
+#section-hero.text-light h2,
+#section-hero.text-light h3,
+#section-hero.text-light h4,
+#section-hero.text-light h5,
+#section-hero.text-light h6,
+#section-hero.text-light p,
+#section-hero.text-light span,
+#section-hero.text-light div {
+    color: #ffffff !important;
+}
+
+#section-hero.text-light .btn-main {
+    color: #ffffff !important;
+}
+
+#section-hero.text-light .btn-main.btn-line {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    color: #ffffff !important;
+}
+
+#section-hero.text-light .btn-main.btn-line:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    color: #ffffff !important;
+}
+

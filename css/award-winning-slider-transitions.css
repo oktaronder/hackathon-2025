@@ -1,0 +1,234 @@
+/* ============================================
+   AWARD WINNING SLIDER TRANSITIONS
+   Professional, smooth, beautiful transitions
+   Based on award-winning UI/UX best practices
+   ============================================ */
+
+/* === OWL CAROUSEL - ENHANCED === */
+.owl-carousel {
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.owl-carousel .owl-stage {
+    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-stage-outer {
+    overflow: hidden;
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-item {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.owl-carousel .owl-item.active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    z-index: 2;
+}
+
+.owl-carousel .owl-item.prev,
+.owl-carousel .owl-item.next {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+/* Fade transition for smooth appearance */
+.owl-carousel .owl-item {
+    animation: fadeInSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* === SWIPER - ENHANCED === */
+.swiper {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    will-change: transform;
+}
+
+.swiper-slide {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    opacity: 0.7;
+    transform: scale(0.96);
+}
+
+.swiper-slide-active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    z-index: 2;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0.85;
+    transform: scale(0.98);
+}
+
+/* === NAVIGATION ARROWS - ENHANCED === */
+.owl-carousel .owl-nav button,
+.swiper-button-next,
+.swiper-button-prev {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.owl-carousel .owl-nav button:hover,
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(1.15) translateY(-2px);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+.owl-carousel .owl-nav button:active,
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    transform: scale(1.05);
+}
+
+/* === PAGINATION DOTS - ENHANCED === */
+.owl-carousel .owl-dots .owl-dot,
+.swiper-pagination-bullet {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    will-change: transform, background-color;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.owl-carousel .owl-dots .owl-dot.active,
+.swiper-pagination-bullet-active {
+    transform: scale(1.3) !important;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.owl-carousel .owl-dots .owl-dot:hover,
+.swiper-pagination-bullet:hover {
+    transform: scale(1.2);
+}
+
+/* === DRAG TRANSITIONS === */
+.owl-carousel.owl-drag .owl-item {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    will-change: transform;
+}
+
+.owl-carousel.owl-grab {
+    cursor: grabbing !important;
+}
+
+.owl-carousel.owl-grab .owl-item {
+    transition: none !important;
+}
+
+/* === PARALLAX EFFECT === */
+.swiper[data-parallax="true"] .swiper-slide {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* === SMOOTH SCROLLING === */
+.owl-carousel,
+.swiper {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* === PERFORMANCE OPTIMIZATION === */
+.owl-carousel *,
+.swiper * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.owl-carousel img,
+.swiper img {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* === RESPONSIVE OPTIMIZATION === */
+@media (max-width: 991px) {
+    .owl-carousel .owl-item,
+    .swiper-slide {
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .owl-carousel .owl-item,
+    .swiper-slide {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    .owl-carousel .owl-nav button,
+    .swiper-button-next,
+    .swiper-button-prev {
+        transform: scale(0.9);
+    }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+    .owl-carousel,
+    .owl-carousel .owl-item,
+    .owl-carousel .owl-stage,
+    .swiper,
+    .swiper-slide,
+    .swiper-wrapper {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* === LOADING STATE === */
+.owl-carousel.loading .owl-item,
+.swiper.loading .swiper-slide {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* === FOCUS STATES === */
+.owl-carousel .owl-nav button:focus,
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+    outline: 3px solid rgba(139, 92, 246, 0.5);
+    outline-offset: 2px;
+}
+

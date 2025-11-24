@@ -1,0 +1,349 @@
+/* ============================================
+   WHAT YOU'LL GAIN - HORIZONTAL CAROUSEL
+   Modern, tech-driven, native design integration
+   ============================================ */
+
+/* Carousel Wrapper - Full Width */
+.gain-carousel-wrapper {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Carousel Container - Full Width */
+.gain-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding: 20px 0 40px;
+    margin: 0;
+    perspective: 1200px;
+    perspective-origin: center center;
+}
+
+.gain-carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.gain-carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Carousel Track - 3D Transform - Auto Scroll - Extended */
+.gain-carousel-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    transform-style: preserve-3d;
+    align-items: center;
+    animation: gain-carousel-scroll 60s linear infinite;
+    will-change: transform;
+    padding: 0 0;
+}
+
+.gain-carousel-wrapper:hover .gain-carousel-track {
+    animation-play-state: paused;
+}
+
+@keyframes gain-carousel-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move by one set of original cards (6 cards) */
+        transform: translateX(calc(-100% / 3));
+    }
+}
+
+/* Gain Cards - Carousel Version - Larger Center Cards */
+.gain-carousel-track .gain-card {
+    flex: 0 0 auto;
+    width: calc(100vw / 5.5);
+    min-width: 320px;
+    max-width: 450px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                filter 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                scale 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity, filter;
+    position: relative;
+}
+
+/* Center Cards - Full Size, No Blur (Most Cards) */
+.gain-carousel-track .gain-card.card-center {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+    filter: blur(0);
+    z-index: 3;
+}
+
+/* Side Cards - Slightly Smaller, No Blur */
+.gain-carousel-track .gain-card.card-side {
+    transform: scale(0.95) translateZ(-50px);
+    opacity: 0.95;
+    filter: blur(0);
+    z-index: 2;
+}
+
+/* Far Edge Cards - Only These Are Blurred */
+.gain-carousel-track .gain-card.card-far {
+    transform: scale(0.85) translateZ(-100px);
+    opacity: 0.6;
+    filter: blur(6px);
+    z-index: 1;
+}
+
+/* Blur Gradients at Edges - Narrower */
+.gain-carousel-gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.gain-carousel-gradient-left {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.95) 40%,
+        rgba(255, 255, 255, 0.1) 80%,
+        rgba(255, 255, 255, 0) 100%);
+}
+
+.gain-carousel-gradient-right {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.95) 40%,
+        rgba(255, 255, 255, 0.1) 80%,
+        rgba(255, 255, 255, 0) 100%);
+}
+
+/* Gradients always visible in loop mode */
+.gain-carousel-gradient-left,
+.gain-carousel-gradient-right {
+    opacity: 1;
+}
+
+/* Navigation Buttons - Hidden */
+.gain-carousel-nav {
+    display: none;
+}
+
+/* Prize Pool Card - No Special Effects (Same as Other Cards) */
+.gain-card-prize {
+    position: relative;
+    /* Remove all special styling - treat as normal card */
+}
+
+.gain-card-prize::before {
+    /* Normal hover effect only */
+}
+
+.gain-card-prize::after {
+    display: none;
+}
+
+.gain-card-prize .gain-icon-wrapper {
+    /* Normal styling */
+}
+
+.gain-card-prize .gain-icon-wrapper i {
+    /* No special animation */
+}
+
+/* Card Hover Effects - Matching Existing Style */
+.gain-carousel-track .gain-card:hover {
+    transform: translateY(-8px) scale(1.02) translateZ(20px) !important;
+    z-index: 5 !important;
+}
+
+.gain-carousel-track .gain-card.card-center:hover {
+    transform: translateY(-8px) scale(1.05) translateZ(20px) !important;
+}
+
+.gain-carousel-track .gain-card:hover .gain-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.gain-carousel-track .gain-card:hover .gain-icon-wrapper i {
+    transform: scale(1.1);
+}
+
+/* Icon Micro-bounce Animation */
+.gain-card .gain-icon-wrapper i {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gain-card:hover .gain-icon-wrapper i {
+    animation: icon-bounce-subtle 0.6s ease;
+}
+
+@keyframes icon-bounce-subtle {
+    0%, 100% {
+        transform: scale(1.1) translateY(0);
+    }
+    50% {
+        transform: scale(1.15) translateY(-4px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+    .gain-carousel-track .gain-card {
+        width: calc(100vw / 5);
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .gain-carousel-track .gain-card {
+        width: calc(100vw / 4.5);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 991px) {
+    .gain-carousel-container {
+        padding: 15px 0 30px;
+    }
+
+    .gain-carousel-track {
+        gap: 20px;
+    }
+
+    .gain-carousel-track .gain-card {
+        width: calc(100vw / 3.5);
+        min-width: 260px;
+    }
+
+    .gain-carousel-track .gain-card.card-side {
+        transform: scale(0.95) translateZ(-50px);
+        filter: blur(0);
+    }
+
+    .gain-carousel-track .gain-card.card-far {
+        transform: scale(0.85) translateZ(-100px);
+        filter: blur(6px);
+    }
+
+    .gain-carousel-gradient {
+        width: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .gain-carousel-container {
+        padding: 10px 0 25px;
+    }
+
+    .gain-carousel-track {
+        gap: 16px;
+    }
+
+    .gain-carousel-track .gain-card {
+        width: calc(100vw / 2.8);
+        min-width: 240px;
+    }
+
+    .gain-carousel-track .gain-card.card-side {
+        transform: scale(0.95) translateZ(-50px);
+        filter: blur(0);
+    }
+
+    .gain-carousel-track .gain-card.card-far {
+        transform: scale(0.85) translateZ(-100px);
+        filter: blur(6px);
+    }
+
+    .gain-carousel-gradient {
+        width: 80px;
+    }
+}
+
+@media (max-width: 575px) {
+    .gain-carousel-track {
+        gap: 14px;
+    }
+
+    .gain-carousel-track .gain-card {
+        width: calc(100vw / 2);
+        min-width: 220px;
+    }
+
+    .gain-carousel-track .gain-card.card-side {
+        transform: scale(0.95) translateZ(-50px);
+        filter: blur(0);
+    }
+
+    .gain-carousel-track .gain-card.card-far {
+        transform: scale(0.85) translateZ(-100px);
+        filter: blur(6px);
+    }
+
+    .gain-carousel-gradient {
+        width: 70px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .gain-carousel-container {
+        scroll-behavior: auto;
+    }
+
+    .gain-carousel-track {
+        animation: none !important;
+    }
+
+    .gain-card .gain-icon-wrapper i {
+        animation: none;
+    }
+
+    .gain-card:hover .gain-icon-wrapper i {
+        animation: none;
+    }
+
+    .gain-card,
+    .gain-icon-wrapper {
+        transition: none !important;
+    }
+}
+
+/* Focus States for Accessibility */
+.gain-card:focus {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 4px;
+}
+
+.gain-card:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 4px;
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .gain-carousel-nav {
+        opacity: 0.7;
+    }
+
+    .gain-carousel-wrapper:hover .gain-carousel-nav {
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,1286 @@
+/* ============================================
+   MOBILE RESPONSIVE - COMPREHENSIVE
+   Tüm siteyi mobile ve tablet için optimize et
+   ============================================ */
+
+/* ============================================
+   TABLET (768px - 991px)
+   ============================================ */
+
+@media (max-width: 991px) {
+    
+    /* Hero Section - Tablet */
+    #section-hero {
+        padding: 80px 0 60px !important;
+        min-height: auto !important;
+    }
+    
+    #section-hero[style*="min-height"] {
+        min-height: auto !important;
+    }
+    
+    #section-hero .row {
+        flex-direction: column;
+    }
+    
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 40px;
+    }
+    
+    /* Hero Title - Tablet */
+    #section-hero h1 {
+        font-size: clamp(42px, 8vw, 72px) !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Hero Subtitle - Tablet */
+    #section-hero h3 {
+        font-size: clamp(22px, 3.5vw, 32px) !important;
+        margin-bottom: 30px !important;
+    }
+    
+    /* Meta Info Badges - Tablet */
+    #section-hero .d-flex.align-items-center {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+    }
+    
+    /* CTA Buttons - Tablet */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 18px 40px !important;
+        font-size: 16px !important;
+        width: auto;
+        margin-right: 12px;
+        margin-bottom: 12px;
+    }
+    
+    /* Prize Card - Tablet */
+    .border-white-op-3 {
+        padding: 40px 30px !important;
+        margin-top: 0 !important;
+    }
+    
+    .modern-prize-amount {
+        font-size: clamp(48px, 7vw, 64px) !important;
+    }
+    
+    /* Countdown - Tablet */
+    .countdown-s2 {
+        margin-top: 30px !important;
+    }
+    
+    .countdown-amount {
+        font-size: 32px !important;
+    }
+    
+    .countdown-period {
+        font-size: 12px !important;
+    }
+    
+    /* Section Titles - Tablet */
+    section h2:first-of-type {
+        font-size: clamp(40px, 6vw, 56px) !important;
+        margin-bottom: 24px !important;
+    }
+    
+    section h3 {
+        font-size: clamp(24px, 3.5vw, 36px) !important;
+    }
+    
+    /* Organized By Section - Tablet */
+    #section-sponsors .row {
+        justify-content: center;
+    }
+    
+    #section-sponsors img {
+        height: 60px !important;
+        margin: 15px !important;
+    }
+    
+    /* About Section - Tablet */
+    #section-about .row {
+        flex-direction: column-reverse;
+    }
+    
+    #section-about .col-lg-6 {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+    
+    /* Gain Cards - Tablet */
+    .gain-card {
+        margin-bottom: 24px;
+    }
+    
+    /* Prize Pool Section - Tablet */
+    #section-prizes {
+        padding: 80px 0 !important;
+    }
+    
+    /* FAQ Section - Tablet */
+    .faq-item {
+        margin-bottom: 16px;
+    }
+    
+    .faq-question {
+        padding: 24px 28px !important;
+    }
+}
+
+/* ============================================
+   MOBILE (max-width: 767px)
+   ============================================ */
+
+@media (max-width: 767px) {
+    
+    /* Container Padding - Mobile */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    /* Hero Section - Mobile */
+    #section-hero {
+        padding: 0 !important;
+        min-height: auto !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        overflow: visible !important;
+        padding-bottom: 30px !important;
+    }
+    
+    #section-hero[style*="min-height"] {
+        min-height: auto !important;
+    }
+    
+    /* Arka plan video ve overlay - Mobilde görünür */
+    #section-hero.jarallax {
+        position: relative !important;
+    }
+    
+    #section-hero .jarallax-img,
+    #section-hero .jarallax-video,
+    #section-hero video,
+    #section-hero .jarallax-container {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .jarallax-container {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 0 !important;
+    }
+    
+    #section-hero .gradient-edge-top,
+    #section-hero .gradient-edge-bottom,
+    #section-hero .sw-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+    }
+    
+    /* Container - Mobilde görünür ve kompakt */
+    /* Navbar altında başlaması için padding-top artırıldı */
+    #section-hero .abs.abs-centered {
+        position: relative !important;
+        min-height: auto !important;
+        padding: 5px 0 30px 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        z-index: 2 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        overflow: visible !important;
+    }
+    
+    /* Navbar fixed olduğunda */
+    body:has(header.transparent) #section-hero,
+    body:has(header.fixed) #section-hero {
+        padding-top: 0 !important;
+    }
+    
+    body:has(header.transparent) #section-hero .abs.abs-centered,
+    body:has(header.fixed) #section-hero .abs.abs-centered {
+        padding-top: 5px !important;
+    }
+    
+    #section-hero .abs.abs-centered .container {
+        position: relative !important;
+        z-index: 3 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    #section-hero .abs.abs-centered .container .row {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .row {
+        flex-direction: column;
+        margin: 0 !important;
+    }
+    
+    #section-hero .row.g-5 {
+        gap: 2rem !important;
+    }
+    
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 12px !important;
+        padding: 0 !important;
+        flex: 0 0 100% !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10 !important;
+        overflow: visible !important;
+    }
+    
+    /* col-lg-7 içindeki tüm içerik görünür - hero-meta-badges hariç (flexbox olmalı) */
+    #section-hero .col-lg-7 > *:not(.hero-meta-badges):not(.hero-benefits),
+    #section-hero .col-lg-7 .wow:not(.hero-benefits),
+    #section-hero .col-lg-7 .mb-3:not(.hero-meta-badges):not(.hero-benefits),
+    #section-hero .col-lg-7 .mb-5:not(.hero-benefits),
+    #section-hero .col-lg-7 .mb-4:not(.hero-benefits) {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+    }
+    
+    /* hero-benefits MUST stay flex and horizontal */
+    #section-hero .col-lg-7 .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits,
+    #section-hero .wow .hero-benefits,
+    .hero-benefits {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* mb-3 div'i özellikle görünür olmalı - hero-meta-badges hariç */
+    #section-hero .col-lg-7 .mb-3:not(.hero-meta-badges) {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        position: relative !important;
+        z-index: 11 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* hero-meta-badges flexbox olarak kalmalı - HIGH SPECIFICITY */
+    #section-hero .col-lg-7 .hero-meta-badges,
+    #section-hero .col-lg-7 > .hero-meta-badges,
+    #section-hero .hero-meta-badges {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+    }
+    
+    /* hero-meta-badge children must be flex too */
+    #section-hero .hero-meta-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+    
+    /* Logo Image - Mobile */
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-7 > div {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"],
+    #section-hero .col-lg-7 .mb-3 img,
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[alt="Future Minds Hackathon"] {
+        max-width: 55% !important;
+        width: 55% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto 8px auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 12 !important;
+        overflow: visible !important;
+    }
+    
+    /* Tüm col-lg-7 içeriği görünür */
+    #section-hero .col-lg-7 .wow {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Hero Title - Mobile */
+    #section-hero h1 {
+        font-size: clamp(20px, 5vw, 32px) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 8px !important;
+        letter-spacing: -0.02em !important;
+    }
+    
+    /* Hero Subtitle - Mobile - Küçült */
+    #section-hero h3 {
+        font-size: clamp(12px, 2.5vw, 16px) !important;
+        margin-bottom: 8px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+    }
+    
+    /* Meta Info Badges - Mobile - Küçült */
+    #section-hero .d-flex.flex-wrap.gap-4 {
+        flex-direction: column !important;
+        gap: 4px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    #section-hero .d-flex.align-items-center {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        padding: 6px 10px !important;
+        font-size: 9px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    #section-hero .d-flex.align-items-center i {
+        font-size: 10px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Deadline Badge - Mobile - Küçült */
+    #section-hero .d-inline-block {
+        padding: 5px 12px !important;
+        font-size: 9px !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-top: 6px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .d-inline-block i {
+        font-size: 10px !important;
+    }
+    
+    /* Prize Pool - Mobile - Tam Ortala */
+    #section-hero .hero-prize-organic,
+    .hero-prize-organic {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 6px auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 6px !important;
+        overflow: visible !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    #section-hero .prize-organic-wrapper,
+    .prize-organic-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px 12px !important;
+        border-radius: 10px !important;
+        overflow: visible !important;
+        position: relative !important;
+        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .prize-label-organic {
+        font-size: 7px !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .prize-number {
+        font-size: clamp(20px, 5vw, 32px) !important;
+    }
+    
+    .prize-currency {
+        font-size: clamp(16px, 4vw, 24px) !important;
+    }
+    
+    /* Benefits - Mobile - Horizontal + Scrollable - CRITICAL OVERRIDE */
+    #section-hero .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .col-lg-7 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits,
+    #section-hero .wow .hero-benefits,
+    .hero-benefits {
+        display: flex !important;
+        flex-direction: row !important; /* Horizontal - Yan yana */
+        flex-wrap: nowrap !important; /* NO WRAPPING - Force single row */
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important; /* Horizontal scroll if needed */
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: thin !important;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent !important;
+        padding-bottom: 4px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .hero-benefits::-webkit-scrollbar,
+    #section-hero .hero-benefits::-webkit-scrollbar {
+        height: 3px !important;
+    }
+    
+    .hero-benefits::-webkit-scrollbar-track,
+    #section-hero .hero-benefits::-webkit-scrollbar-track {
+        background: transparent !important;
+    }
+    
+    .hero-benefits::-webkit-scrollbar-thumb,
+    #section-hero .hero-benefits::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-radius: 3px !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic,
+    .hero-benefits .benefit-item-organic {
+        display: flex !important;
+        flex-direction: row !important;
+        flex: 0 0 auto !important; /* Don't shrink */
+        min-width: fit-content !important;
+        max-width: none !important;
+        width: auto !important;
+        white-space: nowrap !important;
+        padding: 4px 8px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin: 0 !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic .icofont-check-circled,
+    .hero-benefits .benefit-item-organic .icofont-check-circled {
+        font-size: 11px !important;
+        flex-shrink: 0 !important;
+        display: inline-flex !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic span,
+    .hero-benefits .benefit-item-organic span {
+        font-size: 10px !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+    }
+    
+    /* Legacy support for other benefit containers */
+    .prize-benefits-organic {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 4px !important;
+        width: 100% !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .prize-benefits-organic .benefit-item-organic {
+        width: 100% !important;
+        padding: 5px 10px !important;
+        justify-content: flex-start !important;
+    }
+    
+    .prize-benefits-organic .benefit-item-organic .icofont-check-circled {
+        font-size: 10px !important;
+    }
+    
+    .prize-benefits-organic .benefit-item-organic span {
+        font-size: 9px !important;
+    }
+    
+    /* CTA Buttons - Mobile - Küçült */
+    #section-hero .d-flex.flex-wrap.gap-3 {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 5px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 8px 16px !important;
+        font-size: 11px !important;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        text-align: center;
+    }
+    
+    /* Override for hero-cta-buttons container - buttons should be centered */
+    .hero-cta-buttons .btn-main,
+    .hero-cta-buttons .btn-line {
+        width: auto !important; /* Override width: 100% */
+        flex: 0 0 auto !important;
+    }
+    
+    /* Prize Card - Mobile */
+    .border-white-op-3 {
+        padding: 32px 24px !important;
+        margin-top: 0 !important;
+        border-radius: 24px !important;
+    }
+    
+    .border-white-op-3 .subtitle {
+        font-size: 11px !important;
+        margin-bottom: 16px !important;
+    }
+    
+    .modern-prize-amount {
+        font-size: clamp(36px, 10vw, 56px) !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .prize-divider {
+        width: 50px !important;
+        margin: 16px auto !important;
+    }
+    
+    .modern-prize-benefits {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Countdown - Mobile - Küçült */
+    .hero-countdown-new {
+        max-width: 100% !important;
+        margin-top: 8px !important;
+        padding: 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero #defaultCountdown.countdown-new {
+        display: flex !important;
+        gap: 4px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .countdown-new .countdown-row {
+        gap: 4px !important;
+        display: flex !important;
+    }
+    
+    .countdown-new .countdown-section {
+        padding: 6px 4px 4px 4px !important;
+        border-radius: 8px !important;
+        min-width: 35px !important;
+        max-width: 45px !important;
+        flex: 1 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .countdown-new .countdown-amount {
+        font-size: clamp(12px, 3vw, 16px) !important;
+        line-height: 1.2 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-bottom: 1px !important;
+    }
+    
+    .countdown-new .countdown-period {
+        font-size: 6px !important;
+        margin-top: 1px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .row.mt-4 {
+        margin-top: 8px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Row gap küçült */
+    #section-hero .row.g-5 {
+        gap: 0.5rem !important;
+    }
+    
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        margin-bottom: 6px !important;
+    }
+    
+    /* mb-3, mb-4, mb-5 margin'leri küçült */
+    #section-hero .mb-3 {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    #section-hero .mb-4 {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    #section-hero .mb-5 {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Section Titles - Mobile */
+    section {
+        padding-top: 5px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    section h2:first-of-type {
+        font-size: clamp(32px, 7vw, 48px) !important;
+        margin-bottom: 20px !important;
+        line-height: 1.2 !important;
+    }
+    
+    section h3 {
+        font-size: clamp(22px, 4vw, 32px) !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .subtitle {
+        font-size: 12px !important;
+        letter-spacing: 0.2em !important;
+        margin-bottom: 16px !important;
+    }
+    
+    /* Organized By Section - Mobile */
+    #section-sponsors {
+        padding: 60px 0 !important;
+    }
+    
+    #section-sponsors h2 {
+        font-size: clamp(32px, 7vw, 48px) !important;
+        margin-bottom: 30px !important;
+    }
+    
+    #section-sponsors .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #section-sponsors img {
+        height: 50px !important;
+        margin: 12px !important;
+        max-width: 200px;
+    }
+    
+    /* About Section - Mobile */
+    #section-about {
+        padding: 60px 0 !important;
+    }
+    
+    #section-about .row {
+        flex-direction: column-reverse;
+    }
+    
+    #section-about .col-lg-6 {
+        width: 100% !important;
+        margin-bottom: 24px;
+    }
+    
+    #section-about .plexus-structure-wrapper {
+        margin-bottom: 30px;
+        max-width: 60% !important; /* Mobilde küçült */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    #section-about .plexus-structure-wrapper img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto;
+    }
+    
+    /* Görseli ortala */
+    #section-about .col-lg-5 {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    /* Marquee Section - Mobile */
+    .de-marquee-list-1,
+    .de-marquee-list-2 {
+        font-size: 14px !important;
+    }
+    
+    /* Gain Cards - Mobile */
+    #section-why-attend {
+        padding: 60px 0 !important;
+    }
+    
+    .gain-card {
+        padding: 28px 20px !important;
+        margin-bottom: 20px;
+        border-radius: 20px !important;
+    }
+    
+    .gain-icon-wrapper {
+        width: 70px !important;
+        height: 70px !important;
+        margin-bottom: 20px;
+    }
+    
+    .gain-icon-wrapper i {
+        font-size: 32px !important;
+    }
+    
+    .gain-card h4 {
+        font-size: 20px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .gain-card p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Prize Pool Section - Mobile */
+    #section-prizes {
+        padding: 60px 0 !important;
+    }
+    
+    #section-prizes h2.prize-main-title {
+        font-size: clamp(36px, 8vw, 56px) !important;
+        margin-bottom: 24px !important;
+    }
+    
+    #section-prizes .prize-amount {
+        font-size: clamp(40px, 10vw, 64px) !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Venue Section - Mobile */
+    #section-venue {
+        padding: 60px 0 !important;
+    }
+    
+    /* FAQ Section - Mobile */
+    #section-faq {
+        padding: 60px 0 !important;
+    }
+    
+    .faq-accordion {
+        max-width: 100%;
+    }
+    
+    .faq-item {
+        margin-bottom: 16px;
+        border-radius: 16px !important;
+    }
+    
+    .faq-question {
+        padding: 20px 24px !important;
+    }
+    
+    .faq-question-text h4 {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .faq-answer {
+        padding: 0 24px 20px !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Footer - Mobile */
+    footer {
+        padding: 40px 0 30px !important;
+    }
+    
+    footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    footer .col-md-6 {
+        width: 100% !important;
+        margin-bottom: 24px;
+    }
+    
+    footer img {
+        height: 40px !important;
+        margin: 8px !important;
+    }
+    
+    /* Navbar - Mobile (already handled by template) */
+    header .btn-main {
+        display: none;
+    }
+    
+    /* Spacing Utilities - Mobile */
+    .spacer-double {
+        height: 40px !important;
+    }
+    
+    .spacer-single {
+        height: 20px !important;
+    }
+    
+    /* Text Alignment - Mobile */
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    /* Lead Text - Mobile */
+    .lead {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+/* ============================================
+   SMALL MOBILE (max-width: 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    
+    /* Container - Small Mobile */
+    .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    
+    /* Hero Section - Small Mobile */
+    #section-hero {
+        padding: 0 !important;
+        min-height: 100vh !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+    }
+    
+    /* Arka plan video - Small Mobile */
+    #section-hero .jarallax-img,
+    #section-hero .jarallax-video,
+    #section-hero video,
+    #section-hero .jarallax-container {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .abs.abs-centered {
+        padding-top: 1vh !important;
+        padding-bottom: 20px !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 2 !important;
+        overflow: visible !important;
+    }
+    
+    /* Logo - Small Mobile */
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"],
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img,
+    #section-hero .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[alt="Future Minds Hackathon"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 12 !important;
+        max-width: 50% !important;
+        width: 50% !important;
+        margin: 0 auto 6px auto !important;
+        overflow: visible !important;
+    }
+    
+    /* mb-3 div - Small Mobile */
+    #section-hero .col-lg-7 .mb-3 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 11 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    #section-hero h1 {
+        font-size: clamp(18px, 4.5vw, 28px) !important;
+        margin-bottom: 6px !important;
+    }
+    
+    #section-hero h3 {
+        font-size: clamp(11px, 2.2vw, 14px) !important;
+        margin-bottom: 6px !important;
+    }
+    
+    /* Meta badges - Small Mobile */
+    #section-hero .d-flex.align-items-center {
+        padding: 5px 8px !important;
+        font-size: 8px !important;
+    }
+    
+    #section-hero .d-flex.align-items-center i {
+        font-size: 9px !important;
+    }
+    
+    /* Deadline badge - Small Mobile */
+    #section-hero .d-inline-block {
+        padding: 4px 10px !important;
+        font-size: 8px !important;
+    }
+    
+    /* Prize pool - Small Mobile - Enhanced visibility */
+    .prize-organic-wrapper {
+        padding: 20px 10px !important;
+        width: 100% !important;
+    }
+    
+    .prize-label-organic {
+        font-size: 12px !important;
+        margin-bottom: 8px !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .prize-number {
+        font-size: clamp(32px, 10vw, 45px) !important;
+    }
+    
+    .prize-currency {
+        font-size: clamp(24px, 8vw, 36px) !important;
+    }
+    
+    /* Benefits - Small Mobile */
+    /* Benefits - Small Mobile - Keep horizontal scroll */
+    .hero-benefits {
+        gap: 8px !important;
+        overflow-x: auto !important; /* Keep scrollable */
+    }
+    
+    .hero-benefits .benefit-item-organic {
+        padding: 3px 6px !important;
+    }
+    
+    .hero-benefits .benefit-item-organic .icofont-check-circled {
+        font-size: 10px !important;
+    }
+    
+    .hero-benefits .benefit-item-organic span {
+        font-size: 9px !important;
+    }
+    
+    /* Legacy support */
+    .prize-benefits-organic .benefit-item-organic {
+        padding: 4px 8px !important;
+    }
+    
+    .prize-benefits-organic .benefit-item-organic .icofont-check-circled {
+        font-size: 9px !important;
+    }
+    
+    .prize-benefits-organic .benefit-item-organic span {
+        font-size: 8px !important;
+    }
+    
+    /* Buttons - Small Mobile */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 7px 14px !important;
+        font-size: 10px !important;
+    }
+    
+    /* Countdown - Small Mobile */
+    .countdown-new .countdown-section {
+        padding: 5px 3px 3px 3px !important;
+        min-width: 30px !important;
+        max-width: 38px !important;
+    }
+    
+    .countdown-new .countdown-amount {
+        font-size: clamp(11px, 2.5vw, 14px) !important;
+    }
+    
+    .countdown-new .countdown-period {
+        font-size: 5px !important;
+    }
+    
+    /* Logo - Small Mobile */
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"] {
+        max-width: 100% !important;
+        margin-bottom: 16px !important;
+    }
+    
+    /* Prize Pool - Small Mobile */
+    .prize-organic-wrapper {
+        padding: 20px 16px !important;
+    }
+    
+    .prize-number {
+        font-size: clamp(36px, 11vw, 55px) !important;
+    }
+    
+    .prize-currency {
+        font-size: clamp(28px, 9vw, 42px) !important;
+    }
+    
+    /* Countdown - Small Mobile */
+    .countdown-new .countdown-section {
+        padding: 12px 6px 10px 6px !important;
+        min-width: 50px !important;
+        max-width: 65px !important;
+    }
+    
+    .countdown-new .countdown-amount {
+        font-size: clamp(18px, 5.5vw, 24px) !important;
+    }
+    
+    .countdown-new .countdown-period {
+        font-size: 7px !important;
+    }
+    
+    /* Buttons - Small Mobile */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 14px 24px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Prize Card - Small Mobile */
+    .border-white-op-3 {
+        padding: 28px 20px !important;
+    }
+    
+    .modern-prize-amount {
+        font-size: clamp(32px, 12vw, 48px) !important;
+    }
+    
+    /* Countdown - Small Mobile */
+    .countdown-amount {
+        font-size: 24px !important;
+    }
+    
+    .countdown-period {
+        font-size: 10px !important;
+    }
+    
+    /* Section Titles - Small Mobile */
+    section h2:first-of-type {
+        font-size: clamp(28px, 8vw, 40px) !important;
+    }
+    
+    section h3 {
+        font-size: clamp(20px, 5vw, 28px) !important;
+    }
+    
+    /* Gain Cards - Small Mobile */
+    .gain-card {
+        padding: 24px 16px !important;
+    }
+    
+    .gain-icon-wrapper {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .gain-icon-wrapper i {
+        font-size: 28px !important;
+    }
+    
+    .gain-card h4 {
+        font-size: 18px !important;
+    }
+    
+    .gain-card p {
+        font-size: 13px !important;
+    }
+    
+    /* FAQ - Small Mobile */
+    .faq-question {
+        padding: 18px 20px !important;
+    }
+    
+    .faq-question-text h4 {
+        font-size: 15px !important;
+    }
+    
+    .faq-answer {
+        padding: 0 20px 18px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE (max-width: 360px)
+   ============================================ */
+
+@media (max-width: 360px) {
+    
+    /* Hero Title - Extra Small */
+    #section-hero h1 {
+        font-size: clamp(24px, 10vw, 40px) !important;
+    }
+    
+    /* Buttons - Extra Small */
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+    
+    /* Prize Card - Extra Small */
+    .modern-prize-amount {
+        font-size: clamp(28px, 14vw, 40px) !important;
+    }
+    
+    /* Section Titles - Extra Small */
+    section h2:first-of-type {
+        font-size: clamp(24px, 9vw, 36px) !important;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION
+   ============================================ */
+
+@media (max-width: 991px) and (orientation: landscape) {
+    
+    #section-hero {
+        padding: 40px 0 30px !important;
+        min-height: auto !important;
+    }
+    
+    #section-hero h1 {
+        font-size: clamp(36px, 6vw, 56px) !important;
+    }
+    
+    #section-hero h3 {
+        font-size: clamp(20px, 3vw, 28px) !important;
+    }
+    
+    .border-white-op-3 {
+        padding: 24px 20px !important;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    
+    /* Larger touch targets */
+    a, button, .btn-main, .btn-line {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects on touch */
+    .gain-card:hover {
+        transform: none;
+    }
+    
+    /* Disable custom cursor on touch */
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none !important;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    
+    #section-hero,
+    section {
+        page-break-inside: avoid;
+    }
+    
+    .btn-main,
+    .btn-line,
+    .countdown-s2 {
+        display: none;
+    }
+}
+

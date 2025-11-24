@@ -1,0 +1,93 @@
+/* ============================================
+   NAVBAR LOGO SIZE - PNG LOGO BÜYÜK
+   Navbar boyutunu değiştirmeden logoyu büyüt
+   ============================================ */
+
+/* Desktop Logo - Daha Büyük boyut (okunabilir) */
+header.transparent #logo .logo-main,
+header.transparent #logo .logo-scroll {
+    max-height: 240px !important;
+    height: auto !important;
+    width: auto !important;
+    object-fit: contain;
+}
+
+/* Mobile Logo - Büyük boyut */
+header.transparent #logo .logo-mobile {
+    max-height: 180px !important;
+    height: auto !important;
+    width: auto !important;
+    object-fit: contain;
+}
+
+/* Scroll durumunda da aynı boyut */
+header.transparent.smaller #logo .logo-scroll {
+    max-height: 240px !important;
+    height: auto !important;
+    width: auto !important;
+    object-fit: contain;
+}
+
+/* Tablet için */
+@media (max-width: 991px) {
+    header.transparent #logo .logo-main,
+    header.transparent #logo .logo-scroll {
+        max-height: 200px !important;
+    }
+    
+    header.transparent #logo .logo-mobile {
+        max-height: 160px !important;
+    }
+    
+    header.transparent.smaller #logo .logo-scroll {
+        max-height: 200px !important;
+    }
+}
+
+/* Mobile için */
+@media (max-width: 767px) {
+    header.transparent #logo .logo-main,
+    header.transparent #logo .logo-scroll {
+        max-height: 180px !important;
+    }
+    
+    header.transparent #logo .logo-mobile {
+        max-height: 160px !important;
+    }
+    
+    header.transparent.smaller #logo .logo-scroll {
+        max-height: 180px !important;
+    }
+    
+    /* Logo container - vertical centering */
+    header #logo,
+    header .de-flex-col:first-child {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+}
+
+/* Small Mobile için */
+@media (max-width: 480px) {
+    header.transparent #logo .logo-main,
+    header.transparent #logo .logo-scroll {
+        max-height: 160px !important;
+    }
+    
+    header.transparent #logo .logo-mobile {
+        max-height: 150px !important;
+    }
+    
+    header.transparent.smaller #logo .logo-scroll {
+        max-height: 160px !important;
+    }
+    
+    /* Logo container - vertical centering */
+    header #logo,
+    header .de-flex-col:first-child {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+}

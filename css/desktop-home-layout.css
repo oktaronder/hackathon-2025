@@ -1,0 +1,328 @@
+/* ============================================
+   DESKTOP HOME SECTION LAYOUT
+   Laptop & desktop (hero two-column layout)
+   ============================================ */
+
+/* Base desktop enhancements (tablet and up).
+   Symmetry-specific tweaks for real desktop live in a separate
+   @media (min-width: 1024px) block at the bottom. */
+@media (min-width: 768px) {
+    
+    /* Sol kolon - İçerik düzeni */
+    #section-hero .col-lg-7 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+    
+    /* Date and Location - En üstte, yan yana, sola hizalı */
+    #section-hero .hero-meta-badges {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: flex-start !important;
+        width: 100%;
+        margin-bottom: 25px !important;
+    }
+    
+    /* PNG Logo - Tarih ve konum altında, en solda, maksimum büyütülmüş */
+    #section-hero .hero-title-container {
+        width: 100%;
+        text-align: left !important;
+        margin-bottom: 30px !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+    
+    #section-hero .hero-title-image {
+        max-width: 1100px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-left: 0 !important;
+    }
+    
+    #section-hero .hero-meta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 50px;
+        padding: 12px 24px;
+    }
+    
+    /* Subtitle gizle */
+    #section-hero .col-lg-7 h3 {
+        display: none !important;
+    }
+    
+    /* Deadline - Sola hizalı */
+    #section-hero .col-lg-7 > div > .text-center {
+        text-align: left !important;
+        width: 100%;
+        margin-bottom: 30px !important;
+    }
+    
+    #section-hero .hero-deadline {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, rgba(236,72,153,0.25), rgba(167,139,250,0.25));
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(236,72,153,0.4);
+        border-radius: 50px;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    /* CTA Buttons - Sola hizalı, yan yana */
+    #section-hero .hero-cta-buttons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start !important;
+        width: 100%;
+        margin-top: 40px !important;
+    }
+    
+    #section-hero .hero-cta-buttons .btn-main {
+        margin: 0 !important;
+        min-width: 160px;
+    }
+    
+    /* Sağ kolon - Prize Pool ve Benefits */
+    #section-hero .col-lg-5 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+    }
+    
+    #section-hero .prize-label-organic {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: rgba(255,255,255,0.8);
+        margin-bottom: 15px;
+    }
+    
+    #section-hero .prize-amount-organic {
+        font-size: 48px;
+        font-weight: 800;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    #section-hero .benefit-item-organic {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 40px;
+        padding: 12px 24px;
+        white-space: nowrap !important;
+        flex: none !important;
+        width: auto;
+        max-width: 350px;
+        justify-content: flex-start;
+    }
+    
+    #section-hero .benefit-item-organic i {
+        font-size: 20px;
+        color: #a78bfa;
+    }
+    
+    #section-hero .benefit-item-organic span {
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    
+    /* Countdown - Alt kısımda ortalı kalabilir */
+    #section-hero .hero-countdown-new {
+        margin-top: 50px;
+    }
+}
+
+/* Ekstra büyük ekranlar için */
+@media (min-width: 1200px) {
+    #section-hero .hero-title-image {
+        max-width: 1300px;
+    }
+    
+    #section-hero .prize-organic-wrapper {
+        max-width: 380px; /* Küçültülmüş genişlik */
+        padding: 20px 35px; /* Küçültülmüş padding */
+    }
+    
+    #section-hero .prize-amount-organic {
+        font-size: 42px; /* Küçültülmüş font */
+    }
+    
+    #section-hero .hero-prize-organic {
+        margin-top: 0 !important; /* Logo ile aynı hizada */
+        margin-right: 0 !important; /* Simetrik - sağa kaydırma yok */
+        align-self: flex-start !important; /* Üstten hizala */
+    }
+    
+    #section-hero .hero-benefits {
+        margin-right: 40px !important; /* Sağa kaydır */
+    }
+}
+
+/* Orta ekranlar için */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #section-hero .hero-title-image {
+        max-width: 1000px;
+    }
+    
+    #section-hero .hero-prize-organic {
+        margin-top: 75px !important; /* Meta badges yüksekliği kadar aşağı - logo ile aynı hizada */
+        margin-right: 0 !important; /* Simetrik - sağa kaydırma yok */
+        align-self: flex-start !important; /* Üstten hizala */
+    }
+    
+    #section-hero .hero-benefits {
+        margin-top: 75px !important; /* Prize pool ile aynı oranda aşağı kaydırıldı */
+        margin-right: 0 !important; /* Simetrik */
+    }
+    
+    #section-hero .prize-organic-wrapper {
+        max-width: 350px; /* Küçültülmüş genişlik */
+        padding: 18px 30px; /* Küçültülmüş padding */
+    }
+}
+
+/* ============================================
+   TRUE DESKTOP HERO LAYOUT (>= 1024px)
+   İki sütunlu simetrik görünüm
+   ============================================ */
+@media (min-width: 1024px) {
+
+    /* Container - eşit sağ/sol boşluk ve sabit genişlik */
+    #section-hero .abs.abs-centered .container {
+        max-width: 1360px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    /* İki eşit sütun - sol & sağ pillar */
+    #section-hero .row.g-5 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: flex-start;
+        column-gap: 64px;
+    }
+
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        float: none;
+        width: auto;
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* ========== SOL SÜTUN (METIN PILLAR) ========== */
+    #section-hero .col-lg-7 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    #section-hero .hero-meta-badges {
+        margin-bottom: 24px !important;
+    }
+
+    #section-hero .hero-title-container {
+        margin-bottom: 24px !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    #section-hero .hero-title-image {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Desktop'ta subtitle görünür olmalı */
+    #section-hero .col-lg-7 h3 {
+        display: block !important;
+        margin-bottom: 24px;
+    }
+
+    #section-hero .col-lg-7 > div > .text-center {
+        margin-bottom: 24px !important;
+    }
+
+    #section-hero .hero-cta-buttons {
+        margin-top: 32px !important;
+    }
+
+    /* ========== SAĞ SÜTUN (PRIZE + BENEFITS PILLAR) ========== */
+    #section-hero .col-lg-5 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+    }
+
+    #section-hero .hero-right-content {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 24px; /* Prize pool ile benefits arası dikey boşluk */
+    }
+
+    /* Prize pool kartı - PNG logo ile tamamen aynı hizada (meta badges yüksekliği kadar aşağı) */
+    #section-hero .hero-prize-organic {
+        order: 1;
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-start; /* Üstten hizala */
+        margin-top: 75px !important; /* Meta badges yüksekliği (50px) + margin-bottom (25px) = logo ile aynı hizada */
+        padding-right: 0;             /* hero-prize-countdown-award override */
+    }
+
+    #section-hero .prize-organic-wrapper {
+        text-align: center;
+        width: auto; /* width: 100% yerine auto - max-width'in çalışması için */
+        max-width: none; /* Sabit max-width kaldırıldı - hero-prize-countdown-award.css'deki responsive değerler kullanılacak */
+    }
+
+    /* Benefits - prize pool'un hemen altında yatay chip'ler, aynı oranda aşağı kaydırılmış */
+    #section-hero .hero-benefits {
+        order: 2;
+        width: auto;
+        margin-top: 75px !important; /* Prize pool ile aynı oranda aşağı kaydırıldı */
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 12px !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+        margin: 0 !important;
+        padding-right: 0; /* Sağdan ekstra padding olmasın */
+    }
+
+    #section-hero .benefit-item-organic {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+}
+

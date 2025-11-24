@@ -1,0 +1,252 @@
+/* ============================================
+   PLEXUS EPIC EFFECTS - MUHTEŞEM EFEKTLER
+   Award-winning, modern, etkileyici efektler
+   ============================================ */
+
+/* Energy Wave Effect - Enerji dalgası (About section'da devre dışı) */
+.plexus-energy-wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        transparent 0%,
+        rgba(139, 92, 246, 0.1) 30%,
+        rgba(167, 139, 250, 0.15) 50%,
+        rgba(236, 72, 153, 0.1) 70%,
+        transparent 100%);
+    animation: energy-wave-expand 3s ease-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* About section'da energy wave efekti yok */
+#section-about .plexus-energy-wave {
+    display: none !important;
+    animation: none !important;
+}
+
+@keyframes energy-wave-expand {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Glitch Effect - Hackathon temasına uygun */
+@keyframes plexus-glitch {
+    0%, 100% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(5deg);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+        filter: hue-rotate(-5deg);
+    }
+    60% {
+        transform: translate(2px, 2px);
+        filter: hue-rotate(3deg);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(-3deg);
+    }
+}
+
+.plexus-structure-wrapper:hover .plexus-glitch-effect {
+    animation: plexus-glitch 0.3s infinite;
+}
+
+/* 3D Rotation on Scroll - Parallax rotation */
+.plexus-structure-wrapper.scroll-rotate img {
+    transition: transform 0.1s ease-out;
+}
+
+/* Depth Layers - Derinlik efekti (About section'da devre dışı) */
+.plexus-depth-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.3;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(139, 92, 246, 0.2) 0%,
+        transparent 50%);
+    animation: depth-pulse 4s ease-in-out infinite;
+}
+
+/* About section'da depth pulse efekti yok */
+#section-about .plexus-depth-layer {
+    display: none !important;
+    animation: none !important;
+}
+
+@keyframes depth-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+/* Particle Trail - Parçacık izi efekti */
+.plexus-particle-trail {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(139, 92, 246, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 1);
+    pointer-events: none;
+    z-index: 3;
+    animation: particle-trail 2s ease-out infinite;
+}
+
+@keyframes particle-trail {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--trail-x, 50px), var(--trail-y, 50px)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Magnetic Effect - Mouse'a doğru çekilme */
+.plexus-structure-wrapper.magnetic {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Shine Effect - Parlama efekti */
+@keyframes plexus-shine {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.plexus-structure-wrapper img.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.plexus-structure-wrapper img.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: plexus-shine 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Morphing Glow - Şekil değiştiren glow (About section'da devre dışı) */
+@keyframes morph-glow {
+    0%, 100% {
+        border-radius: 50% 40% 60% 30%;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+    25% {
+        border-radius: 40% 60% 30% 50%;
+        transform: translate(-50%, -50%) scale(1.1) rotate(90deg);
+    }
+    50% {
+        border-radius: 60% 30% 50% 40%;
+        transform: translate(-50%, -50%) scale(1.2) rotate(180deg);
+    }
+    75% {
+        border-radius: 30% 50% 40% 60%;
+        transform: translate(-50%, -50%) scale(1.1) rotate(270deg);
+    }
+}
+
+.plexus-morph-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, 
+        rgba(139, 92, 246, 0.2) 0%,
+        rgba(167, 139, 250, 0.15) 30%,
+        rgba(236, 72, 153, 0.1) 60%,
+        transparent 100%);
+    animation: morph-glow 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(40px);
+}
+
+/* About section'da morph glow efekti yok */
+#section-about .plexus-morph-glow {
+    display: none !important;
+    animation: none !important;
+}
+
+/* Interactive Scale on Click */
+.plexus-structure-wrapper:active img {
+    transform: scale(0.95) !important;
+    transition: transform 0.1s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .plexus-energy-wave,
+    .plexus-morph-glow {
+        filter: blur(30px);
+    }
+}
+
+@media (max-width: 767px) {
+    .plexus-energy-wave,
+    .plexus-morph-glow {
+        display: none; /* Mobile'da performans için */
+    }
+    
+    .plexus-structure-wrapper img {
+        animation: plexus-pulse 6s ease-in-out infinite,
+                   plexus-glow-pulse 3s ease-in-out infinite;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .plexus-energy-wave,
+    .plexus-morph-glow,
+    .plexus-depth-layer,
+    .plexus-particle-trail {
+        animation: none !important;
+    }
+    
+    .plexus-structure-wrapper img {
+        animation: none !important;
+    }
+}
+

@@ -1,0 +1,123 @@
+/* ============================================
+   MOBILE PRIZE POOL - TAM ORTALAMA
+   Mobilde prize pool'u sayfanın tam ortasında göster
+   ============================================ */
+
+@media (max-width: 767px) {
+    /* Tüm parent container'ları ortala */
+    #section-hero .abs.abs-centered .container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    #section-hero .row.g-5.justify-content-between {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* col-lg-5 - Tam ortala */
+    #section-hero .col-lg-5 {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* hero-right-content - Tam ortala */
+    #section-hero .col-lg-5 .hero-right-content,
+    #section-hero .hero-right-content,
+    .hero-right-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* hero-prize-organic - Tam ortala - ÇOK GÜÇLÜ */
+    #section-hero .hero-prize-organic,
+    #section-hero .col-lg-5 .hero-prize-organic,
+    #section-hero .hero-right-content .hero-prize-organic,
+    #section-hero .col-lg-5 .hero-right-content .hero-prize-organic,
+    .hero-prize-organic {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+    
+    /* prize-organic-wrapper - Tam ortala - ÇOK GÜÇLÜ */
+    #section-hero .prize-organic-wrapper,
+    #section-hero .hero-prize-organic .prize-organic-wrapper,
+    #section-hero .col-lg-5 .prize-organic-wrapper,
+    #section-hero .hero-right-content .prize-organic-wrapper,
+    #section-hero .col-lg-5 .hero-right-content .hero-prize-organic .prize-organic-wrapper,
+    .prize-organic-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        padding: 16px 14px !important;
+    }
+    
+    /* Prize label - Ortala */
+    #section-hero .prize-label-organic,
+    #section-hero .prize-organic-wrapper .prize-label-organic,
+    .prize-label-organic {
+        text-align: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+    
+    /* Prize amount - Ortala */
+    #section-hero .prize-amount-organic,
+    #section-hero .prize-organic-wrapper .prize-amount-organic,
+    .prize-amount-organic {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Currency ve Number - Ortala */
+    #section-hero .prize-currency,
+    #section-hero .prize-number,
+    .prize-currency,
+    .prize-number {
+        text-align: center !important;
+    }
+}
+

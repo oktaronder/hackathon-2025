@@ -1,0 +1,177 @@
+/* ============================================
+   ORGANIZED BY SECTION
+   Logolar arasında boşluk, düzenli yerleşim
+   ============================================ */
+
+/* Organized By Section */
+.organized-by-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    padding: 40px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Logo Item */
+.organized-logo-item {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Sol ve Sağ Logolar - Daha küçük */
+.organized-logo-left,
+.organized-logo-right {
+    flex: 0 0 auto;
+}
+
+/* Orta Logo - Daha büyük */
+.organized-logo-center {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Logo Images - Genel */
+.organized-logo-item img {
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(0);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Sol Logo - Cyprus Construction */
+.organized-logo-left img {
+    max-height: 90px;
+    max-width: 250px;
+}
+
+/* Orta Logo - DAÜ (Okul ve Kulüp) - BÜYÜK */
+.organized-logo-center img {
+    max-height: 140px;
+    max-width: 400px;
+}
+
+/* Sağ Logo - Califorian */
+.organized-logo-right img {
+    max-height: 90px;
+    max-width: 250px;
+}
+
+.organized-logo-item:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+/* Sol Logo - Cyprus Construction - En Solda */
+.organized-logo-left {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Orta Logo - DAÜ (Okul ve Kulüp) - Ortada, Büyük */
+.organized-logo-center {
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* Sağ Logo - Califorian - En Sağda, Ayrık */
+.organized-logo-right {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 991px) {
+    .organized-by-logos {
+        gap: 50px;
+        padding: 30px 20px;
+    }
+    
+    .organized-logo-left img {
+        max-height: 75px;
+        max-width: 200px;
+    }
+    
+    .organized-logo-center img {
+        max-height: 120px;
+        max-width: 350px;
+    }
+    
+    .organized-logo-right img {
+        max-height: 75px;
+        max-width: 200px;
+    }
+    
+    /* Tablet'te de aynı düzen */
+    .organized-logo-left {
+        justify-content: flex-start;
+    }
+    
+    .organized-logo-center {
+        justify-content: center;
+    }
+    
+    .organized-logo-right {
+        justify-content: flex-end;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 767px) {
+    .organized-by-logos {
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px 20px;
+    }
+    
+    .organized-logo-item {
+        width: 100%;
+        justify-content: center !important;
+    }
+    
+    .organized-logo-left img {
+        max-height: 60px;
+        max-width: 180px;
+    }
+    
+    .organized-logo-center img {
+        max-height: 100px;
+        max-width: 280px;
+    }
+    
+    .organized-logo-right img {
+        max-height: 60px;
+        max-width: 180px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .organized-by-logos {
+        gap: 30px;
+        padding: 24px 15px;
+    }
+    
+    .organized-logo-left img {
+        max-height: 50px;
+        max-width: 150px;
+    }
+    
+    .organized-logo-center img {
+        max-height: 85px;
+        max-width: 240px;
+    }
+    
+    .organized-logo-right img {
+        max-height: 50px;
+        max-width: 150px;
+    }
+}
+

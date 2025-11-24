@@ -1,0 +1,567 @@
+/* ============================================
+   ABOUT SECTION 3D SHAPE - AWARD WINNING EFFECTS
+   Muhteşem dönen daireler, parçacıklar ve 3D efektler
+   ============================================ */
+
+/* About Section 3D Image Container */
+#section-about .plexus-structure-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    perspective: 2000px;
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+/* Interactive wheel - 3D efektleri kaldır, sadece 2D */
+#section-about .plexus-structure-wrapper.interactive-wheel {
+    perspective: none !important;
+    transform-style: flat !important;
+}
+
+/* Main 3D Image - Sağa doğru yuvarlak şekilde dönen animasyon */
+#section-about .plexus-structure-wrapper img,
+#section-about .plexus-structure-wrapper img.about-3d-rotate-clockwise,
+#section-about img.plexus-img-processed {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    filter: drop-shadow(0 30px 80px rgba(139, 92, 246, 0.4)) 
+            drop-shadow(0 0 100px rgba(167, 139, 250, 0.5))
+            brightness(1.15) 
+            contrast(1.15)
+            saturate(1.3);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: 
+        about-rotate-y-axis 20s linear infinite !important;
+    will-change: transform, filter;
+}
+
+/* Interactive wheel aktifse CSS animasyonunu kapat */
+#section-about .plexus-structure-wrapper.interactive-wheel img.about-3d-rotate-clockwise,
+#section-about .plexus-structure-wrapper.interactive-wheel img {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Interactive wheel - JavaScript kontrolünde, CSS animasyonu kapalı */
+#section-about .plexus-structure-wrapper.interactive-wheel img {
+    animation: none !important;
+    transition: none !important; /* JavaScript kontrol edecek */
+    transform-style: flat !important; /* 2D düzlem - 3D değil */
+    transform-origin: center center !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* 3D efektleri kaldır - sadece 2D rotate */
+    perspective: none !important;
+    /* Transform JavaScript tarafından kontrol edilecek - CSS override etmesin */
+}
+
+/* Sağa doğru yuvarlak şekilde dönen animasyon - Tekerlek gibi sürekli dönme (Z ekseni) */
+@keyframes about-rotate-y-axis {
+    0% {
+        transform: rotate(0deg) translateY(0px);
+    }
+    25% {
+        transform: rotate(90deg) translateY(-15px);
+    }
+    50% {
+        transform: rotate(180deg) translateY(-30px);
+    }
+    75% {
+        transform: rotate(270deg) translateY(-15px);
+    }
+    100% {
+        transform: rotate(360deg) translateY(0px);
+    }
+}
+
+/* Eski 3D rotate animasyonu (kullanılmıyor) */
+@keyframes about-3d-rotate {
+    0% {
+        transform: rotateY(0deg) rotateX(5deg);
+    }
+    25% {
+        transform: rotateY(90deg) rotateX(-5deg);
+    }
+    50% {
+        transform: rotateY(180deg) rotateX(5deg);
+    }
+    75% {
+        transform: rotateY(270deg) rotateX(-5deg);
+    }
+    100% {
+        transform: rotateY(360deg) rotateX(5deg);
+    }
+}
+
+/* Floating animasyon - Yukarı aşağı hareket (artık about-rotate-y-axis içinde birleştirildi) */
+@keyframes about-3d-float {
+    0%, 100% {
+        transform: translateY(0px) translateZ(0);
+    }
+    50% {
+        transform: translateY(-30px) translateZ(0);
+    }
+}
+
+/* Dönen Renkli Daireler - Etrafta dönen parçacıklar */
+#section-about .plexus-structure-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        rgba(236, 72, 153, 0.6) 0%,
+        rgba(236, 72, 153, 0.4) 30%,
+        rgba(236, 72, 153, 0.2) 50%,
+        transparent 70%);
+    animation: about-circle-orbit-1 15s linear infinite;
+    filter: blur(20px);
+    pointer-events: none;
+    z-index: 0;
+    box-shadow: 0 0 60px rgba(236, 72, 153, 0.5);
+}
+
+#section-about .plexus-structure-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        rgba(139, 92, 246, 0.6) 0%,
+        rgba(139, 92, 246, 0.4) 30%,
+        rgba(139, 92, 246, 0.2) 50%,
+        transparent 70%);
+    animation: about-circle-orbit-2 12s linear infinite reverse;
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.5);
+}
+
+/* Daire orbit animasyonları */
+@keyframes about-circle-orbit-1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes about-circle-orbit-2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(220px) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg) translateX(220px) rotate(360deg);
+        opacity: 0.7;
+    }
+}
+
+/* Hover Effects - İnteraktif hover (pulse yok) */
+    #section-about .plexus-structure-wrapper:hover img {
+        animation: 
+            about-rotate-y-axis-fast 12s linear infinite;
+    filter: drop-shadow(0 50px 120px rgba(139, 92, 246, 0.6)) 
+            drop-shadow(0 0 150px rgba(167, 139, 250, 0.7))
+            drop-shadow(0 0 200px rgba(236, 72, 153, 0.5))
+            brightness(1.3) 
+            contrast(1.2)
+            saturate(1.4);
+    transform: scale(1.15) translateZ(50px);
+}
+
+/* Hover'da daha hızlı sağa doğru dönme */
+@keyframes about-rotate-y-axis-fast {
+    0% {
+        transform: rotate(0deg) scale(1.15) translateY(0px);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.15) translateY(-10px);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.15) translateY(-20px);
+    }
+    75% {
+        transform: rotate(270deg) scale(1.15) translateY(-10px);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.15) translateY(0px);
+    }
+}
+
+/* Hover float */
+@keyframes about-3d-hover-float {
+    0%, 100% {
+        transform: translateY(0px) translateZ(50px);
+    }
+    50% {
+        transform: translateY(-20px) translateZ(60px);
+    }
+}
+
+/* Hover'da dönen daireler daha hızlı ve parlak */
+#section-about .plexus-structure-wrapper:hover::before {
+    animation: about-circle-orbit-1-fast 8s linear infinite;
+    filter: blur(25px);
+    box-shadow: 0 0 80px rgba(236, 72, 153, 0.8);
+    opacity: 1;
+}
+
+#section-about .plexus-structure-wrapper:hover::after {
+    animation: about-circle-orbit-2-fast 6s linear infinite reverse;
+    filter: blur(20px);
+    box-shadow: 0 0 70px rgba(139, 92, 246, 0.8);
+    opacity: 1;
+}
+
+@keyframes about-circle-orbit-1-fast {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes about-circle-orbit-2-fast {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(240px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg) translateX(240px) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Ekstra Dönen Daireler - HTML'de eklenebilir */
+#section-about .plexus-structure-wrapper {
+    position: relative;
+    overflow: visible;
+}
+
+/* Ekstra orbit daireleri için container */
+#section-about .plexus-structure-wrapper .orbit-circles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ekstra dönen daireler */
+#section-about .orbit-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(15px);
+    pointer-events: none;
+}
+
+#section-about .orbit-circle-1 {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, 
+        rgba(167, 139, 250, 0.7) 0%,
+        rgba(167, 139, 250, 0.4) 40%,
+        transparent 70%);
+    animation: about-orbit-extra-1 18s linear infinite;
+    box-shadow: 0 0 40px rgba(167, 139, 250, 0.6);
+}
+
+#section-about .orbit-circle-2 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, 
+        rgba(236, 72, 153, 0.7) 0%,
+        rgba(236, 72, 153, 0.4) 40%,
+        transparent 70%);
+    animation: about-orbit-extra-2 14s linear infinite reverse;
+    box-shadow: 0 0 35px rgba(236, 72, 153, 0.6);
+}
+
+#section-about .orbit-circle-3 {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, 
+        rgba(139, 92, 246, 0.7) 0%,
+        rgba(139, 92, 246, 0.4) 40%,
+        transparent 70%);
+    animation: about-orbit-extra-3 16s linear infinite;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+}
+
+@keyframes about-orbit-extra-1 {
+    0% {
+        transform: rotate(0deg) translateX(250px) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: rotate(360deg) translateX(250px) rotate(-360deg);
+        opacity: 0.6;
+    }
+}
+
+@keyframes about-orbit-extra-2 {
+    0% {
+        transform: rotate(0deg) translateX(280px) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: rotate(-360deg) translateX(280px) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+@keyframes about-orbit-extra-3 {
+    0% {
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+        opacity: 0.7;
+    }
+}
+
+/* Energy Particles - Enerji parçacıkları */
+#section-about .plexus-structure-wrapper {
+    position: relative;
+}
+
+#section-about .plexus-structure-wrapper::after {
+    /* Inner glow zaten var, ekstra particle efekti için */
+}
+
+/* Responsive - Mobile için daha yavaş animasyon ve KÜÇÜK BOYUT */
+@media (max-width: 767px) {
+    /* Container - mobilde küçült */
+    #section-about .plexus-structure-wrapper {
+        max-width: 60% !important; /* Mobilde %60 boyut */
+        margin: 0 auto !important; /* Ortala */
+    }
+    
+    /* Image - mobilde küçült */
+    #section-about .plexus-structure-wrapper img,
+    #section-about .plexus-structure-wrapper img.about-3d-rotate-clockwise,
+    #section-about img.plexus-img-processed {
+        max-width: 100% !important;
+        width: 100% !important;
+        animation: about-rotate-y-axis 25s linear infinite;
+    }
+    
+    #section-about .plexus-structure-wrapper:hover img {
+        animation: about-rotate-y-axis-fast 18s linear infinite;
+        transform: scale(1.05) translateZ(20px); /* Hover efekti daha küçük */
+    }
+    
+    /* Mobile'da dönen daireler daha küçük */
+    #section-about .plexus-structure-wrapper::before {
+        width: 100px !important; /* Küçültüldü */
+        height: 100px !important;
+        animation: about-circle-orbit-1 20s linear infinite;
+    }
+    
+    #section-about .plexus-structure-wrapper::after {
+        width: 80px !important; /* Küçültüldü */
+        height: 80px !important;
+        animation: about-circle-orbit-2 16s linear infinite reverse;
+    }
+}
+
+/* iPhone SE ve daha küçük ekranlar */
+@media (max-width: 390px) {
+    #section-about .plexus-structure-wrapper {
+        max-width: 50% !important; /* Daha da küçük */
+    }
+    
+    #section-about .plexus-structure-wrapper::before {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    #section-about .plexus-structure-wrapper::after {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+/* Çok küçük ekranlar */
+@media (max-width: 360px) {
+    #section-about .plexus-structure-wrapper {
+        max-width: 45% !important; /* Minimum boyut */
+    }
+    
+    #section-about .plexus-structure-wrapper::before {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    #section-about .plexus-structure-wrapper::after {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+/* Performance optimization */
+#section-about .plexus-structure-wrapper {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+#section-about .plexus-structure-wrapper img {
+    will-change: transform, filter;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* ============================================
+   INTERACTIVE WHEEL - AWARD WINNING STYLES
+   Mouse ile döndürme için özel stiller
+   ============================================ */
+
+/* Interactive wheel wrapper */
+#section-about .plexus-structure-wrapper.interactive-wheel {
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: none;
+    transition: box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+#section-about .plexus-structure-wrapper.interactive-wheel:active {
+    cursor: grabbing;
+}
+
+/* Smooth transitions when not dragging */
+#section-about .plexus-structure-wrapper.interactive-wheel img {
+    transform-origin: center center !important;
+    will-change: transform;
+}
+
+/* Tap impulse feedback */
+#section-about .plexus-structure-wrapper.interactive-wheel.wheel-impulse {
+    box-shadow: 0 25px 60px rgba(139, 92, 246, 0.25), 0 0 80px rgba(236, 72, 153, 0.25);
+}
+
+#section-about .plexus-structure-wrapper.interactive-wheel img.wheel-spin-impulse {
+    animation: wheel-impulse-glow 0.6s ease-out;
+}
+
+@keyframes wheel-impulse-glow {
+    0% {
+        filter: drop-shadow(0 30px 80px rgba(139, 92, 246, 0.45))
+                drop-shadow(0 0 100px rgba(167, 139, 250, 0.5))
+                brightness(1.15)
+                contrast(1.15)
+                saturate(1.3);
+    }
+    35% {
+        filter: drop-shadow(0 45px 120px rgba(139, 92, 246, 0.65))
+                drop-shadow(0 0 160px rgba(236, 72, 153, 0.55))
+                brightness(1.35)
+                contrast(1.2)
+                saturate(1.4);
+    }
+    100% {
+        filter: drop-shadow(0 30px 80px rgba(139, 92, 246, 0.45))
+                drop-shadow(0 0 100px rgba(167, 139, 250, 0.5))
+                brightness(1.15)
+                contrast(1.15)
+                saturate(1.3);
+    }
+}
+
+/* Direction aware glow */
+#section-about .plexus-structure-wrapper.interactive-wheel[data-spin-direction="cw"]::before {
+    animation-direction: normal;
+}
+
+#section-about .plexus-structure-wrapper.interactive-wheel[data-spin-direction="cw"]::after {
+    animation-direction: reverse;
+}
+
+#section-about .plexus-structure-wrapper.interactive-wheel[data-spin-direction="ccw"]::before {
+    animation-direction: reverse;
+}
+
+#section-about .plexus-structure-wrapper.interactive-wheel[data-spin-direction="ccw"]::after {
+    animation-direction: normal;
+}
+
+/* Hover effect - subtle scale */
+#section-about .plexus-structure-wrapper.interactive-wheel:hover img {
+    filter: drop-shadow(0 40px 100px rgba(139, 92, 246, 0.5)) 
+            drop-shadow(0 0 120px rgba(167, 139, 250, 0.6))
+            brightness(1.2) 
+            contrast(1.2)
+            saturate(1.35);
+    transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Active drag state */
+#section-about .plexus-structure-wrapper.interactive-wheel:active img {
+    filter: drop-shadow(0 50px 120px rgba(139, 92, 246, 0.6)) 
+            drop-shadow(0 0 150px rgba(167, 139, 250, 0.7))
+            brightness(1.3) 
+            contrast(1.25)
+            saturate(1.4);
+}
+
+/* Mobile touch optimization */
+@media (max-width: 767px) {
+    #section-about .plexus-structure-wrapper.interactive-wheel {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    #section-about .plexus-structure-wrapper.interactive-wheel img {
+        touch-action: pan-y pinch-zoom;
+    }
+}
+

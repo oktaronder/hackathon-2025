@@ -1,0 +1,151 @@
+/* ============================================
+   AWARD-WINNING CURSOR EFFECT
+   Muhteşem, modern, interactive cursor
+   Magnetic + Trail + Glow + Particles
+   ============================================ */
+
+/* Hide Default Cursor */
+* {
+    cursor: none !important;
+}
+
+/* Show normal cursor on cards and FAQ items (they have their own hover effects) */
+.gain-card,
+.faq-item,
+.faq-question,
+.card-modern {
+    cursor: pointer !important;
+}
+
+.gain-card *,
+.faq-item *,
+.card-modern * {
+    cursor: pointer !important;
+}
+
+/* Custom Cursor Container */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                background 0.3s ease;
+    transform: translate(-50%, -50%);
+    background: rgba(167, 139, 250, 0.1);
+    box-shadow: 
+        0 0 20px rgba(167, 139, 250, 0.5),
+        0 0 40px rgba(167, 139, 250, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    mix-blend-mode: difference;
+}
+
+/* Cursor Dot (Inner) */
+.custom-cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Cursor Trail Particles */
+.cursor-trail {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: rgba(167, 139, 250, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    animation: cursor-trail-fade 0.6s ease-out forwards;
+    box-shadow: 0 0 8px rgba(167, 139, 250, 0.8);
+}
+
+@keyframes cursor-trail-fade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+}
+
+/* Hover States - Interactive Elements (Applied via JS) */
+.custom-cursor.hover {
+    width: 60px !important;
+    height: 60px !important;
+    border-color: rgba(167, 139, 250, 1) !important;
+    background: rgba(167, 139, 250, 0.2) !important;
+    box-shadow: 
+        0 0 30px rgba(167, 139, 250, 0.8),
+        0 0 60px rgba(167, 139, 250, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Magnetic Effect - Pull towards interactive elements */
+.custom-cursor.magnetic {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Click Effect */
+.custom-cursor.click {
+    width: 30px !important;
+    height: 30px !important;
+    border-color: rgba(236, 72, 153, 1) !important;
+    background: rgba(236, 72, 153, 0.3) !important;
+    box-shadow: 
+        0 0 40px rgba(236, 72, 153, 0.8),
+        0 0 80px rgba(236, 72, 153, 0.5) !important;
+}
+
+/* Text Hover Effect (Applied via JS) */
+.custom-cursor.text-hover {
+    width: 80px !important;
+    height: 80px !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Prize Card Hover (Applied via JS) */
+.custom-cursor.prize-hover {
+    width: 100px !important;
+    height: 100px !important;
+    border-color: rgba(167, 139, 250, 1) !important;
+    background: rgba(167, 139, 250, 0.15) !important;
+}
+
+/* Disable on Mobile/Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    .custom-cursor,
+    .custom-cursor-dot,
+    .cursor-trail {
+        display: none !important;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* Performance Optimization */
+.custom-cursor,
+.custom-cursor-dot {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+

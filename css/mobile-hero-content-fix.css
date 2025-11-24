@@ -1,0 +1,340 @@
+/* ============================================
+   MOBILE HERO CONTENT FIX - AGGRESSIVE
+   Tüm hero içeriğinin mobilde kesinlikle görünür olması için
+   ============================================ */
+
+@media (max-width: 767px) {
+    
+    /* WOW.js animasyonlarını devre dışı bırak - mobilde hemen göster */
+    #section-hero .wow,
+    #section-hero .wow.fadeInUp,
+    #section-hero .wow[data-wow-duration],
+    #section-hero .wow[data-wow-delay],
+    #section-hero .col-lg-7 .wow,
+    #section-hero .col-lg-7 .wow.fadeInUp {
+        animation: none !important;
+        -webkit-animation: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+    
+    /* WOW.js'in gizlediği elementleri zorla göster */
+    #section-hero .wow.animated,
+    #section-hero .wow.animated.fadeInUp {
+        animation: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+    
+    /* col-lg-7 ve tüm içeriği kesinlikle görünür */
+    #section-hero .col-lg-7 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 15 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Meta Info Badges - Tarih ve Konum - Kesinlikle görünür */
+    #section-hero .d-flex.flex-wrap.gap-4,
+    #section-hero .col-lg-7 .d-flex.flex-wrap.gap-4,
+    #section-hero .wow .d-flex.flex-wrap.gap-4,
+    #section-hero .col-lg-7 .wow .d-flex.flex-wrap.gap-4 {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        margin-bottom: 6px !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 20 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    #section-hero .d-flex.align-items-center,
+    #section-hero .col-lg-7 .d-flex.align-items-center,
+    #section-hero .wow .d-flex.align-items-center,
+    #section-hero .col-lg-7 .wow .d-flex.align-items-center,
+    #section-hero .d-flex.flex-wrap.gap-4 .d-flex.align-items-center {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        padding: 6px 10px !important;
+        font-size: 9px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        margin-bottom: 4px !important;
+        position: relative !important;
+        z-index: 21 !important;
+        background: rgba(255,255,255,0.15) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 50px !important;
+        border: 1px solid rgba(255,255,255,0.3) !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    #section-hero .d-flex.align-items-center i {
+        font-size: 10px !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .d-flex.align-items-center span {
+        font-size: 9px !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Logo Image - Kesinlikle görünür */
+    #section-hero .col-lg-7 .mb-3 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 16 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 8px !important;
+    }
+    
+    /* Inline style'ları override et */
+    #section-hero .col-lg-7 .mb-3[style*="max-width"] {
+        max-width: 100% !important;
+    }
+    
+    #section-hero .col-lg-7 .mb-3 img,
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero img[src*="aifutureminds"],
+    #section-hero img[alt="Future Minds Hackathon"],
+    #section-hero .col-lg-7 img[alt="Future Minds Hackathon"],
+    #section-hero .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[src*="aifutureminds25"],
+    #section-hero .col-lg-7 .mb-3 img[alt="Future Minds Hackathon"],
+    #section-hero .col-lg-7 .mb-3 img[style*="max-width"],
+    #section-hero img[src*="aifutureminds25"][style*="max-width"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 17 !important;
+        max-width: 55% !important;
+        width: 55% !important;
+        height: auto !important;
+        margin: 0 auto 8px auto !important;
+        overflow: visible !important;
+    }
+    
+    /* Subtitle - Construction AI Challenge - Kesinlikle görünür */
+    #section-hero h3,
+    #section-hero h3.text-white,
+    #section-hero .col-lg-7 h3,
+    #section-hero .col-lg-7 h3.text-white,
+    #section-hero .col-lg-7 h3.mb-5,
+    #section-hero .col-lg-7 h3.mb-5.text-white,
+    #section-hero .wow h3,
+    #section-hero .wow h3.text-white,
+    #section-hero .col-lg-7 .wow h3,
+    #section-hero .col-lg-7 .wow h3.text-white {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 20 !important;
+        font-size: clamp(12px, 2.5vw, 16px) !important;
+        margin-bottom: 8px !important;
+        margin-top: 8px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        font-weight: normal !important;
+        height: auto !important;
+        min-height: auto !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+    
+    /* Butonlar - Kesinlikle görünür */
+    #section-hero .d-flex.flex-wrap.gap-3 {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 5px !important;
+        margin-bottom: 6px !important;
+        position: relative !important;
+        z-index: 15 !important;
+    }
+    
+    #section-hero .btn-main,
+    #section-hero .btn-line,
+    #section-hero .col-lg-7 .btn-main,
+    #section-hero .col-lg-7 .btn-line {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 15 !important;
+        padding: 8px 16px !important;
+        font-size: 11px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    /* Override for hero-cta-buttons container - buttons should be centered */
+    .hero-cta-buttons .btn-main,
+    .hero-cta-buttons .btn-line {
+        width: auto !important; /* Override width: 100% */
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+    }
+    
+    /* Deadline Badge - Kesinlikle görünür */
+    #section-hero .d-inline-block {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 15 !important;
+        padding: 5px 12px !important;
+        font-size: 9px !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-top: 6px !important;
+        background: rgba(236,72,153,0.25) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 50px !important;
+        border: 2px solid rgba(236,72,153,0.5) !important;
+    }
+    
+    #section-hero .d-inline-block i {
+        font-size: 10px !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    #section-hero .d-inline-block span {
+        font-size: 9px !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Tüm col-lg-7 içindeki div'ler görünür - hero-meta-badges ve hero-benefits hariç (flex olmalı) */
+    #section-hero .col-lg-7 > div:not(.hero-meta-badges):not(.hero-benefits),
+    #section-hero .col-lg-7 > *:not(.hero-meta-badges):not(.hero-benefits),
+    #section-hero .col-lg-7 .wow > *:not(.hero-meta-badges):not(.hero-benefits),
+    #section-hero .col-lg-7 .wow > div:not(.hero-meta-badges):not(.hero-benefits) {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 15 !important;
+        overflow: visible !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    /* hero-meta-badges MUST stay flex */
+    #section-hero .col-lg-7 > .hero-meta-badges,
+    #section-hero .col-lg-7 .hero-meta-badges {
+        display: flex !important;
+        flex-direction: row !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* hero-benefits MUST stay flex and horizontal on mobile */
+    #section-hero .col-lg-7 > .hero-benefits,
+    #section-hero .col-lg-7 .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits,
+    #section-hero .wow .hero-benefits,
+    #section-hero .col-lg-7 .wow .hero-benefits,
+    .hero-benefits {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* hero-benefits items MUST stay inline */
+    #section-hero .hero-benefits .benefit-item-organic,
+    .hero-benefits .benefit-item-organic {
+        display: flex !important;
+        flex-direction: row !important;
+        flex: 0 0 auto !important;
+        min-width: fit-content !important;
+        white-space: nowrap !important;
+        align-items: center !important;
+    }
+    
+    /* Özellikle mb-4 class'ı olan div'ler (meta info badges için) */
+    #section-hero .col-lg-7 .mb-4,
+    #section-hero .col-lg-7 .wow .mb-4,
+    #section-hero .col-lg-7 .wow .d-flex.flex-wrap.gap-4.mb-4 {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-bottom: 6px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small Mobile - Daha da küçük */
+    #section-hero .col-lg-7 .mb-3 img,
+    #section-hero img[src*="aifutureminds25"] {
+        max-width: 50% !important;
+        width: 50% !important;
+        margin: 0 auto 6px auto !important;
+    }
+    
+    #section-hero h3 {
+        font-size: clamp(11px, 2.2vw, 14px) !important;
+    }
+    
+    #section-hero .d-flex.align-items-center {
+        padding: 5px 8px !important;
+        font-size: 8px !important;
+    }
+    
+    #section-hero .d-flex.align-items-center i {
+        font-size: 9px !important;
+    }
+    
+    #section-hero .d-flex.align-items-center span {
+        font-size: 8px !important;
+    }
+}
+

@@ -1,0 +1,189 @@
+/* ============================================
+   MOBILE BENEFITS HORIZONTAL FIX - CRITICAL
+   Benefits listesinin mobilde kesinlikle yan yana olması için
+   En yüksek specificity ile override
+   Inline styles ile birlikte çalışır
+   ============================================ */
+
+/* ALL DEVICES - Base horizontal layout */
+#section-hero .hero-benefits[style],
+#section-hero .col-lg-5 .hero-benefits[style],
+#section-hero .col-lg-7 .hero-benefits[style],
+#section-hero .hero-right-content .hero-benefits[style],
+.hero-benefits[style] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+@media (max-width: 767px) {
+    
+    /* MAXIMUM SPECIFICITY - VERTICAL LAYOUT (alt alta) on mobile */
+    #section-hero .hero-benefits[style],
+    #section-hero .col-lg-5 .hero-benefits[style],
+    #section-hero .col-lg-7 .hero-benefits[style],
+    #section-hero .hero-right-content .hero-benefits[style],
+    #section-hero .wow .hero-benefits[style],
+    #section-hero .col-lg-7 .wow .hero-benefits[style],
+    #section-hero .col-lg-5 .wow .hero-benefits[style],
+    #section-hero .hero-right-content .wow .hero-benefits[style],
+    .hero-benefits[style],
+    .hero-right-content .hero-benefits[style],
+    .wow .hero-benefits[style],
+    #section-hero .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .col-lg-7 .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits,
+    #section-hero .wow .hero-benefits,
+    #section-hero .col-lg-7 .wow .hero-benefits,
+    #section-hero .col-lg-5 .wow .hero-benefits,
+    #section-hero .hero-right-content .wow .hero-benefits,
+    .hero-benefits,
+    .hero-right-content .hero-benefits,
+    .wow .hero-benefits {
+        display: flex !important;
+        flex-direction: column !important; /* Vertical - alt alta */
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 15px !important;
+        overflow: visible !important; /* No scroll */
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+        -webkit-overflow-scrolling: auto !important;
+        scrollbar-width: none !important;
+        padding-bottom: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Scrollbar styling */
+    #section-hero .hero-benefits::-webkit-scrollbar,
+    .hero-benefits::-webkit-scrollbar {
+        height: 3px !important;
+    }
+    
+    #section-hero .hero-benefits::-webkit-scrollbar-track,
+    .hero-benefits::-webkit-scrollbar-track {
+        background: transparent !important;
+    }
+    
+    #section-hero .hero-benefits::-webkit-scrollbar-thumb,
+    .hero-benefits::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-radius: 3px !important;
+    }
+    
+    /* MAXIMUM SPECIFICITY - Center aligned items */
+    #section-hero .hero-benefits .benefit-item-organic[style],
+    #section-hero .col-lg-5 .hero-benefits .benefit-item-organic[style],
+    #section-hero .col-lg-7 .hero-benefits .benefit-item-organic[style],
+    #section-hero .hero-right-content .hero-benefits .benefit-item-organic[style],
+    #section-hero .wow .hero-benefits .benefit-item-organic[style],
+    .hero-benefits .benefit-item-organic[style],
+    #section-hero .hero-benefits .benefit-item-organic,
+    #section-hero .col-lg-5 .hero-benefits .benefit-item-organic,
+    #section-hero .col-lg-7 .hero-benefits .benefit-item-organic,
+    #section-hero .hero-right-content .hero-benefits .benefit-item-organic,
+    #section-hero .wow .hero-benefits .benefit-item-organic,
+    #section-hero .col-lg-7 .wow .hero-benefits .benefit-item-organic,
+    #section-hero .col-lg-5 .wow .hero-benefits .benefit-item-organic,
+    .hero-benefits .benefit-item-organic,
+    .hero-right-content .hero-benefits .benefit-item-organic,
+    .wow .hero-benefits .benefit-item-organic {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 auto !important;
+        min-width: auto !important;
+        max-width: none !important;
+        width: auto !important;
+        white-space: nowrap !important;
+        gap: 8px !important;
+        padding: 4px 8px !important;
+        margin: 0 auto !important; /* Center each item */
+        background: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 13px !important;
+    }
+    
+    /* Icon styling */
+    #section-hero .hero-benefits .benefit-item-organic i,
+    #section-hero .hero-benefits .benefit-item-organic .icofont-check-circled,
+    .hero-benefits .benefit-item-organic i,
+    .hero-benefits .benefit-item-organic .icofont-check-circled {
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+        display: inline-flex !important;
+    }
+    
+    /* Text styling */
+    #section-hero .hero-benefits .benefit-item-organic span,
+    .hero-benefits .benefit-item-organic span {
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    #section-hero .hero-benefits,
+    .hero-benefits {
+        gap: 8px !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic,
+    .hero-benefits .benefit-item-organic {
+        padding: 3px 6px !important;
+        gap: 5px !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic i,
+    #section-hero .hero-benefits .benefit-item-organic .icofont-check-circled,
+    .hero-benefits .benefit-item-organic i,
+    .hero-benefits .benefit-item-organic .icofont-check-circled {
+        font-size: 11px !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic span,
+    .hero-benefits .benefit-item-organic span {
+        font-size: 10px !important;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    #section-hero .hero-benefits,
+    .hero-benefits {
+        gap: 6px !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic,
+    .hero-benefits .benefit-item-organic {
+        padding: 2px 5px !important;
+        gap: 4px !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic i,
+    #section-hero .hero-benefits .benefit-item-organic .icofont-check-circled,
+    .hero-benefits .benefit-item-organic i,
+    .hero-benefits .benefit-item-organic .icofont-check-circled {
+        font-size: 10px !important;
+    }
+    
+    #section-hero .hero-benefits .benefit-item-organic span,
+    .hero-benefits .benefit-item-organic span {
+        font-size: 9px !important;
+    }
+}
+

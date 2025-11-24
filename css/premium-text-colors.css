@@ -1,0 +1,90 @@
+/* ============================================
+   PREMIUM TEXT COLORS - AWARD-WINNING
+   Tüm başlıklar beyaz, muhteşem görünüm
+   ============================================ */
+
+/* Home Section - Ana Başlık - Award-Winning White */
+#section-hero h1 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 
+        0 2px 20px rgba(0,0,0,0.4),
+        0 4px 40px rgba(0,0,0,0.2) !important;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)) !important;
+}
+
+/* Home Section - Alt Başlık - Award-Winning White */
+#section-hero h3 {
+    color: rgba(255,255,255,0.95) !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: rgba(255,255,255,0.95) !important;
+    text-shadow: 
+        0 1px 10px rgba(0,0,0,0.3),
+        0 2px 20px rgba(0,0,0,0.2) !important;
+    filter: drop-shadow(0 1px 5px rgba(0,0,0,0.2)) !important;
+}
+
+/* Prize Amount - Award-Winning White */
+#section-hero .border-white-op-3 h2,
+.modern-prize-amount,
+#section-hero h2.prize-amount {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 
+        0 2px 20px rgba(0,0,0,0.4),
+        0 4px 40px rgba(0,0,0,0.2) !important;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)) !important;
+}
+
+/* Prize Card İçindeki Tüm Metinler - White */
+#section-hero .border-white-op-3 .subtitle {
+    color: rgba(255,255,255,0.9) !important;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2) !important;
+}
+
+#section-hero .border-white-op-3 p,
+.modern-prize-benefits {
+    color: rgba(255,255,255,0.95) !important;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2) !important;
+}
+
+/* Section Titles - Award-Winning White for Dark Sections */
+section.text-light h2:first-of-type {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 
+        0 2px 20px rgba(0,0,0,0.4),
+        0 4px 40px rgba(0,0,0,0.2) !important;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)) !important;
+}
+
+section.text-light h3 {
+    color: rgba(255,255,255,0.95) !important;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.3) !important;
+}
+
+section.text-light .subtitle {
+    color: rgba(255,255,255,0.9) !important;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2) !important;
+}
+
+/* Prize Pool Section - Award-Winning White */
+#section-prizes h2.prize-main-title,
+#section-prizes .prize-amount {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 
+        0 2px 20px rgba(0,0,0,0.4),
+        0 4px 40px rgba(0,0,0,0.2) !important;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)) !important;
+}
+
+/* Meta Info Text - White */
+#section-hero .d-flex.align-items-center span,
+#section-hero .d-inline-block span {
+    color: #ffffff !important;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2) !important;
+}
+

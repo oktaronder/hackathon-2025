@@ -1,0 +1,78 @@
+/* ============================================
+   NAVBAR SVG LOGO - VETKORELHACKATHON
+   SVG logoyu navbar'da görünür yap
+   ============================================ */
+
+/* SVG Logo - Ana görünüm */
+header.transparent #logo svg.logo-main {
+    max-height: 120px !important;
+    height: auto !important;
+    width: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* SVG Logo - Scroll durumunda */
+header.transparent.smaller #logo svg.logo-main {
+    display: none !important;
+}
+
+header.transparent.smaller #logo svg.logo-scroll {
+    display: block !important;
+    max-height: 120px !important;
+    height: auto !important;
+    width: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* SVG Logo - Mobile */
+header.transparent #logo svg.logo-mobile {
+    display: none !important;
+}
+
+@media (max-width: 991px) {
+    header.transparent #logo svg.logo-main {
+        display: none !important;
+    }
+    
+    header.transparent #logo svg.logo-mobile {
+        display: block !important;
+        max-height: 90px !important;
+        height: auto !important;
+        width: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    header.transparent.smaller #logo svg.logo-mobile {
+        display: none !important;
+    }
+    
+    header.transparent.smaller #logo svg.logo-scroll {
+        display: block !important;
+        max-height: 100px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    header.transparent #logo svg.logo-mobile {
+        max-height: 80px !important;
+    }
+    
+    header.transparent.smaller #logo svg.logo-scroll {
+        max-height: 90px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header.transparent #logo svg.logo-mobile {
+        max-height: 70px !important;
+    }
+    
+    header.transparent.smaller #logo svg.logo-scroll {
+        max-height: 80px !important;
+    }
+}
+

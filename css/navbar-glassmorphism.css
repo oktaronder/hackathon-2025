@@ -1,0 +1,310 @@
+/* ============================================
+   NAVBAR GLASSMORPHISM EFFECT
+   Transparent blur navbar for hero section
+   ============================================ */
+
+/* Transparent Header with Glassmorphism */
+header.transparent {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(8px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(120%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Header Inner Container */
+header.transparent .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Logo - Transparent durumda emusoftdotai.png göster */
+header.transparent #logo .logo-main {
+    display: block !important;
+    filter: brightness(1.1);
+    transition: all 0.3s ease;
+}
+
+header.transparent #logo .logo-scroll {
+    display: none !important;
+}
+
+header.transparent #logo .logo-mobile {
+    display: none !important;
+}
+
+header.transparent #logo:hover .logo-main {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+/* Menu Links - White with hover effect */
+header.transparent #mainmenu li a.menu-item {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    padding: 10px 18px !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+header.transparent #mainmenu li a.menu-item::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #a78bfa, #ec4899);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+header.transparent #mainmenu li a.menu-item:hover,
+header.transparent #mainmenu li a.menu-item.active {
+    color: #ffffff !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+header.transparent #mainmenu li a.menu-item:hover::before,
+header.transparent #mainmenu li a.menu-item.active::before {
+    width: 60%;
+}
+
+/* Apply Now Button - Glassmorphism Style */
+header.transparent .btn-main {
+    background: rgba(139, 92, 246, 0.25) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    border: 2px solid rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    padding: 12px 28px !important;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+header.transparent .btn-main:hover {
+    background: rgba(139, 92, 246, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+}
+
+header.transparent .btn-main span {
+    color: #ffffff !important;
+}
+
+/* Mobile Menu Button */
+header.transparent #menu-btn {
+    color: #ffffff !important;
+}
+
+header.transparent #menu-btn:hover {
+    color: #a78bfa !important;
+}
+
+/* Scroll State - When scrolled, make it more solid */
+header.transparent.smaller {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+header.transparent.smaller #mainmenu li a.menu-item {
+    color: #1e293b !important;
+}
+
+header.transparent.smaller #mainmenu li a.menu-item:hover,
+header.transparent.smaller #mainmenu li a.menu-item.active {
+    color: #8b5cf6 !important;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+header.transparent.smaller .btn-main {
+    background: #8b5cf6 !important;
+    border-color: #8b5cf6 !important;
+    color: #ffffff !important;
+}
+
+header.transparent.smaller .btn-main:hover {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+}
+
+/* Scroll sonrası (beyaz navbar) - logo mor renkte */
+header.transparent.smaller #logo .logo-main {
+    display: none !important;
+}
+
+header.transparent.smaller #logo .logo-scroll {
+    display: block !important;
+    /* PNG logoyu mor rengine çevir */
+    filter: 
+        brightness(0) 
+        saturate(100%) 
+        invert(28%) 
+        sepia(95%) 
+        saturate(1352%) 
+        hue-rotate(245deg) 
+        brightness(0.9) 
+        contrast(1.15) !important;
+    transition: filter 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* SVG Logo için özel stil - scroll durumunda */
+header.transparent.smaller #logo img[src$=".svg"] {
+    /* SVG'yi mor rengine çevir */
+    filter: 
+        brightness(0) 
+        saturate(100%) 
+        invert(28%) 
+        sepia(95%) 
+        saturate(1352%) 
+        hue-rotate(245deg) 
+        brightness(0.9) 
+        contrast(1.15) !important;
+    transition: filter 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header.transparent.smaller #logo:hover img[src$=".svg"] {
+    /* Hover durumunda daha koyu mor */
+    transform: scale(1.05);
+    filter: 
+        brightness(0) 
+        saturate(100%) 
+        invert(22%) 
+        sepia(98%) 
+        saturate(1352%) 
+        hue-rotate(245deg) 
+        brightness(0.85) 
+        contrast(1.2) !important;
+}
+
+header.transparent.smaller #logo img:not([src$=".svg"]) {
+    /* PNG/JPG logolar için mor renk */
+    filter: 
+        brightness(0) 
+        saturate(100%) 
+        invert(28%) 
+        sepia(95%) 
+        saturate(1352%) 
+        hue-rotate(245deg) 
+        brightness(0.9) 
+        contrast(1.15) !important;
+    transition: filter 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header.transparent.smaller #logo:hover .logo-scroll {
+    /* Hover durumunda daha koyu mor */
+    transform: scale(1.05);
+    filter: 
+        brightness(0) 
+        saturate(100%) 
+        invert(22%) 
+        sepia(98%) 
+        saturate(1352%) 
+        hue-rotate(245deg) 
+        brightness(0.85) 
+        contrast(1.2) !important;
+}
+
+header.transparent.smaller #logo .logo-mobile {
+    /* Mobile logo için mor renk */
+    filter: 
+        brightness(0) 
+        saturate(100%) 
+        invert(28%) 
+        sepia(95%) 
+        saturate(1352%) 
+        hue-rotate(245deg) 
+        brightness(0.9) 
+        contrast(1.15) !important;
+    transition: filter 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header.transparent.smaller #menu-btn {
+    color: #1e293b !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    header.transparent {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+    }
+    
+    header.transparent #mainmenu li a.menu-item {
+        color: #1e293b !important;
+    }
+    
+    /* Mobilde de logo değişimi */
+    header.transparent #logo .logo-main {
+        display: none !important;
+    }
+    
+    header.transparent #logo .logo-mobile {
+        display: block !important;
+    }
+    
+    header.transparent.smaller #logo .logo-mobile {
+        display: none !important;
+    }
+    
+    header.transparent.smaller #logo .logo-scroll {
+        display: block !important;
+        /* Mobile'da da mor renk */
+        filter: 
+            brightness(0) 
+            saturate(100%) 
+            invert(28%) 
+            sepia(95%) 
+            saturate(1352%) 
+            hue-rotate(245deg) 
+            brightness(0.9) 
+            contrast(1.15) !important;
+    }
+}
+
+/* Smooth Transitions */
+header.transparent * {
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+/* ============================================
+   MOBILE MENU OPEN - BLUR KALDIR
+   Menü açıkken blur efektini tamamen kaldır
+   ============================================ */
+
+@media (max-width: 767px) {
+    /* Menü açıkken header'dan blur'u kaldır */
+    header.transparent.menu-open,
+    header.transparent.smaller.menu-open {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%) !important;
+    }
+    
+    /* Menü açıkken tüm child elementlerden blur'u kaldır */
+    header.menu-open * {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
+    /* Menü öğeleri net görünsün */
+    header.menu-open #mainmenu li a.menu-item {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+    }
+}
+

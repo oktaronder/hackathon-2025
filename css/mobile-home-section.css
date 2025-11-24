@@ -1,0 +1,593 @@
+/* ============================================
+   MOBILE HOME SECTION - SIFIRDAN YENİDEN
+   Mobil için özel olarak tasarlanmış hero section
+   ============================================ */
+
+@media (max-width: 767px) {
+    
+    /* Hero Section - Temiz başlangıç */
+    #section-hero {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        overflow: visible !important;
+        padding-top: 5px !important;
+        padding-bottom: 30px !important;
+    }
+    
+    /* Arka plan video - görünür ama içeriği engellemez */
+    #section-hero.jarallax .jarallax-container,
+    #section-hero.jarallax .jarallax-img,
+    #section-hero.jarallax video,
+    #section-hero video {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Overlay'ler */
+    #section-hero .gradient-edge-top,
+    #section-hero .gradient-edge-bottom,
+    #section-hero .sw-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
+    }
+    
+    /* Container - Navbar altında başlar */
+    #section-hero .abs.abs-centered {
+        position: relative !important;
+        z-index: 10 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+    }
+    
+    #section-hero .abs.abs-centered .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    /* Row ve Column yapısı - Temiz */
+    #section-hero .row {
+        margin: 0 !important;
+        display: block !important;
+        flex-direction: column !important;
+    }
+    
+    #section-hero .row.g-5 {
+        gap: 0 !important;
+    }
+    
+    #section-hero .col-lg-7,
+    #section-hero .col-lg-5 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex: none !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    /* WOW animasyonlarını tamamen kapat */
+    #section-hero .wow,
+    #section-hero .wow.fadeInUp,
+    #section-hero .wow[data-wow-duration],
+    #section-hero .wow[data-wow-delay] {
+        animation: none !important;
+        -webkit-animation: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+    
+    /* ============================================
+       1. LOGO - En üstte, küçük ve düzgün
+       ============================================ */
+    
+    #section-hero .col-lg-7 .mb-3,
+    #section-hero .col-lg-7 .wow .mb-3 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 12px auto !important;
+        padding: 0 !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 11 !important;
+    }
+    
+    #section-hero .col-lg-7 .mb-3 img,
+    #section-hero img[src*="aifutureminds25"],
+    #section-hero img[alt="Future Minds Hackathon"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-width: 60% !important;
+        width: 60% !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 12 !important;
+    }
+    
+    /* ============================================
+       2. TARİH VE KONUM - Logo altında
+       ============================================ */
+    
+    #section-hero .d-flex.flex-wrap.gap-4,
+    #section-hero .col-lg-7 .d-flex.flex-wrap.gap-4,
+    #section-hero .wow .d-flex.flex-wrap.gap-4 {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        margin: 0 auto 12px auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        z-index: 11 !important;
+        padding: 0 !important;
+    }
+    
+    #section-hero .d-flex.align-items-center,
+    #section-hero .col-lg-7 .d-flex.align-items-center {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 8px 16px !important;
+        font-size: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 12 !important;
+        background: rgba(255,255,255,0.15) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 50px !important;
+        border: 1px solid rgba(255,255,255,0.3) !important;
+        text-align: center !important;
+    }
+    
+    #section-hero .d-flex.align-items-center i {
+        font-size: 12px !important;
+        color: #a78bfa !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+    }
+    
+    #section-hero .d-flex.align-items-center span {
+        font-size: 10px !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+        display: inline-block !important;
+    }
+    
+    /* ============================================
+       3. SUBTITLE - Construction AI Challenge
+       ============================================ */
+    
+    #section-hero h3,
+    #section-hero h3.text-white,
+    #section-hero .col-lg-7 h3,
+    #section-hero .col-lg-7 h3.text-white,
+    #section-hero .col-lg-7 h3.mb-5 {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        color: #ffffff !important;
+        text-align: center !important;
+        margin: 0 auto 12px auto !important;
+        padding: 0 !important;
+        position: relative !important;
+        z-index: 11 !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* ============================================
+       4. BENEFITS - Küçükçe, ödül havuzu üstünde
+       ============================================ */
+    
+    .prize-benefits-organic {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        width: 100% !important;
+        margin: 0 auto 8px auto !important;
+        padding: 0 !important;
+        position: relative !important;
+        z-index: 11 !important;
+        order: 1 !important;
+    }
+    
+    .benefit-item-organic {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        padding: 6px 12px !important;
+        width: 100% !important;
+        background: rgba(255,255,255,0.1) !important;
+        backdrop-filter: blur(8px) !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+    }
+    
+    .benefit-item-organic .icofont-check-circled {
+        font-size: 12px !important;
+        color: #ec4899 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .benefit-item-organic span {
+        font-size: 10px !important;
+        color: #ffffff !important;
+        font-weight: 500 !important;
+    }
+    
+    /* ============================================
+       5. PRIZE POOL - SAYFANIN TAM ORTASINDA
+       ============================================ */
+    
+    /* Container ve Row'u ortala */
+    #section-hero .container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    #section-hero .row.g-5 {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* col-lg-5 - Tam ortala */
+    #section-hero .col-lg-5 {
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* hero-right-content - Tam ortala */
+    #section-hero .col-lg-5 .hero-right-content,
+    .hero-right-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+    
+    /* hero-prize-organic - Tam ortala */
+    #section-hero .hero-prize-organic,
+    #section-hero .col-lg-5 .hero-prize-organic,
+    #section-hero .hero-right-content .hero-prize-organic,
+    .hero-prize-organic {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 12px auto !important;
+        padding: 0 !important;
+        position: relative !important;
+        z-index: 11 !important;
+        order: 2 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    /* prize-organic-wrapper - Tam ortala */
+    #section-hero .prize-organic-wrapper,
+    #section-hero .hero-prize-organic .prize-organic-wrapper,
+    #section-hero .col-lg-5 .prize-organic-wrapper,
+    .prize-organic-wrapper {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px 14px !important;
+        background: rgba(255,255,255,0.12) !important;
+        backdrop-filter: blur(12px) !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(255,255,255,0.25) !important;
+        text-align: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .prize-label-organic {
+        font-size: 8px !important;
+        color: rgba(255,255,255,0.8) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 8px !important;
+        display: block !important;
+    }
+    
+    .prize-amount-organic {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        gap: 4px !important;
+    }
+    
+    .prize-currency {
+        font-size: 24px !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+    }
+    
+    .prize-number {
+        font-size: 32px !important;
+        color: #ffffff !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+    }
+    
+    /* ============================================
+       6. COUNTDOWN - En altta
+       ============================================ */
+    
+    .hero-countdown-new {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        position: relative !important;
+        z-index: 11 !important;
+    }
+    
+    #section-hero #defaultCountdown.countdown-new {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        gap: 6px !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .countdown-new .countdown-row {
+        display: flex !important;
+        gap: 6px !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    .countdown-new .countdown-section {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 8px 6px !important;
+        min-width: 50px !important;
+        max-width: 60px !important;
+        flex: 1 1 auto !important;
+        background: rgba(255,255,255,0.1) !important;
+        backdrop-filter: blur(8px) !important;
+        border-radius: 10px !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+    }
+    
+    .countdown-new .countdown-amount {
+        font-size: 18px !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        display: block !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .countdown-new .countdown-period {
+        font-size: 7px !important;
+        color: rgba(255,255,255,0.8) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        display: block !important;
+    }
+    
+    /* Butonlar ve deadline badge - gizle veya küçült */
+    #section-hero .d-flex.flex-wrap.gap-3,
+    #section-hero .btn-main,
+    #section-hero .btn-line {
+        display: none !important;
+    }
+    
+    #section-hero .d-inline-block {
+        display: none !important;
+    }
+    
+    /* col-lg-7 - Üstte */
+    #section-hero .col-lg-7 {
+        order: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* hero-benefits MUST be horizontal (row) even inside column parent */
+    .hero-right-content .hero-benefits,
+    #section-hero .hero-right-content .hero-benefits,
+    #section-hero .col-lg-5 .hero-benefits,
+    #section-hero .col-lg-7 .hero-benefits,
+    #section-hero .wow .hero-benefits,
+    .hero-benefits {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .hero-right-content .hero-benefits .benefit-item-organic,
+    #section-hero .hero-right-content .hero-benefits .benefit-item-organic,
+    #section-hero .col-lg-5 .hero-benefits .benefit-item-organic,
+    .hero-benefits .benefit-item-organic {
+        display: flex !important;
+        flex-direction: row !important;
+        flex: 0 0 auto !important;
+        min-width: fit-content !important;
+        white-space: nowrap !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 4px 8px !important;
+    }
+    
+    /* Benefits'i prize pool'un üstüne taşı */
+    .prize-benefits-organic {
+        order: 1 !important;
+    }
+    
+    /* Prize pool için ekstra güçlü ortalamalar */
+    #section-hero .hero-prize-organic .prize-organic-wrapper,
+    #section-hero .col-lg-5 .hero-right-content .hero-prize-organic .prize-organic-wrapper,
+    .hero-prize-organic .prize-organic-wrapper {
+        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Prize label ve amount'u da ortala */
+    #section-hero .prize-label-organic,
+    .prize-label-organic {
+        text-align: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    #section-hero .prize-amount-organic,
+    .prize-amount-organic {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Row mt-4 (countdown için) */
+    #section-hero .row.mt-4 {
+        margin-top: 12px !important;
+        display: block !important;
+        order: 3 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Küçük mobil için daha da küçült */
+    #section-hero .col-lg-7 .mb-3 img {
+        max-width: 55% !important;
+        width: 55% !important;
+    }
+    
+    #section-hero h3 {
+        font-size: 13px !important;
+    }
+    
+    #section-hero .d-flex.align-items-center {
+        padding: 6px 12px !important;
+        font-size: 9px !important;
+    }
+    
+    .prize-currency {
+        font-size: 20px !important;
+    }
+    
+    .prize-number {
+        font-size: 28px !important;
+    }
+    
+    .countdown-new .countdown-section {
+        min-width: 45px !important;
+        max-width: 55px !important;
+        padding: 6px 4px !important;
+    }
+    
+    .countdown-new .countdown-amount {
+        font-size: 16px !important;
+    }
+}
+

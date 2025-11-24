@@ -1,0 +1,290 @@
+/* ============================================
+   PRIZE POOL - AWARD WINNING UI
+   Muhteşem, minimalist, etkileyici tasarım
+   ============================================ */
+
+/* Prize Pool Section - Enhanced */
+#section-prizes {
+    padding: 100px 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+#section-prizes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(167,139,250,0.25) 0%, transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(236,72,153,0.2) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+    animation: background-pulse 10s ease-in-out infinite;
+}
+
+@keyframes background-pulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+#section-prizes .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Prize Title Wrapper */
+.prize-title-wrapper {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.prize-main-title {
+    font-size: clamp(64px, 8vw, 120px) !important;
+    font-weight: 900 !important;
+    color: rgba(255,255,255,0.98) !important;
+    line-height: 1.1 !important;
+    letter-spacing: 4px !important;
+    text-transform: uppercase !important;
+    text-shadow: 
+        0 4px 20px rgba(0,0,0,0.4),
+        0 0 60px rgba(167,139,250,0.3),
+        0 0 100px rgba(167,139,250,0.2) !important;
+    margin-bottom: 40px !important;
+    position: relative;
+    animation: title-glow 4s ease-in-out infinite;
+}
+
+@keyframes title-glow {
+    0%, 100% {
+        text-shadow: 
+            0 4px 20px rgba(0,0,0,0.4),
+            0 0 60px rgba(167,139,250,0.3),
+            0 0 100px rgba(167,139,250,0.2);
+    }
+    50% {
+        text-shadow: 
+            0 4px 30px rgba(0,0,0,0.5),
+            0 0 80px rgba(167,139,250,0.5),
+            0 0 120px rgba(167,139,250,0.4);
+    }
+}
+
+.prize-gradient-line {
+    width: 200px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, #a78bfa, #ec4899, #a78bfa, transparent);
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 
+        0 2px 20px rgba(167,139,250,0.6),
+        0 0 40px rgba(236,72,153,0.4);
+    animation: line-shimmer 3s ease-in-out infinite;
+    position: relative;
+}
+
+.prize-gradient-line::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, transparent, rgba(167,139,250,0.5), transparent);
+    border-radius: 3px;
+    animation: line-glow 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes line-shimmer {
+    0%, 100% {
+        opacity: 0.8;
+        box-shadow: 
+            0 2px 20px rgba(167,139,250,0.6),
+            0 0 40px rgba(236,72,153,0.4);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 
+            0 4px 30px rgba(167,139,250,0.8),
+            0 0 60px rgba(236,72,153,0.6);
+    }
+}
+
+@keyframes line-glow {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Prize Amount Wrapper */
+.prize-amount-wrapper {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.prize-amount {
+    font-size: clamp(100px, 15vw, 220px) !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 30%, #ffffff 60%, #f3e8ff 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 8px 40px rgba(0,0,0,0.6));
+    animation: amount-gradient 6s ease infinite, amount-float 5s ease-in-out infinite;
+}
+
+@keyframes amount-gradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes amount-float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.prize-amount-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(167,139,250,0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: glow-pulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Prize Description */
+.prize-description {
+    font-size: clamp(20px, 3vw, 28px) !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.9) !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    line-height: 1.7 !important;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    #section-prizes {
+        padding: 80px 0 !important;
+    }
+    
+    .prize-title-wrapper {
+        margin-bottom: 60px;
+    }
+    
+    .prize-main-title {
+        font-size: clamp(56px, 7vw, 96px) !important;
+        margin-bottom: 32px !important;
+    }
+    
+    .prize-gradient-line {
+        width: 160px;
+        height: 5px;
+    }
+    
+    .prize-amount {
+        font-size: clamp(80px, 12vw, 160px) !important;
+    }
+    
+    .prize-amount-wrapper {
+        margin-bottom: 48px;
+    }
+    
+    .prize-description {
+        font-size: clamp(18px, 2.5vw, 24px) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #section-prizes {
+        padding: 60px 0 !important;
+    }
+    
+    .prize-title-wrapper {
+        margin-bottom: 48px;
+    }
+    
+    .prize-main-title {
+        font-size: clamp(48px, 8vw, 72px) !important;
+        letter-spacing: 3px !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .prize-gradient-line {
+        width: 120px;
+        height: 4px;
+    }
+    
+    .prize-amount {
+        font-size: clamp(64px, 15vw, 120px) !important;
+    }
+    
+    .prize-amount-wrapper {
+        margin-bottom: 40px;
+    }
+    
+    .prize-description {
+        font-size: clamp(16px, 3vw, 20px) !important;
+        padding: 0 20px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .prize-main-title,
+    .prize-amount,
+    .prize-gradient-line,
+    .prize-amount-glow,
+    #section-prizes::before {
+        animation: none !important;
+    }
+}
+

@@ -1,0 +1,48 @@
+/* ============================================
+   PRIZE CARD HERO SECTION FIXES
+   Perfect glassmorphism and spacing
+   ============================================ */
+
+/* Hero Section Prize Card */
+#section-hero .border-white-op-3 {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#section-hero .border-white-op-3:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Check Icons */
+#section-hero .icofont-check-circled {
+    font-size: 18px !important;
+    vertical-align: middle;
+}
+
+/* Responsive Prize Card */
+@media (max-width: 991px) {
+    #section-hero .border-white-op-3 {
+        padding: 32px 24px !important;
+    }
+    
+    #section-hero .border-white-op-3 h2 {
+        font-size: 48px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #section-hero .border-white-op-3 {
+        padding: 28px 20px !important;
+    }
+    
+    #section-hero .border-white-op-3 h2 {
+        font-size: 40px !important;
+    }
+    
+    #section-hero .border-white-op-3 p {
+        font-size: 14px !important;
+    }
+}
+
