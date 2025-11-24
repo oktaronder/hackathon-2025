@@ -45,6 +45,13 @@
     }
 }
 
+/* Laptop & Desktop (>= 992px) - navbar ile hero arasında güvenli boşluk */
+@media (min-width: 992px) and (max-width: 1439px) {
+    #section-hero {
+        padding-top: 120px !important; /* Navbar yüksekliği + ekstra nefes alanı */
+    }
+}
+
 /* Mobile - Small Devices (max-width: 767px)
    Not: Burada 100vh sabit yükseklik KULLANMIYORUZ.
    İçerik yüksekse kahraman alanı dikeyde uzayabiliyor, böylece
