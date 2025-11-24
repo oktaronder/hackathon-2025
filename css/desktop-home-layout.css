@@ -220,6 +220,9 @@
         max-width: 1360px;
         padding-left: 64px;
         padding-right: 64px;
+        /* Tüm içeriği biraz küçült (daha kompakt hero görünümü) */
+        transform: scale(0.9);
+        transform-origin: top center;
     }
 
     /* İki eşit sütun - sol & sağ pillar */
