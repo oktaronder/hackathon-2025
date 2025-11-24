@@ -379,6 +379,37 @@
     }
 }
 
+/* ============================================
+   MOBILE NAVBAR CONTENT (only "Apply Now" button)
+   ============================================ */
+@media (max-width: 767px) {
+    /* Tüm menü linklerini ve hamburger ikonunu gizle */
+    header.transparent #mainmenu,
+    header.transparent .header-col-mid,
+    header.transparent .menu_side_area,
+    #menu-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    /* Sadece Apply Now butonu kalsın ve mobilde kompakt olsun */
+    header.transparent .de-flex-col .btn-main.fx-slide.w-100 {
+        display: inline-flex !important;
+        width: auto !important;
+        max-width: 160px !important;
+        justify-content: center !important;
+        margin-left: 0 !important;
+        padding: 6px 14px !important;
+        font-size: 12px !important;
+        border-radius: 999px !important;
+    }
+
+    header.transparent .de-flex {
+        justify-content: space-between !important;
+    }
+}
+
 /* Extremely small devices (< 340px) */
 @media (max-width: 340px) {
     /* Hero - maximum zorunlu alt boşluk */

@@ -46,14 +46,11 @@
     will-change: transform, filter;
 }
 
-/* Interactive wheel - JS ağır animasyon devre dışı, CSS animasyonu kullan */
+/* Interactive wheel (object2.webp) için: tamamen statik, otomatik dönme yok */
 #section-about .plexus-structure-wrapper.interactive-wheel img.about-3d-rotate-clockwise,
 #section-about .plexus-structure-wrapper.interactive-wheel img {
+    animation: none !important;
     transition: none !important;
-}
-
-#section-about .plexus-structure-wrapper.interactive-wheel img {
-    /* 2D düzlem - 3D, momentum vs yok */
     transform-style: flat !important;
     transform-origin: center center !important;
     backface-visibility: hidden;

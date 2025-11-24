@@ -35,7 +35,7 @@
     <style>
       body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
       header.transparent{position:fixed;top:0;left:0;right:0;z-index:9999}
-      #section-hero{position:relative;min-height:100vh;padding-top:160px}
+      #section-hero{position:relative;min-height:100vh;padding-top:160px;overflow:hidden}
     </style>
 
     <!-- Single bundled stylesheet, loaded non-blocking -->
@@ -51,12 +51,6 @@
 <body class="light-scheme">
 
     <div id="wrapper">
-
-        <!-- SHARED BACKGROUND VIDEO (INTRO + HERO) -->
-        <video id="bg-video-shared" class="intro-video-bg" autoplay muted loop playsinline>
-            <source src="video/purple-abstract.mp4" type="video/mp4">
-        </video>
-
         <!-- FULLSCREEN INTRO / DISCOVER SCREEN -->
         <section id="intro-discovery" aria-label="Discover Future Minds">
             <div class="intro-overlay-content">
@@ -122,6 +116,9 @@
 
         <!-- HERO SECTION -->
         <section id="section-hero" class="no-top no-bottom text-light relative">
+            <video id="bg-video-shared" class="intro-video-bg" autoplay muted loop playsinline>
+                <source src="video/purple-abstract.mp4" type="video/mp4">
+            </video>
             <div class="gradient-edge-top op-6 h-50"></div>
             <div class="gradient-edge-bottom"></div>
             <div class="sw-overlay op-7"></div>
@@ -308,7 +305,7 @@
                     <div class="col-lg-5">
                         <div class="wow scaleIn" data-wow-delay=".5s">
                             <div class="plexus-structure-wrapper interactive-wheel" style="background: transparent !important; overflow: visible;">
-                                <img src="images/object2.webp" class="w-100 plexus-img-processed about-3d-rotate-clockwise" style="max-width: 100%; height: auto; object-fit: contain; border: none !important; outline: none !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; margin: 0 !important; opacity: 1 !important; visibility: visible !important;" alt="Future Minds Hackathon - Construction AI Challenge">
+                                <img src="images/object2.webp" class="w-100 plexus-img-processed about-3d-rotate-clockwise" style="max-width: 100%; height: auto; object-fit: contain; border: none !important; outline: none !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; margin: 0 !important; opacity: 1 !important; visibility: visible !important; animation: none !important;" alt="Future Minds Hackathon - Construction AI Challenge">
                             </div>
                         </div>
                     </div>
@@ -743,8 +740,10 @@
     <!-- GLOBAL MUSIC PLAYER -->
     <audio id="bg-music" src="js/music.mpeg" preload="auto"></audio>
     <button id="music-toggle" class="music-toggle" type="button" aria-label="Toggle background music">
-        <i id="music-icon-play" class="icofont-ui-play"></i>
-        <i id="music-icon-pause" class="icofont-ui-pause" style="display:none;"></i>
+        <span class="music-toggle-icon">
+            <i id="music-icon-play" class="icofont-ui-play"></i>
+            <i id="music-icon-pause" class="icofont-ui-pause" style="display:none;"></i>
+        </span>
     </button>
 
     <!-- FOOTER -->

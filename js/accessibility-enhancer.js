@@ -63,43 +63,16 @@
         });
     }
     
-    // Enhance keyboard navigation
+    // Enhance keyboard navigation (skip link disabled)
     function enhanceKeyboardNavigation() {
-        // Skip to main content link
-        const skipLink = document.createElement('a');
-        skipLink.href = '#section-hero';
-        skipLink.className = 'skip-to-main';
-        skipLink.textContent = 'Skip to main content';
-        skipLink.style.cssText = `
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #8b5cf6;
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            z-index: 10000;
-            border-radius: 0 0 4px 0;
-        `;
-        skipLink.addEventListener('focus', function() {
-            this.style.top = '0';
-        });
-        skipLink.addEventListener('blur', function() {
-            this.style.top = '-40px';
-        });
-        document.body.insertBefore(skipLink, document.body.firstChild);
-        
-        // Enhanced focus styles
+        // Skip to main content link kaldırıldı.
+        // Sadece genel focus görünürlüğünü koruyoruz.
         const style = document.createElement('style');
         style.textContent = `
             *:focus-visible {
                 outline: 3px solid #8b5cf6;
                 outline-offset: 2px;
                 border-radius: 4px;
-            }
-            
-            .skip-to-main:focus {
-                top: 0 !important;
             }
         `;
         document.head.appendChild(style);

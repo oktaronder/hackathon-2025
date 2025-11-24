@@ -4,10 +4,11 @@
 <head>
     <title>Apply Now - Future Minds Hackathon 2025</title>
     <link rel="icon" href="images/logo-emusoft.png" type="image/png" sizes="16x16">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Apply for Future Minds Hackathon - Construction AI Challenge" name="description">
-    <!-- CSS Files (bundled in production) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for Future Minds Hackathon - Construction AI Challenge">
+
+    <!-- Bundled styles -->
     <link rel="preload"
           href="css/app.bundle.min.css"
           as="style"
@@ -15,970 +16,276 @@
     <noscript>
         <link rel="stylesheet" href="css/app.bundle.min.css">
     </noscript>
+
+    <!-- Page-specific minimal styles -->
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            background: #ffffff;
-            overflow-x: hidden;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #ede9fe 0, #ffffff 55%);
+            color: #0f172a;
         }
 
-        /* Ensure all form elements are clickable and interactive */
-        form, form *, 
-        .form-container, .form-container *,
-        .member-card, .member-card * {
-            pointer-events: auto !important;
-        }
-
-        input, textarea, select, button {
-            pointer-events: auto !important;
-            cursor: text !important;
-            -webkit-user-select: text !important;
-            user-select: text !important;
-        }
-
-        select, button {
-            cursor: pointer !important;
-        }
-
-        input:disabled, textarea:disabled, select:disabled {
-            pointer-events: none !important;
-            opacity: 0.6;
-        }
-
-        /* Navbar - ALWAYS the same: fixed, white background, never changes */
-        header.transparent,
-        header.transparent.smaller {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width: 100% !important;
-            z-index: 1000 !important;
-            background: #ffffff !important;
-            backdrop-filter: blur(12px) saturate(150%) !important;
-            -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.15) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
-        }
-
-        /* Logo - ALWAYS purple, never changes */
-        /* Hide logo-main, always show logo-scroll with purple filter */
-        header.transparent #logo .logo-main,
-        header.transparent.smaller #logo .logo-main {
-            display: none !important;
-        }
-
-        header.transparent #logo .logo-scroll,
-        header.transparent.smaller #logo .logo-scroll {
-            display: block !important;
-            /* Always purple - never white */
-            filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            -webkit-filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            transition: filter 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            max-height: 50px;
-            opacity: 1 !important;
-        }
-
-        /* PNG/JPG logolar için mor filter - ALWAYS applied */
-        header.transparent #logo img:not([src$=".svg"]),
-        header.transparent.smaller #logo img:not([src$=".svg"]) {
-            filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            -webkit-filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            transition: filter 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        /* Hover durumunda daha koyu mor */
-        header.transparent #logo:hover .logo-scroll,
-        header.transparent.smaller #logo:hover .logo-scroll,
-        header.transparent #logo:hover img:not([src$=".svg"]),
-        header.transparent.smaller #logo:hover img:not([src$=".svg"]) {
-            filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(22%) 
-                sepia(98%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.85) 
-                contrast(1.2) !important;
-            -webkit-filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(22%) 
-                sepia(98%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.85) 
-                contrast(1.2) !important;
-        }
-
-        /* Mobile logo */
-        header.transparent #logo .logo-mobile,
-        header.transparent.smaller #logo .logo-mobile {
-            display: none !important;
-        }
-
-        @media (max-width: 991px) {
-            header.transparent #logo .logo-scroll,
-            header.transparent.smaller #logo .logo-scroll {
-                display: block !important;
-            }
-            header.transparent #logo .logo-mobile,
-            header.transparent.smaller #logo .logo-mobile {
-                display: none !important;
-            }
-        }
-
-        /* Home button - ALWAYS vibrant and opaque, never transparent */
-        header.transparent .btn-main,
-        header.transparent.smaller .btn-main {
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%) !important;
-            border: none !important;
-            border-color: transparent !important;
-            color: #ffffff !important;
-            padding: 14px 32px !important;
-            border-radius: 50px;
-            font-weight: 800 !important;
-            font-size: 15px !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4) !important;
-            opacity: 1 !important;
-        }
-
-        header.transparent .btn-main:hover,
-        header.transparent.smaller .btn-main:hover {
-            background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%) !important;
-            transform: translateY(-3px) !important;
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5) !important;
-        }
-
-        header.transparent .btn-main span,
-        header.transparent.smaller .btn-main span {
-            color: #ffffff !important;
-            opacity: 1 !important;
-        }
-
-        /* Override ALL styles from landing page CSS files - navbar never changes */
-        /* Override navbar-glassmorphism.css and other CSS files */
         header.transparent {
-            background: #ffffff !important;
-            backdrop-filter: blur(12px) saturate(150%) !important;
-            -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
-        }
-
-        header.transparent .btn-main {
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%) !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            border: none !important;
-            opacity: 1 !important;
-            color: #ffffff !important;
-        }
-
-        header.transparent .btn-main span {
-            color: #ffffff !important;
-            opacity: 1 !important;
-        }
-
-        /* Logo always purple, never white */
-        header.transparent #logo .logo-main {
-            display: none !important;
-        }
-
-        header.transparent #logo .logo-scroll {
-            display: block !important;
-            filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            -webkit-filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            opacity: 1 !important;
-        }
-
-        header.transparent #logo img:not([src$=".svg"]) {
-            filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            -webkit-filter: 
-                brightness(0) 
-                saturate(100%) 
-                invert(28%) 
-                sepia(95%) 
-                saturate(1352%) 
-                hue-rotate(245deg) 
-                brightness(0.9) 
-                contrast(1.15) !important;
-            opacity: 1 !important;
-        }
-
-        /* Menu item - Home link */
-        header.transparent.smaller #mainmenu li a.menu-item {
-            color: #1e293b !important;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 10px 18px !important;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        header.transparent.smaller #mainmenu li a.menu-item:hover {
-            color: #8b5cf6 !important;
-            background: rgba(139, 92, 246, 0.1);
-        }
-
-        /* Animated Background */
-        .animated-bg {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #faf5ff 100%);
+            right: 0;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.25);
         }
 
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+        header .de-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
         }
 
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.05;
-            animation: float 20s infinite ease-in-out;
+        header #logo img {
+            height: 46px;
+            width: auto;
         }
 
-        .shape:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
+        header .btn-main {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 45%, #ec4899 100%);
+            border-radius: 999px;
+            padding: 10px 22px;
+            border: none;
+            font-weight: 700;
+            font-size: 14px;
+            color: #ffffff !important;
+            box-shadow: 0 8px 20px rgba(129, 140, 248, 0.5);
         }
 
-        .shape:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
-            top: 60%;
-            right: 15%;
-            animation-delay: 3s;
+        header .btn-main span {
+            color: #ffffff !important;
         }
 
-        .shape:nth-child(3) {
-            width: 250px;
-            height: 250px;
-            background: linear-gradient(135deg, #ec4899, #8b5cf6);
-            bottom: 10%;
-            left: 20%;
-            animation-delay: 6s;
+        main.apply-page {
+            padding-top: 90px;
+            padding-bottom: 60px;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-            25% {
-                transform: translate(30px, -30px) rotate(90deg);
-            }
-            50% {
-                transform: translate(-20px, 20px) rotate(180deg);
-            }
-            75% {
-                transform: translate(40px, 10px) rotate(270deg);
-            }
-        }
-
-
-        /* Hero Section - Compact */
-        .hero-section {
-            position: relative;
-            padding: 120px 0 80px 0;
-            overflow: hidden;
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%);
-            margin-top: 0;
-        }
-
-        .hero-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        .apply-hero {
             text-align: center;
-            color: white;
+            padding: 40px 16px 10px 16px;
         }
 
-        .hero-badge {
+        .apply-hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: rgba(129, 140, 248, 0.1);
+            border: 1px solid rgba(129, 140, 248, 0.6);
+            color: #4f46e5;
             font-size: 13px;
             font-weight: 700;
-            margin-bottom: 16px;
-            animation: pulse 2s infinite;
+            margin-bottom: 14px;
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .hero-title {
-            font-size: clamp(40px, 7vw, 64px);
+        .apply-title {
+            font-size: clamp(36px, 5vw, 52px);
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.03em;
+            margin: 0 0 10px 0;
+            color: #0f172a;
         }
 
-        .hero-subtitle {
-            font-size: clamp(16px, 2.5vw, 20px);
-            font-weight: 500;
-            opacity: 0.95;
-            margin-bottom: 20px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .apply-subtitle {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.7;
         }
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 36px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+        .apply-form-section {
+            margin-top: 24px;
+            padding: 0 16px;
         }
 
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 900;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            opacity: 0.9;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Main Content - Compact (alt boşluk azaltıldı) */
-        .main-content {
-            position: relative;
-            z-index: 10;
-            padding: 50px 0 24px 0; /* Eskiden 60px idi, footer öncesi boşluk kısaltıldı */
-            pointer-events: auto;
-        }
-
-        /* Prize Pool Card - Compact */
-        .prize-pool-card {
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+        .apply-card {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #ffffff;
             border-radius: 24px;
-            padding: 40px 30px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            padding: 28px 24px 30px 24px;
         }
 
-        .prize-pool-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 30s linear infinite;
+        .apply-section-title {
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #7c3aed;
+            margin-bottom: 12px;
         }
 
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        .apply-section-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 18px;
         }
 
-        .prize-pool-content {
-            position: relative;
-            z-index: 2;
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px 20px;
         }
 
-        .prize-label {
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-label {
             font-size: 14px;
             font-weight: 700;
-            letter-spacing: 2px;
-            opacity: 0.9;
-            margin-bottom: 16px;
-            text-transform: uppercase;
+            color: #111827;
         }
 
-        .prize-amount {
-            font-size: clamp(48px, 8vw, 72px);
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 12px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        .form-label small {
+            font-weight: 500;
+            color: #6b7280;
+            margin-left: 6px;
         }
 
-        .prize-subtext {
-            font-size: 18px;
-            font-weight: 600;
-            opacity: 0.95;
+        .required-star {
+            color: #ef4444;
+            margin-left: 4px;
         }
 
-        /* Form Container - Compact */
-        .form-container {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(139, 92, 246, 0.1);
-            position: relative;
-            z-index: 10;
-            pointer-events: auto;
+        .form-control,
+        .form-select,
+        textarea {
+            padding: 11px 12px;
+            border-radius: 10px;
+            border: 1px solid #d1d5db;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
         }
 
-        .form-header {
-            text-align: center;
-            margin-bottom: 40px;
+        .form-control:focus,
+        .form-select:focus,
+        textarea:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25);
         }
 
-        .form-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
-        .form-icon i {
-            font-size: 40px;
-            color: white;
-        }
-
-        .form-title {
-            font-size: clamp(28px, 4.5vw, 40px);
-            font-weight: 900;
-            color: #1e293b;
-            margin-bottom: 12px;
-        }
-
-        .form-description {
-            font-size: 18px;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Section Divider */
-        .section-divider {
-            display: flex;
-            align-items: center;
-            margin: 40px 0 30px 0;
-            gap: 16px;
-        }
-
-        .section-divider::before,
-        .section-divider::after {
-            content: '';
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #e9d5ff, transparent);
-        }
-
-        .section-divider-text {
-            font-size: 16px;
-            font-weight: 800;
-            color: #7c3aed;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            white-space: nowrap;
-        }
-
-        /* Member Cards - Compact */
-        .member-card {
-            padding: 30px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #faf8ff 0%, #ffffff 100%);
-            border: 2px solid #e9d5ff;
-            margin-bottom: 24px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: visible;
-            z-index: 10;
-            pointer-events: auto;
-        }
-
-        .member-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .member-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
-            border-color: #c4b5fd;
-        }
-
-        .member-card:hover::before {
-            opacity: 1;
+        .member-block {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid #e5e7eb;
         }
 
         .member-header {
             display: flex;
             align-items: center;
-            margin-bottom: 24px;
-            padding-bottom: 18px;
-            border-bottom: 2px solid #e9d5ff;
-            position: relative;
-            z-index: 2;
-        }
-
-        .member-badge {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            font-weight: 900;
-            color: white;
-            margin-right: 16px;
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+            justify-content: space-between;
+            margin-bottom: 14px;
         }
 
         .member-title {
-            font-size: 20px;
-            font-weight: 900;
-            color: #7c3aed;
-            margin: 0;
-        }
-
-        .member-role {
-            font-size: 14px;
-            color: #64748b;
-            font-weight: 600;
-            margin-top: 4px;
-        }
-
-        /* Form Controls - Ensure they're clickable */
-        .form-control, .form-select, select.form-control, select.form-select,
-        input[type="text"], input[type="email"], input[type="tel"], input[type="url"],
-        textarea, select {
-            padding: 16px 20px !important;
-            font-size: 16px !important;
-            border: 2px solid #e5e7eb !important;
-            border-radius: 14px !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            background: #ffffff !important;
-            font-weight: 500 !important;
-            appearance: auto !important;
-            -webkit-appearance: menulist !important;
-            -moz-appearance: menulist !important;
-            cursor: text !important;
-            pointer-events: auto !important;
-            z-index: 10 !important;
-            position: relative !important;
-            -webkit-user-select: text !important;
-            user-select: text !important;
-        }
-
-        select.form-control, select.form-select, select {
-            cursor: pointer !important;
-        }
-
-        .form-control:focus, .form-select:focus, select.form-control:focus, select.form-select:focus {
-            border-color: #a855f7 !important;
-            box-shadow: 0 0 0 5px rgba(168,85,247,0.1) !important;
-            outline: none !important;
-            transform: translateY(-2px);
-        }
-
-        /* Select dropdown arrow */
-        select.form-control, select.form-select, select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b5cf6' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
-            background-repeat: no-repeat !important;
-            background-position: right 18px center !important;
-            background-size: 12px !important;
-            padding-right: 45px !important;
-            pointer-events: auto !important;
-            cursor: pointer !important;
-        }
-
-        /* Force all inputs to be interactive */
-        #applicationForm input,
-        #applicationForm textarea,
-        #applicationForm select {
-            pointer-events: auto !important;
-            -webkit-user-select: text !important;
-            user-select: text !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: block !important;
-        }
-
-        #applicationForm input[type="text"],
-        #applicationForm input[type="email"],
-        #applicationForm input[type="tel"],
-        #applicationForm input[type="url"],
-        #applicationForm textarea {
-            cursor: text !important;
-        }
-
-        #applicationForm select {
-            cursor: pointer !important;
-        }
-
-        .form-label {
-            font-size: 15px !important;
-            font-weight: 700 !important;
-            color: #1e293b !important;
-            margin-bottom: 10px !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 8px !important;
-        }
-
-        .required-star {
-            color: #ef4444;
             font-size: 16px;
-        }
-
-        .optional-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 4px 12px;
-            background: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
-            color: #7c3aed;
-            font-size: 11px;
             font-weight: 800;
-            border-radius: 8px;
+            color: #1f2937;
+        }
+
+        .member-badge {
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.14em;
+            color: #6b7280;
         }
 
-        textarea.form-control {
-            resize: vertical;
-            min-height: 140px;
-            line-height: 1.7 !important;
-        }
-
-        .form-helper-text {
-            color: #64748b;
-            font-size: 13px;
-            margin-top: 8px;
+        .submit-row {
+            margin-top: 28px;
             display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .form-helper-text i {
-            color: #a855f7;
-        }
-
-        /* Confirmation Box */
-        .confirmation-box {
-            padding: 24px;
-            background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);
-            border-radius: 16px;
-            border: 2px solid #e9d5ff;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .confirmation-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #8b5cf6 0%, #ec4899 100%);
-        }
-
-        .form-check-input {
-            width: 24px !important;
-            height: 24px !important;
-            border: 2px solid #c4b5fd !important;
-            border-radius: 8px !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-        }
-
-        .form-check-input:checked {
-            background-color: #8b5cf6 !important;
-            border-color: #8b5cf6 !important;
-            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1) !important;
-        }
-
-        .form-check-label {
-            cursor: pointer;
-            font-size: 16px;
-            color: #1e293b;
-            line-height: 1.7;
-            font-weight: 600;
-        }
-
-        .form-check-label small {
-            display: block;
-            margin-top: 8px;
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        /* Submit Section */
-        .submit-section {
-            text-align: center;
-            margin-top: 35px;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
         }
 
         .btn-submit {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 20px 60px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+            gap: 8px;
+            padding: 12px 32px;
+            border-radius: 999px;
             border: none;
-            border-radius: 16px;
-            color: white;
-            font-size: 20px;
-            font-weight: 900;
+            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 45%, #ec4899 100%);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 15px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(129, 140, 248, 0.6);
         }
 
-        .btn-submit::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-submit:hover::before {
-            left: 100%;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
-        }
-
-        .btn-submit:active {
-            transform: translateY(-2px);
+        .btn-submit i {
+            font-size: 18px;
         }
 
         .submit-helper {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #64748b;
+            font-size: 13px;
+            color: #6b7280;
         }
 
-        /* Contact Card - Compact */
-        .contact-card {
-            padding: 24px;
-            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
-            border-radius: 16px;
-            border: 2px solid #e9d5ff;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .contact-card i {
-            font-size: 32px;
-            color: #8b5cf6;
-            margin-bottom: 16px;
-        }
-
-        .contact-card p {
-            font-size: 17px;
-            color: #1e293b;
-            margin: 0;
-            font-weight: 600;
-        }
-
-        .contact-card a {
-            color: #8b5cf6;
-            font-weight: 800;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-card a:hover {
-            border-bottom-color: #8b5cf6;
-        }
-
-        /* Footer */
-        .premium-footer {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 60px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .premium-footer img {
-            height: 60px;
-            margin-bottom: 24px;
-            filter: brightness(0) invert(1);
-        }
-
-        .footer-text {
-            font-size: 15px;
-            opacity: 0.7;
-            margin: 0;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero-section {
-                padding: 140px 20px 80px 20px;
+            header .btn-main {
+                padding: 7px 16px;
+                font-size: 13px;
             }
 
-            .hero-stats {
-                gap: 32px;
+            main.apply-page {
+                padding-top: 80px;
             }
 
-            .form-container {
-                padding: 30px 20px;
+            .apply-card {
+                padding: 22px 16px 24px 16px;
             }
 
-            .member-card {
-                padding: 24px;
+            .form-grid {
+                grid-template-columns: minmax(0, 1fr);
             }
 
-            .prize-pool-card {
-                padding: 40px 24px;
+            .member-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .btn-submit {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
 </head>
 
 <body class="light-scheme">
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
-    </div>
-
     <div id="wrapper">
-        <div id="de-loader"></div>
-
-        <!-- Navbar - White background like landing page, purple logo and beautiful Home button -->
-        <header class="transparent smaller" style="background: #ffffff !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <!-- Simple navbar: logo + back to landing -->
+        <header class="transparent">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -986,18 +293,12 @@
                             <div class="de-flex-col">
                                 <div id="logo">
                                     <a href="index.html">
-                                        <img class="logo-main" src="images/aifutureminds25.webp" alt="Future Minds Hackathon">
-                                        <img class="logo-scroll" src="images/aifutureminds25.webp" alt="Future Minds Hackathon">
-                                        <img class="logo-mobile" src="images/aifutureminds25.webp" alt="Future Minds Hackathon">
+                                        <img src="images/aifutureminds25.webp" alt="Future Minds Hackathon">
                                     </a>
                                 </div>
                             </div>
-
                             <div class="de-flex-col">
-                                <a class="btn-main fx-slide w-100" href="index.html"><span>Home</span></a>
-                                <div class="menu_side_area">
-                                    <span id="menu-btn"></span>
-                                </div>
+                                <a class="btn-main fx-slide w-100" href="index.html"><span>Back to Home</span></a>
                             </div>
                         </div>
                     </div>
@@ -1005,374 +306,261 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-pattern"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge wow fadeInDown">
-                        <i class="icofont-clock-time"></i>
-                        <span>Application Deadline: December 2, 2025</span>
-                    </div>
-                    <h1 class="hero-title wow fadeInUp">
-                        Join the<br>Revolution
-                    </h1>
-                    <p class="hero-subtitle wow fadeInUp" data-wow-delay=".2s">
-                        Be part of Cyprus's biggest AI hackathon. Build the future of construction technology and win amazing prizes.
-                    </p>
-                    <div class="hero-stats wow fadeInUp" data-wow-delay=".4s">
-                        <div class="stat-item">
-                            <span class="stat-number">₺150K</span>
-                            <span class="stat-label">Prize Pool</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">3 Days</span>
-                            <span class="stat-label">Hackathon</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100+</span>
-                            <span class="stat-label">Participants</span>
-                        </div>
-                    </div>
+        <main class="apply-page">
+            <section class="apply-hero">
+                <div class="apply-hero-badge">
+                    <i class="icofont-clock-time"></i>
+                    <span>Application Deadline: December 2, 2025</span>
                 </div>
-            </div>
-        </section>
+                <h1 class="apply-title">Team Application</h1>
+                <p class="apply-subtitle">
+                    Apply as a team of three to join Future Minds Hackathon 2025. Fill in the details below and submit
+                    your application for review.
+                </p>
+            </section>
 
-        <!-- Main Content -->
-        <section class="main-content">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10">
-                        <!-- Prize Pool Card -->
-                        <div class="prize-pool-card wow fadeInUp">
-                            <div class="prize-pool-content">
-                                <div class="prize-label">🏆 TOTAL PRIZE POOL</div>
-                                <div class="prize-amount">₺150,000</div>
-                                <div class="prize-subtext">+ All Expenses Covered (Food, Accommodation, Travel)</div>
+            <section class="apply-form-section">
+                <div class="apply-card">
+                    <form id="applicationForm" novalidate>
+                        <div class="apply-section">
+                            <div class="apply-section-title">Team Motivation</div>
+                            <div class="apply-section-subtitle">
+                                Tell us why you want to participate and share any relevant experience.
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="participate_details">
+                                    Why do you want to participate? <span class="required-star">*</span>
+                                </label>
+                                <textarea id="participate_details" name="participate_details" required
+                                          placeholder="We want to participate to improve our AI skills."></textarea>
+                            </div>
+                            <div class="form-group" style="margin-top:14px;">
+                                <label class="form-label" for="experience_details">
+                                    Relevant experience <small>(optional)</small>
+                                </label>
+                                <textarea id="experience_details" name="experience_details"
+                                          placeholder="We have experience in Python, ML and web development."></textarea>
                             </div>
                         </div>
 
-                        <!-- Form Container -->
-                        <div class="form-container wow fadeInUp" data-wow-delay=".2s">
-                            <form id="applicationForm" action="https://formspree.io/f/xnnyabky" method="POST" accept-charset="UTF-8">
-                                <!-- Form Header -->
-                                <div class="form-header">
-                                    <div class="form-icon">
-                                        <i class="icofont-users-alt-4"></i>
-                                    </div>
-                                    <h2 class="form-title">Team Application</h2>
-                                    <p class="form-description">
-                                        Complete all required fields below. Teams must have exactly 3 members to participate in the hackathon.
-                                    </p>
+                        <!-- Team Leader -->
+                        <div class="member-block">
+                            <div class="member-header">
+                                <div class="member-title">Team Leader</div>
+                                <div class="member-badge">Member 1 · Team Leader</div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="leader_full_name">
+                                        Full name <span class="required-star">*</span>
+                                    </label>
+                                    <input id="leader_full_name" name="leader_full_name" class="form-control"
+                                           type="text" required placeholder="John Doe">
                                 </div>
-
-                                <!-- Team Members Section -->
-                                <div class="section-divider">
-                                    <span class="section-divider-text">👥 Team Members</span>
+                                <div class="form-group">
+                                    <label class="form-label" for="leader_email">
+                                        Email <span class="required-star">*</span>
+                                    </label>
+                                    <input id="leader_email" name="leader_email" class="form-control"
+                                           type="email" required placeholder="john@example.com">
                                 </div>
-
-                                <!-- Team Leader -->
-                                <div class="member-card wow fadeInUp" data-wow-delay=".3s">
-                                    <div class="member-header">
-                                        <div class="member-badge">1</div>
-                                        <div>
-                                            <h3 class="member-title">Team Leader</h3>
-                                            <p class="member-role">Main contact person</p>
-                                        </div>
-                                    </div>
-                                    <div class="row g-4">
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-user-alt-4"></i>
-                                                Full Name<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="leader_name" class="form-control" placeholder="e.g. John Doe" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-email"></i>
-                                                Email<span class="required-star">*</span>
-                                            </label>
-                                            <input type="email" name="leader_email" class="form-control" placeholder="e.g. john@example.com" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-phone"></i>
-                                                Phone Number<span class="required-star">*</span>
-                                            </label>
-                                            <input type="tel" name="leader_phone" class="form-control" placeholder="e.g. +90 533 123 4567" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-university"></i>
-                                                University<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="leader_university" class="form-control" placeholder="e.g. Eastern Mediterranean University" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-book"></i>
-                                                Department/Major<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="leader_department" class="form-control" placeholder="e.g. Computer Engineering" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-graduate"></i>
-                                                Education Level<span class="required-star">*</span>
-                                            </label>
-                                            <select name="leader_education" class="form-select" required>
-                                                <option value="">Select education level</option>
-                                                <option value="associate">Associate Degree</option>
-                                                <option value="bachelor">Bachelor's Degree</option>
-                                                <option value="master">Master's Degree</option>
-                                                <option value="phd">PhD</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <label class="form-label">
-                                                <i class="icofont-linkedin"></i>
-                                                LinkedIn Profile or CV Link
-                                                <span class="optional-badge">Optional</span>
-                                            </label>
-                                            <input type="url" name="leader_link" class="form-control" placeholder="e.g. https://linkedin.com/in/johndoe">
-                                            <div class="form-helper-text">
-                                                <i class="icofont-info-circle"></i>
-                                                <span>Add your LinkedIn profile or a link to your CV (you can leave this blank)</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="leader_phone">
+                                        Phone <span class="required-star">*</span>
+                                    </label>
+                                    <input id="leader_phone" name="leader_phone" class="form-control"
+                                           type="tel" required placeholder="+905551112233">
                                 </div>
-
-                                <!-- Team Member 1 -->
-                                <div class="member-card wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="member-header">
-                                        <div class="member-badge">2</div>
-                                        <div>
-                                            <h3 class="member-title">Team Member 1</h3>
-                                            <p class="member-role">Second team member</p>
-                                        </div>
-                                    </div>
-                                    <div class="row g-4">
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-user-alt-4"></i>
-                                                Full Name<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="member1_name" class="form-control" placeholder="e.g. Jane Smith" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-email"></i>
-                                                Email<span class="required-star">*</span>
-                                            </label>
-                                            <input type="email" name="member1_email" class="form-control" placeholder="e.g. jane@example.com" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-phone"></i>
-                                                Phone Number<span class="required-star">*</span>
-                                            </label>
-                                            <input type="tel" name="member1_phone" class="form-control" placeholder="e.g. +90 533 123 4567" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-university"></i>
-                                                University<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="member1_university" class="form-control" placeholder="e.g. Eastern Mediterranean University" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-book"></i>
-                                                Department/Major<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="member1_department" class="form-control" placeholder="e.g. Computer Engineering" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-graduate"></i>
-                                                Education Level<span class="required-star">*</span>
-                                            </label>
-                                            <select name="member1_education" class="form-select" required>
-                                                <option value="">Select education level</option>
-                                                <option value="associate">Associate Degree</option>
-                                                <option value="bachelor">Bachelor's Degree</option>
-                                                <option value="master">Master's Degree</option>
-                                                <option value="phd">PhD</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <label class="form-label">
-                                                <i class="icofont-linkedin"></i>
-                                                LinkedIn Profile or CV Link
-                                                <span class="optional-badge">Optional</span>
-                                            </label>
-                                            <input type="url" name="member1_link" class="form-control" placeholder="e.g. https://linkedin.com/in/janesmith">
-                                            <div class="form-helper-text">
-                                                <i class="icofont-info-circle"></i>
-                                                <span>Add your LinkedIn profile or a link to your CV (you can leave this blank)</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="leader_university">
+                                        University <span class="required-star">*</span>
+                                    </label>
+                                    <input id="leader_university" name="leader_university" class="form-control"
+                                           type="text" required placeholder="EMU">
                                 </div>
-
-                                <!-- Team Member 2 -->
-                                <div class="member-card wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="member-header">
-                                        <div class="member-badge">3</div>
-                                        <div>
-                                            <h3 class="member-title">Team Member 2</h3>
-                                            <p class="member-role">Third team member</p>
-                                        </div>
-                                    </div>
-                                    <div class="row g-4">
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-user-alt-4"></i>
-                                                Full Name<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="member2_name" class="form-control" placeholder="e.g. Alex Johnson" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-email"></i>
-                                                Email<span class="required-star">*</span>
-                                            </label>
-                                            <input type="email" name="member2_email" class="form-control" placeholder="e.g. alex@example.com" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-phone"></i>
-                                                Phone Number<span class="required-star">*</span>
-                                            </label>
-                                            <input type="tel" name="member2_phone" class="form-control" placeholder="e.g. +90 533 123 4567" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-university"></i>
-                                                University<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="member2_university" class="form-control" placeholder="e.g. Eastern Mediterranean University" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-book"></i>
-                                                Department/Major<span class="required-star">*</span>
-                                            </label>
-                                            <input type="text" name="member2_department" class="form-control" placeholder="e.g. Computer Engineering" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">
-                                                <i class="icofont-graduate"></i>
-                                                Education Level<span class="required-star">*</span>
-                                            </label>
-                                            <select name="member2_education" class="form-select" required>
-                                                <option value="">Select education level</option>
-                                                <option value="associate">Associate Degree</option>
-                                                <option value="bachelor">Bachelor's Degree</option>
-                                                <option value="master">Master's Degree</option>
-                                                <option value="phd">PhD</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <label class="form-label">
-                                                <i class="icofont-linkedin"></i>
-                                                LinkedIn Profile or CV Link
-                                                <span class="optional-badge">Optional</span>
-                                            </label>
-                                            <input type="url" name="member2_link" class="form-control" placeholder="e.g. https://linkedin.com/in/alexjohnson">
-                                            <div class="form-helper-text">
-                                                <i class="icofont-info-circle"></i>
-                                                <span>Add your LinkedIn profile or a link to your CV (you can leave this blank)</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="leader_department">
+                                        Department <span class="required-star">*</span>
+                                    </label>
+                                    <input id="leader_department" name="leader_department" class="form-control"
+                                           type="text" required placeholder="Computer Engineering">
                                 </div>
-
-                                <!-- Additional Information -->
-                                <div class="section-divider">
-                                    <span class="section-divider-text">📝 Additional Information</span>
+                                <div class="form-group">
+                                    <label class="form-label" for="leader_education_level">
+                                        Education level <span class="required-star">*</span>
+                                    </label>
+                                    <select id="leader_education_level" name="leader_education_level"
+                                            class="form-select" required>
+                                        <option value="">Select</option>
+                                        <option value="Undergraduate">Undergraduate</option>
+                                        <option value="Graduate">Graduate</option>
+                                    </select>
                                 </div>
-
-                                <div class="row g-4 mb-4">
-                                    <div class="col-12 wow fadeInUp" data-wow-delay=".6s">
-                                        <label class="form-label">
-                                            <i class="icofont-fire-burn"></i>
-                                            Why do you want to participate?<span class="required-star">*</span>
-                                        </label>
-                                        <textarea name="motivation" class="form-control" rows="6" placeholder="Tell us about your motivation and what you hope to achieve at this hackathon..." required></textarea>
-                                        <div class="form-helper-text">
-                                            <i class="icofont-info-circle"></i>
-                                            <span>Share your passion, goals, and what drives your team to participate</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 wow fadeInUp" data-wow-delay=".7s">
-                                        <label class="form-label">
-                                            <i class="icofont-brain-alt"></i>
-                                            Relevant Experience
-                                            <span class="optional-badge">Optional</span>
-                                        </label>
-                                        <textarea name="experience" class="form-control" rows="5" placeholder="Share any relevant experience in AI, construction, software development, or related fields..."></textarea>
-                                        <div class="form-helper-text">
-                                            <i class="icofont-info-circle"></i>
-                                            <span>Include projects, courses, internships, or any relevant experience</span>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="leader_linkedin_profile">
+                                        LinkedIn profile <small>(optional)</small>
+                                    </label>
+                                    <input id="leader_linkedin_profile" name="leader_linkedin_profile"
+                                           class="form-control" type="url"
+                                           placeholder="https://linkedin.com/in/johndoe">
                                 </div>
-
-                                <!-- Confirmation -->
-                                <div class="confirmation-box wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="form-check d-flex align-items-start">
-                                        <input class="form-check-input mt-1" type="checkbox" id="confirmAccuracy" name="confirmation" required>
-                                        <label class="form-check-label ms-3" for="confirmAccuracy">
-                                            <strong>✓ I confirm that all information is accurate and our team has exactly 3 members</strong>
-                                            <small>By checking this box, you confirm that all provided information is correct and complete. False information may lead to disqualification.</small>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <!-- Submit Button -->
-                                <div class="submit-section wow fadeInUp" data-wow-delay=".9s">
-                                    <button type="submit" class="btn-submit">
-                                        <i class="icofont-rocket-alt-1"></i>
-                                        <span>Submit Application</span>
-                                    </button>
-                                    <div class="submit-helper">
-                                        We'll review your application and notify you by <strong>December 3-4, 2025</strong>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
 
-                        <!-- Contact Card -->
-                        <div class="contact-card wow fadeInUp" data-wow-delay="1s">
-                            <i class="icofont-question-circle"></i>
-                            <p>
-                                <strong>Need Help?</strong> Contact us at 
-                                <a href="mailto:emusoft.ai@emu.edu.tr">emusoft.ai@emu.edu.tr</a>
-                            </p>
+                        <!-- Member 2 -->
+                        <div class="member-block">
+                            <div class="member-header">
+                                <div class="member-title">Team Member 2</div>
+                                <div class="member-badge">Member 2</div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="member2_full_name">
+                                        Full name <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member2_full_name" name="member2_full_name" class="form-control"
+                                           type="text" required placeholder="Jane Smith">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member2_email">
+                                        Email <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member2_email" name="member2_email" class="form-control"
+                                           type="email" required placeholder="jane@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member2_phone">
+                                        Phone <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member2_phone" name="member2_phone" class="form-control"
+                                           type="tel" required placeholder="+905554445566">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member2_university">
+                                        University <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member2_university" name="member2_university" class="form-control"
+                                           type="text" required placeholder="EMU">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member2_department">
+                                        Department <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member2_department" name="member2_department" class="form-control"
+                                           type="text" required placeholder="Software Engineering">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member2_education_level">
+                                        Education level <span class="required-star">*</span>
+                                    </label>
+                                    <select id="member2_education_level" name="member2_education_level"
+                                            class="form-select" required>
+                                        <option value="">Select</option>
+                                        <option value="Undergraduate">Undergraduate</option>
+                                        <option value="Graduate">Graduate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member2_linkedin_profile">
+                                        LinkedIn profile <small>(optional)</small>
+                                    </label>
+                                    <input id="member2_linkedin_profile" name="member2_linkedin_profile"
+                                           class="form-control" type="url"
+                                           placeholder="https://linkedin.com/in/janesmith">
+                                </div>
+                            </div>
                         </div>
-                    </div>
+
+                        <!-- Member 3 -->
+                        <div class="member-block">
+                            <div class="member-header">
+                                <div class="member-title">Team Member 3</div>
+                                <div class="member-badge">Member 3</div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="member3_full_name">
+                                        Full name <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member3_full_name" name="member3_full_name" class="form-control"
+                                           type="text" required placeholder="Michael Brown">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member3_email">
+                                        Email <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member3_email" name="member3_email" class="form-control"
+                                           type="email" required placeholder="michael@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member3_phone">
+                                        Phone <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member3_phone" name="member3_phone" class="form-control"
+                                           type="tel" required placeholder="+905559998877">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member3_university">
+                                        University <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member3_university" name="member3_university" class="form-control"
+                                           type="text" required placeholder="EMU">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member3_department">
+                                        Department <span class="required-star">*</span>
+                                    </label>
+                                    <input id="member3_department" name="member3_department" class="form-control"
+                                           type="text" required placeholder="ITS">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member3_education_level">
+                                        Education level <span class="required-star">*</span>
+                                    </label>
+                                    <select id="member3_education_level" name="member3_education_level"
+                                            class="form-select" required>
+                                        <option value="">Select</option>
+                                        <option value="Undergraduate">Undergraduate</option>
+                                        <option value="Graduate">Graduate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="member3_linkedin_profile">
+                                        LinkedIn profile <small>(optional)</small>
+                                    </label>
+                                    <input id="member3_linkedin_profile" name="member3_linkedin_profile"
+                                           class="form-control" type="url"
+                                           placeholder="https://linkedin.com/in/michaelbrown">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="submit-row">
+                            <button type="submit" class="btn-submit">
+                                <i class="icofont-rocket-alt-1"></i>
+                                <span>Submit Application</span>
+                            </button>
+                            <div class="submit-helper">
+                                After successful submission, your team will receive a confirmation email from the
+                                organizers.
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     </div>
 
-    <!-- FOOTER (same structure as index.html) -->
+    <!-- FOOTER (same structure as landing page) -->
     <footer class="text-light section-dark">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-12">
                     <div class="d-lg-flex align-items-start justify-content-between text-center text-lg-start">
-                        <!-- Left: Club name -->
                         <div class="mb-4 mb-lg-0">
                             <h4>Software &amp; AI Development Club</h4>
                             <p>Future Minds Hackathon · Eastern Mediterranean University</p>
                         </div>
-
-                        <!-- Middle: Simple organized-by list -->
                         <div class="mb-4 mb-lg-0">
                             <h4>Organized By</h4>
                             <ul>
@@ -1381,8 +569,6 @@
                                 <li>Califorian Restaurant</li>
                             </ul>
                         </div>
-
-                        <!-- Right: Contact -->
                         <div>
                             <h4>Contact</h4>
                             <p>
@@ -1404,214 +590,155 @@
         </div>
     </footer>
 
-    <!-- GLOBAL MUSIC PLAYER -->
+    <!-- GLOBAL MUSIC PLAYER (same as index.html) -->
     <audio id="bg-music" src="js/music.mpeg" preload="auto"></audio>
     <button id="music-toggle" class="music-toggle" type="button" aria-label="Toggle background music">
-        <i id="music-icon-play" class="icofont-ui-play"></i>
-        <i id="music-icon-pause" class="icofont-ui-pause" style="display:none;"></i>
+        <span class="music-toggle-icon">
+            <i id="music-icon-play" class="icofont-ui-play"></i>
+            <i id="music-icon-pause" class="icofont-ui-pause" style="display:none;"></i>
+        </span>
     </button>
 
     <!-- Scripts -->
     <script src="js/vendors.js"></script>
     <script src="js/designesia.js"></script>
     <script src="js/music-player.js"></script>
-    
+
     <script>
-        // Form submission handler with Formspree integration - Simple and reliable
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('applicationForm');
-            if (!form) {
-                console.error('Form not found!');
-                return;
+            if (!form) return;
+
+            const API_ENDPOINT = 'http://softaiclub.emu.edu.tr/team-applications';
+
+            function v(name) {
+                const el = form.elements[name];
+                return el ? el.value.trim() : '';
             }
-            
-            form.addEventListener('submit', async function(e) {
+
+            function buildPayload() {
+                return {
+                    participate_details: v('participate_details'),
+                    experience_details: v('experience_details'),
+                    members: [
+                        {
+                            full_name: v('leader_full_name'),
+                            email: v('leader_email'),
+                            phone: v('leader_phone'),
+                            university: v('leader_university'),
+                            department: v('leader_department'),
+                            education_level: v('leader_education_level'),
+                            is_team_leader: true,
+                            linkedin_profile: v('leader_linkedin_profile')
+                        },
+                        {
+                            full_name: v('member2_full_name'),
+                            email: v('member2_email'),
+                            phone: v('member2_phone'),
+                            university: v('member2_university'),
+                            department: v('member2_department'),
+                            education_level: v('member2_education_level'),
+                            is_team_leader: false,
+                            linkedin_profile: v('member2_linkedin_profile')
+                        },
+                        {
+                            full_name: v('member3_full_name'),
+                            email: v('member3_email'),
+                            phone: v('member3_phone'),
+                            university: v('member3_university'),
+                            department: v('member3_department'),
+                            education_level: v('member3_education_level'),
+                            is_team_leader: false,
+                            linkedin_profile: v('member3_linkedin_profile')
+                        }
+                    ]
+                };
+            }
+
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                e.stopPropagation();
-                
-                const btn = form.querySelector('.btn-submit');
-                const originalHTML = btn ? btn.innerHTML : '';
-                
-                // Validate form first
+
                 if (!form.checkValidity()) {
                     form.reportValidity();
-                    return false;
+                    return;
                 }
-                
-                // Show loading state
+
+                const payload = buildPayload();
+                if (!payload.members || payload.members.length !== 3) {
+                    alert('❌ The team must contain exactly 3 members.');
+                    return;
+                }
+
+                const btn = form.querySelector('.btn-submit');
+                const originalHtml = btn ? btn.innerHTML : '';
                 if (btn) {
                     btn.innerHTML = '<i class="icofont-spinner-alt icofont-spin"></i><span>Submitting...</span>';
                     btn.disabled = true;
                     btn.style.opacity = '0.7';
                 }
-                
+
                 try {
-                    // Create FormData from form
-                    const formData = new FormData(form);
-                    
-                    // Add Formspree special fields
-                    const leaderEmail = formData.get('leader_email') || '';
-                    if (leaderEmail) {
-                        formData.append('_replyto', leaderEmail);
-                    }
-                    formData.append('_subject', 'New Hackathon Application - Future Minds 2025');
-                    
-                    console.log('Submitting to:', form.action);
-                    console.log('Form data entries:', Array.from(formData.entries()));
-                    
-                    // Submit to Formspree
-                    const response = await fetch(form.action, {
+                    console.log('Submitting to API:', API_ENDPOINT, payload);
+                    const response = await fetch(API_ENDPOINT, {
                         method: 'POST',
-                        body: formData,
                         headers: {
-                            'Accept': 'application/json'
-                        }
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
                     });
-                    
-                    console.log('Response status:', response.status);
-                    console.log('Response headers:', response.headers);
-                    
-                    // Check if response is ok
-                    if (response.ok) {
-                        // Try to parse JSON response
-                        let responseData = {};
-                        try {
-                            const text = await response.text();
-                            console.log('Response text:', text);
-                            if (text) {
-                                responseData = JSON.parse(text);
-                            }
-                        } catch (parseError) {
-                            console.log('Response is not JSON, but status is OK');
-                        }
-                        
-                        // Success
-                        const successMessage = `✅ APPLICATION SUBMITTED SUCCESSFULLY!\n\nThank you for applying to Future Minds Hackathon 2025!\n\n📧 Confirmation email has been sent to your team leader's email.\n📅 We will review your application and notify you by December 3-4, 2025.\n🏆 Good luck!\n\nKeep an eye on your inbox for updates.`;
-                        
-                        alert(successMessage);
-                        
-                        // Reset form
-                        form.reset();
-                        
-                        if (btn) {
-                            btn.innerHTML = originalHTML;
-                            btn.disabled = false;
-                            btn.style.opacity = '1';
-                        }
-                        
-                        // Scroll to top
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else {
-                        // Error from Formspree
-                        let errorMessage = 'Submission failed. Please try again.';
-                        try {
-                            const errorData = await response.json();
-                            if (errorData.error) {
-                                errorMessage = errorData.error;
-                            } else if (errorData.errors && Array.isArray(errorData.errors)) {
-                                errorMessage = errorData.errors.map(e => e.message || e).join(', ');
-                            }
-                        } catch (parseError) {
-                            errorMessage = `Server returned status ${response.status}. Please try again.`;
-                        }
-                        throw new Error(errorMessage);
+
+                    let data = null;
+                    try {
+                        data = await response.json();
+                    } catch (err) {
+                        console.warn('Response is not valid JSON', err);
                     }
-                } catch (error) {
-                    // Error occurred
-                    console.error('Form submission error:', error);
-                    console.error('Error stack:', error.stack);
-                    
-                    let errorMsg = `❌ Error submitting application.\n\n`;
-                    errorMsg += `Error: ${error.message}\n\n`;
-                    errorMsg += `Please check:\n`;
-                    errorMsg += `- Your internet connection\n`;
-                    errorMsg += `- All required fields are filled\n`;
-                    errorMsg += `- Try again in a few moments\n\n`;
-                    errorMsg += `If the problem persists, contact us at emusoft.ai@emu.edu.tr`;
-                    
-                    alert(errorMsg);
-                    
+
+                    if (response.ok) {
+                        const msg = (data && data.message) || 'Team application submitted successfully.';
+                        alert('✅ APPLICATION SUBMITTED SUCCESSFULLY\n\n' + msg);
+                        form.reset();
+                    } else if (response.status === 422) {
+                        let details = '';
+                        if (data && data.errors) {
+                            const parts = [];
+                            Object.keys(data.errors).forEach(key => {
+                                const val = data.errors[key];
+                                if (Array.isArray(val)) {
+                                    parts.push(`${key}: ${val.join(', ')}`);
+                                } else if (typeof val === 'string') {
+                                    parts.push(`${key}: ${val}`);
+                                }
+                            });
+                            details = parts.join('\n');
+                        }
+                        const base = (data && data.message) || 'The given data was invalid.';
+                        alert('❌ Validation error\n\n' + base + (details ? '\n\n' + details : ''));
+                    } else {
+                        const msg = (data && data.message) || `Server returned status ${response.status}.`;
+                        throw new Error(msg);
+                    }
+                } catch (err) {
+                    console.error('Submit error:', err);
+                    alert(
+                        '❌ Error submitting application.\n\n' +
+                        'Error: ' + (err && err.message ? err.message : 'Unknown error') + '\n\n' +
+                        'Please check your connection and try again.\n' +
+                        'If the problem persists, please contact emusoft.ai@emu.edu.tr'
+                    );
+                } finally {
                     if (btn) {
-                        btn.innerHTML = originalHTML;
+                        btn.innerHTML = originalHtml;
                         btn.disabled = false;
                         btn.style.opacity = '1';
                     }
                 }
-                
-                return false;
-            });
-        });
-
-        // Enhanced form interactions
-        document.querySelectorAll('.form-control, .form-select').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.01)';
-                this.parentElement.style.transition = 'transform 0.3s ease';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
-        });
-
-        // Member card animations
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.member-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(card);
-        });
-
-        // Phone number formatting
-        document.querySelectorAll('input[type="tel"]').forEach(input => {
-            input.addEventListener('blur', function() {
-                let value = this.value.trim();
-                if (value && !value.startsWith('+')) {
-                    if (value.startsWith('0')) {
-                        value = value.substring(1);
-                    }
-                    if (value.length === 10) {
-                        this.value = '+90 ' + value;
-                    }
-                }
-            });
-        });
-
-        // Form validation feedback
-        document.querySelectorAll('input[required], textarea[required]').forEach(input => {
-            input.addEventListener('invalid', function(e) {
-                e.preventDefault();
-                this.style.borderColor = '#ef4444';
-                this.style.boxShadow = '0 0 0 4px rgba(239,68,68,0.1)';
-                
-                setTimeout(() => {
-                    this.style.borderColor = '#e5e7eb';
-                    this.style.boxShadow = 'none';
-                }, 2000);
-            });
-            
-            input.addEventListener('input', function() {
-                if (this.validity.valid) {
-                    this.style.borderColor = '#10b981';
-                }
             });
         });
     </script>
-
 </body>
 
 </html>
+
+ 
