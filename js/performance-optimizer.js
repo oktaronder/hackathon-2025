@@ -98,8 +98,8 @@
     function preloadCriticalResources() {
         const criticalImages = [
             'images/logo-emusoft.png',
-            'images/sponsor-cyprus.png',
-            'images/sponsor-califorian.png'
+            'images/sponsor-cyprus.webp',
+            'images/sponsor-califorian.webp'
         ];
         
         criticalImages.forEach(src => {
