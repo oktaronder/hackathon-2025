@@ -340,7 +340,7 @@
         font-weight: 600 !important;
     }
     
-    /* Benefits - LARGER vertical list */
+    /* Benefits - horizontal, yan yana metinler */
     #section-hero .hero-benefits,
     #section-hero .col-lg-5 .hero-benefits,
     #section-hero .col-lg-7 .hero-benefits,
@@ -349,11 +349,11 @@
     .hero-benefits,
     .hero-right-content .hero-benefits {
         display: flex !important;
-        flex-direction: column !important;
-        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 6px !important; /* Slightly larger gap */
+        gap: 8px !important;
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
@@ -362,11 +362,13 @@
     }
     
     .hero-benefits .benefit-item-organic {
-        font-size: 14px !important; /* Larger */
-        padding: 3px 8px !important;
+        font-size: 14px !important;
+        padding: 2px 6px !important;
         width: auto !important;
         margin: 0 !important;
         justify-content: center !important;
+        display: inline-flex !important;
+        white-space: nowrap !important;
     }
     
     .hero-benefits .benefit-item-organic i,
@@ -548,7 +550,6 @@
     
     /* All spacing reduced */
     .hero-cta-buttons,
-    .hero-deadline,
     .hero-benefits {
         margin-bottom: 8px !important;
     }
@@ -680,7 +681,6 @@
     
     /* All spacing reduced */
     .hero-cta-buttons,
-    .hero-deadline,
     .hero-benefits {
         margin-bottom: 6px !important;
     }
@@ -816,13 +816,47 @@
     #section-hero .abs.abs-centered {
         padding-top: clamp(210px, 22vh, 360px) !important;
     }
-
+ 
     #section-hero .col-lg-7 {
         padding-top: clamp(24px, 4vh, 72px) !important;
     }
-
+ 
     #section-hero .hero-meta-badges {
         margin-top: clamp(32px, 4vh, 80px) !important;
     }
+}
+
+/* ============================================
+   Global hero fine-tuning (all breakpoints)
+   - Benefits inline
+   - Reduce gap between deadline and CTA
+   ============================================ */
+
+/* Benefits always horizontal & wrapping */
+#section-hero .hero-benefits {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+}
+
+#section-hero .hero-benefits .benefit-item-organic {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 2px 8px !important;
+    white-space: nowrap !important;
+}
+
+/* Remove extra vertical gap between deadline and CTA buttons */
+#section-hero .text-center.mb-5 {
+    margin-bottom: 10px !important;
+}
+
+#section-hero .hero-cta-buttons {
+    margin-top: 0 !important;
 }
 

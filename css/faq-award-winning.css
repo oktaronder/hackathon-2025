@@ -255,8 +255,31 @@
     font-size: 18px;
 }
 
-/* Responsive Design */
+/* Desktop: two-column layout (sidebar + questions) */
+@media (min-width: 992px) {
+    .faq-header-mobile {
+        display: none !important;
+    }
+
+    .faq-header-desktop {
+        display: block !important;
+    }
+
+    .faq-sidebar {
+        padding-right: 30px;
+    }
+}
+
+/* Tablet and below: single column */
 @media (max-width: 991px) {
+    .faq-header-desktop {
+        display: none !important;
+    }
+
+    .faq-header-mobile {
+        display: block !important;
+    }
+
     .faq-question {
         padding: 24px 28px;
     }

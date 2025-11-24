@@ -539,6 +539,13 @@
             saturate(1.4);
 }
 
+/* Mobile: hide rotating wheel image (object2.webp) on small screens */
+@media (max-width: 767px) {
+    #section-about .plexus-structure-wrapper.interactive-wheel {
+        display: none !important;
+    }
+}
+
 /* Mobile touch optimization */
 @media (max-width: 767px) {
     #section-about .plexus-structure-wrapper.interactive-wheel {
