@@ -83,11 +83,30 @@
     <link href="css/hero-mobile-fullscreen-fix.css" rel="stylesheet" type="text/css">
     <link href="css/mobile-prize-pool-center.css" rel="stylesheet" type="text/css">
     <link href="css/mobile-navbar-hero-spacing.css" rel="stylesheet" type="text/css">
+    <link href="css/footer-enhanced.css" rel="stylesheet" type="text/css">
+    <link href="css/music-player.css" rel="stylesheet" type="text/css">
+    <link href="css/intro-discovery.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="light-scheme">
 
     <div id="wrapper">
+
+        <!-- FULLSCREEN INTRO / DISCOVER SCREEN -->
+        <section id="intro-discovery" aria-label="Discover Future Minds">
+            <video class="intro-video-bg" autoplay muted loop playsinline>
+                <source src="video/purple-abstract.mp4" type="video/mp4">
+            </video>
+            <div class="intro-overlay-content">
+                <img src="images/buyukhacakthonlogo.png"
+                     alt="Future Minds'25 Hackathon"
+                     class="intro-logo">
+                <button id="discover-btn" class="intro-discover-btn" type="button">
+                    <span>Discover</span>
+                    <i class="icofont-simple-right"></i>
+                </button>
+            </div>
+        </section>
 
         <div class="float-text show-on-scroll">
             <span><a href="#">Scroll to top</a></span>
@@ -416,7 +435,8 @@
 
                             <div class="gain-card wow fadeInUp" data-wow-delay=".3s" tabindex="0">
                                 <div class="gain-icon-wrapper" style="background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(236,72,153,0.1));">
-                                    <i class="icofont-users-alt"></i>
+                                    <!-- Farklı font icon: Expert Mentorship için özel mezuniyet ikonu -->
+                                    <i class="icofont-graduate-alt"></i>
                                 </div>
                                 <h4 style="font-size: 24px; font-weight: 800; color: #1e293b !important; margin: 24px 0 12px;">Expert Mentorship</h4>
                                 <p style="font-size: 16px; color: #64748b !important; margin: 0; line-height: 1.7;">
@@ -699,7 +719,8 @@
                         <div class="faq-question" data-tab="faq6">
                             <div class="faq-question-content">
                                 <div class="faq-icon">
-                                    <i class="icofont-users-alt"></i>
+                                    <!-- Farklı font icon: Deneyim / eğitim için mezuniyet ikonu -->
+                                    <i class="icofont-graduate"></i>
                                 </div>
                                 <div class="faq-question-text">
                                     <h4>Do I need prior experience in AI or construction?</h4>
@@ -757,38 +778,51 @@
 
             </div>
 
+    <!-- GLOBAL MUSIC PLAYER -->
+    <audio id="bg-music" src="js/music.mpeg" preload="auto"></audio>
+    <button id="music-toggle" class="music-toggle" type="button" aria-label="Toggle background music">
+        <i id="music-icon-play" class="icofont-ui-play"></i>
+        <i id="music-icon-pause" class="icofont-ui-pause" style="display:none;"></i>
+    </button>
+
     <!-- FOOTER -->
     <footer class="text-light section-dark">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-12">
-                    <div class="d-lg-flex align-items-center justify-content-between text-center">
-                        <div>
-                            <img src="images/logo-emusoft.png" class="mb-3" style="height: 50px;" alt="EMU Software">
-                            <p style="font-size: 14px;">Building the future with AI</p>
+                    <div class="d-lg-flex align-items-start justify-content-between text-center text-lg-start">
+                        <!-- Left: Club name -->
+                        <div class="mb-4 mb-lg-0">
+                            <h4>Software &amp; AI Development Club</h4>
+                            <p>Future Minds Hackathon · Eastern Mediterranean University</p>
                         </div>
-                        <div>
-                            <h4 class="mb-3" style="font-size: 18px; font-weight: 700; color: #a78bfa !important;">Organized By</h4>
-                            <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mb-3">
-                                <img src="images/sponsor-cyprus.png" style="height: 35px; opacity: 0.9;" alt="Cyprus Construction">
-                                <img src="images/sponsor-califorian.png" style="height: 35px; opacity: 0.9;" alt="Califorian Restaurant">
-                            </div>
+
+                        <!-- Middle: Simple organized-by list -->
+                        <div class="mb-4 mb-lg-0">
+                            <h4>Organized By</h4>
+                            <ul>
+                                <li>Software &amp; AI Development Club</li>
+                                <li>Cyprus Constructions</li>
+                                <li>Califorian Restaurant</li>
+                            </ul>
                         </div>
+
+                        <!-- Right: Contact -->
                         <div>
-                            <h4 class="mb-3" style="font-size: 18px; font-weight: 700; color: #a78bfa !important;">Contact</h4>
-                            <p style="font-size: 15px; margin: 0;">
-                                <a href="mailto:emusoft.ai@emu.edu.tr" style="color: #a78bfa; text-decoration: none; font-weight: 600;">emusoft.ai@emu.edu.tr</a>
+                            <h4>Contact</h4>
+                            <p>
+                                <a href="mailto:emusoft.ai@emu.edu.tr">emusoft.ai@emu.edu.tr</a>
                             </p>
                         </div>
                     </div>
-                </div>                    
+                </div>
             </div>
         </div>
         <div class="subfooter">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p style="font-size: 14px; margin: 0; opacity: 0.6;">© 2025 Future Minds Hackathon. All rights reserved.</p>
+                        <p>© 2025 Future Minds Hackathon. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -813,6 +847,8 @@
     <script src="js/plexus-background-remover.js"></script>
     <script src="js/navbar-prize-section.js"></script>
     <script src="js/about-wheel-interactive.js"></script>
+    <script src="js/music-player.js"></script>
+    <script src="js/intro-discovery.js"></script>
     
     <!-- Countdown is handled by countdown-custom.js (December 5, 2025 17:00) -->
 

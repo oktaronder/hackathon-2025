@@ -21,6 +21,8 @@
     <link href="css/navbar-smooth-transition.css" rel="stylesheet" type="text/css">
     <link href="css/navbar-visibility-fix.css" rel="stylesheet" type="text/css">
     <link href="css/navbar-svg-logo.css" rel="stylesheet" type="text/css">
+    <link href="css/footer-enhanced.css" rel="stylesheet" type="text/css">
+    <link href="css/music-player.css" rel="stylesheet" type="text/css">
     <style>
         * {
             margin: 0;
@@ -452,11 +454,11 @@
             letter-spacing: 1px;
         }
 
-        /* Main Content - Compact */
+        /* Main Content - Compact (alt boşluk azaltıldı) */
         .main-content {
             position: relative;
             z-index: 10;
-            padding: 50px 0 60px 0;
+            padding: 50px 0 24px 0; /* Eskiden 60px idi, footer öncesi boşluk kısaltıldı */
             pointer-events: auto;
         }
 
@@ -1366,17 +1368,61 @@
         </section>
     </div>
 
-    <!-- Footer -->
-    <footer class="premium-footer">
+    <!-- FOOTER (same structure as index.html) -->
+    <footer class="text-light section-dark">
         <div class="container">
-            <img src="images/logo-emusoft.png" alt="EMU Software">
-            <p class="footer-text">© 2025 Future Minds Hackathon. All rights reserved.</p>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-12">
+                    <div class="d-lg-flex align-items-start justify-content-between text-center text-lg-start">
+                        <!-- Left: Club name -->
+                        <div class="mb-4 mb-lg-0">
+                            <h4>Software &amp; AI Development Club</h4>
+                            <p>Future Minds Hackathon · Eastern Mediterranean University</p>
+                        </div>
+
+                        <!-- Middle: Simple organized-by list -->
+                        <div class="mb-4 mb-lg-0">
+                            <h4>Organized By</h4>
+                            <ul>
+                                <li>Software &amp; AI Development Club</li>
+                                <li>Cyprus Constructions</li>
+                                <li>Califorian Restaurant</li>
+                            </ul>
+                        </div>
+
+                        <!-- Right: Contact -->
+                        <div>
+                            <h4>Contact</h4>
+                            <p>
+                                <a href="mailto:emusoft.ai@emu.edu.tr">emusoft.ai@emu.edu.tr</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>© 2025 Future Minds Hackathon. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- GLOBAL MUSIC PLAYER -->
+    <audio id="bg-music" src="js/music.mpeg" preload="auto"></audio>
+    <button id="music-toggle" class="music-toggle" type="button" aria-label="Toggle background music">
+        <i id="music-icon-play" class="icofont-ui-play"></i>
+        <i id="music-icon-pause" class="icofont-ui-pause" style="display:none;"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="js/vendors.js"></script>
     <script src="js/designesia.js"></script>
+    <script src="js/music-player.js"></script>
     
     <script>
         // Form submission handler with Formspree integration - Simple and reliable

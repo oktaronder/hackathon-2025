@@ -1,0 +1,126 @@
+/* ============================================
+   FOOTER ENHANCEMENTS
+   Modern, clean, and responsive footer styles
+   ============================================ */
+
+/* Footer Layout Fix - Push to bottom */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    flex-shrink: 0;
+    margin-top: auto !important;
+}
+
+/* Footer Styling */
+footer.section-dark {
+    background: #000000 !important; /* Tam siyah arka plan */
+    border-top: 1px solid rgba(139, 92, 246, 0.15);
+    padding: 60px 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle glow effect */
+footer.section-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.5) 0%, transparent 70%);
+}
+
+/* Başlıklar ve metinler - TAMAMEN siyah (footer.section-dark içinde) */
+footer.section-dark h4 {
+    color: #000000 !important;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+footer.section-dark p, 
+footer.section-dark li, 
+footer.section-dark a {
+    color: #000000 !important;
+    font-size: 15px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    opacity: 1;
+}
+
+footer.section-dark a:hover {
+    color: #ffffff !important; /* Hover'da beyaz */
+    opacity: 1;
+}
+
+/* Organized By List */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+footer ul li::before {
+    content: '•';
+    color: #000000; /* Bullet rengi de siyah */
+    margin-right: 8px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Subfooter */
+.subfooter {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(139, 92, 246, 0.2); /* Mor border */
+}
+
+.subfooter p {
+    font-size: 13px;
+    opacity: 0.7;
+    color: #000000 !important; /* Copyright yazısı siyah */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    footer {
+        text-align: center;
+    }
+    
+    .d-lg-flex {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    footer ul li {
+        justify-content: center;
+    }
+    
+    footer h4 {
+        margin-bottom: 15px;
+    }
+}

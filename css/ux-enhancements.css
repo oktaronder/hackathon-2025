@@ -148,3 +148,18 @@ a, button, .btn-main, .btn-line {
     box-shadow: 0 12px 24px rgba(139, 92, 246, 0.2);
 }
 
+/* ============================================
+   FOOTER COLORS
+   Titles: dark purple, text + copyright: black
+   ============================================ */
+
+footer.section-dark h4 {
+    color: #7c3aed !important; /* Dark purple title */
+}
+
+footer.section-dark p,
+footer.section-dark li,
+footer.section-dark a {
+    color: #000000 !important; /* Black text under titles + copyright */
+}
+
