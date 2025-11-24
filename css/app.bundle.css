@@ -1,6 +1,7 @@
 /* Bundled CSS entry point - imports all existing styles in correct order */
 @import url('bootstrap.min.css');
 @import url('vendors.css');
+@import url('icofont.min.css');
 @import url('style.css');
 @import url('colors/scheme-01.css');
 @import url('epic-effects.css');
